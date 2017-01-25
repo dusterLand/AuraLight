@@ -200,7 +200,7 @@ create trigger before_insert_al_character
  * al_race_faction - Valid race/faction combinations
  */
 
-drop table if exists ai_race_faction;
+drop table if exists al_race_faction;
 
 create table al_race_faction (
 	id int not null auto_increment,
@@ -221,7 +221,7 @@ create table al_race_class (
 	id int not null auto_increment,
 	id_race int not null,
 	id_class int not null,
-	primary key (id).
+	primary key (id),
 	foreign key (id_race) references al_race(id) on delete cascade,
 	foreign key (id_class) references al_class(id) on delete cascade
 );
@@ -242,11 +242,16 @@ create table al_character_professions (
 	foreign key (id_profession) references al_profession(id) on delete cascade
 );
 
-create trigger before_insert_al_character_professions (
+
+delimiter |
+create trigger before_insert_al_character_professions 
 	before insert on al_character_professions
 	for each row
-	set new.id = uuid()
-);
+	begin
+		set new.id = uuid();
+	end;
+|
+delimiter ;
 
 /*
  * al_objective
@@ -263,11 +268,16 @@ create table al_objective (
 	foreign key (id_objective_scope) references al_objective_scope(id) on delete cascade
 );
  
-create trigger before_insert_al_objective (
+ 
+delimiter |
+create trigger before_insert_al_objective 
 	before insert on al_objective
 	for each row
-	set new.id = uuid()
-);
+	begin
+		set new.id = uuid();
+	end;
+|
+delimiter ;
  
 /*
  * al_objective_scope - Player or character - Is the player trying to get something done across
