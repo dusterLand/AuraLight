@@ -1,4 +1,4 @@
 Git setup in Codeanywhere:
 $ git config --global user.name "Jason Dusterwald"
 $ git config --global user.email "wardust@gmail.com"
-
+#--global forces everyone to be Jason versus just Jason
