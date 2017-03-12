@@ -6,8 +6,6 @@
 	</head>
 	<body>
 		<p>Testing Smarty templating service.</p>
-		{assign var="name1" value="Tom"}
-		{assign var="name2" value="Gus"}
 		<p>{$name1} is not {$name2}</p>
 	</body>
 </html>
