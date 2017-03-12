@@ -28,7 +28,8 @@ class FrontPageController {
 		$name1 = 'Tom';
 		$name2 = 'Gus';
 		$javascript = array(
-			'../../../javascript/jquery-3.1.1.js',
+			'../../javascript/jquery-3.1.1.js',
+			'../../javascript/auralight.js',
 		);
 		$this->smarty->assign( 'name1', $name1 );
 		$this->smarty->assign( 'name2', $name2 );
