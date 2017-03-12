@@ -2,8 +2,8 @@
 
 // Call Smarty connection script
 //require_once('../../smarty-dusterland.php');
-require_once('C:/Users/Jason/Documents/Programs/PHP/AuraLight/Controller/smarty-dusterland.php');
-define( 'DOC_ROOT', 'C:/Users/Jason/Documents/Programs/PHP/AuraLight/' );
+require_once('C:/Users/Jason/Documents/Programs/PHP/AuraLight/application/Controller/smarty-dusterland.php');
+define( 'DOC_ROOT', 'C:/Users/Jason/Documents/Programs/PHP/AuraLight/application/' );
 /**
  * Controller that will handle the application front page.
  */
@@ -22,10 +22,19 @@ class FrontPageController {
 		$this->smarty->config_dir = DOC_ROOT . 'View/FrontPage/Config/';
 	}
 	/**
-	 * Theoretically this will be called to actually render the page.
+	 * Assign values for variables the page will use.
+	 */
+	private function AssignValues() {
+		$name1 = 'Tom';
+		$name2 = 'Gus';
+		$this->smarty->assign( 'name1', $name1 );
+		$this->smarty->assign( 'name2', $name2 );
+	}
+	/**
+	 * Render the page.
 	 */
 	public function DisplayPage() {
-//		die( print_r( $this->smarty->template_dir, false ));
+		$this->AssignValues();
 		$this->smarty->display( $this->smarty->template_dir[0] . 'index.smarty' );
 	}
 }
