@@ -2,3 +2,12 @@ Git setup in Codeanywhere:
 $ git config --global user.name "Jason Dusterwald"
 $ git config --global user.email "wardust@gmail.com"
 #--global forces everyone to be Jason versus just Jason
+
+Install log4php
+pear channel-discover pear.apache.org/log4php
+pear remote-list -c log4php
+pear install log4php/package_name
+
+Composer setup
+https://getcomposer.org/doc/00-intro.md
+Composer-Setup.exe
