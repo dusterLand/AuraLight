@@ -29,6 +29,7 @@ class FrontPageController {
 		$name2 = 'Gus';
 		$this->smarty->assign( 'name1', $name1 );
 		$this->smarty->assign( 'name2', $name2 );
+		$this->smarty->assign( 'stylesheet', '../../View/FrontPage/CSS/index.css' );
 	}
 	/**
 	 * Render the page.
