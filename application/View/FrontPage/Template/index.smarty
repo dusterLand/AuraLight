@@ -4,6 +4,10 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 		<title>AuraLight Smarty Testbed</title>
 		<link rel="stylesheet" type="text/css" href="{$stylesheet}" />
+		{foreach $javascript as $jsfile}
+		<script type="text/javascript" src="{$jsfile}"></script>
+		{foreachelse}
+		{/foreach}
 	</head>
 	<body>
 		<p>Testing Smarty templating service.</p>
