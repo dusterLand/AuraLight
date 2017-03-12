@@ -2,8 +2,8 @@
 
 // Call Smarty connection script
 //require_once('../../smarty-dusterland.php');
-require_once('C:/Users/Jason/Documents/Programs/PHP/AuraLight/Controller/smarty-dusterland.php');
-define( 'DOC_ROOT', 'C:/Users/Jason/Documents/Programs/PHP/AuraLight/' );
+define( 'DOC_ROOT', getenv('DOCUMENT_ROOT').'/');
+require_once(DOC_ROOT .'/Controller/smarty-dusterland.php');
 /**
  * Controller that will handle the application front page.
  */
