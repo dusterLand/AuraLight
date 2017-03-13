@@ -1,0 +1,93 @@
+---
+RACES -- race_name, race_reputation_name
+---
+'Human','Stormwind'
+'Dwarf','Ironforge'
+'Gnome','Gnomeregan'
+'Night Elf','Darnassus'
+'Draenei','Exodar'
+'Worgen','Gilneas'
+'Pandaren','Tushui Pandaren'
+'Orc','Orgrimmar'
+'Troll','Darkspear Trolls'
+'Tauren','Thunder Bluff'
+'Undead','Undercity'
+'Blood Elf','Silvermoon City'
+'Goblin','Bilgewater Cartel'
+'Pandaren','Huojin Pandaren'
+---
+FACTION -- faction_name
+---
+'Alliance'
+'Horde'
+'Unaligned'
+---
+GENDER -- gender_name
+---
+'Female'
+'Male'
+---
+CLASS -- class_name
+---
+'Death Knight'
+'Demon Hunter'
+'Druid'
+'Hunter'
+'Mage'
+'Monk'
+'Paladin'
+'Priest'
+'Rogue'
+'Shaman'
+'Warlock'
+'Warrior'
+---
+SPECIALIZATION_ROLE -- name
+---
+'Damage'
+'Healer'
+'Tank'
+---
+SPECIALIZATION_TYPE -- 
+---
+'Melee'
+'Ranged'
+---
+SPECIALIZATION -- specialization_name, parent_class, id_specialization_role, id_specialization_type
+---
+'Blood','@class:Death Knight','@specialization_role:Tank','@specialization_type:Melee'
+'Frost','@class:Death Knight','@specialization_role:Damage','@specialization_type:Melee'
+'Unholy','@class:Death Knight','@specialization_role:Damage','@specialization_type:Melee'
+'Chaos','@class:Demon Hunter','@specialization_role:Damage','@specialization_type:Melee'
+'Vengeance','@class:Demon Hunter','@specialization_role:Tank','@specialization_type:Melee'
+'Balance','@class:Druid','@specialization_role:Damage','@specialization_type:Ranged'
+'Feral','@class:Druid','@specialization_role:Damage','@specialization_type:Melee'
+'Guardian','@class:Druid','@specialization_role:Tank','@specialization_type:Melee'
+'Restoration''@class:Druid','@specialization_role:Healer','@specialization_type:Ranged'
+'Beast Mastery','@class:Hunter','@specialization_role:Damage','@specialization_type:Ranged'
+'Marksmanship','@class:Hunter','@specialization_role:Damage','@specialization_type:Ranged'
+'Survival','@class:Hunter','@specialization_role:Damage','@specialization_type:Melee'
+'Arcane','@class:Mage','@specialization_role:Damage','@specialization_type:Ranged'
+'Fire','@class:Mage','@specialization_role:Damage','@specialization_type:Ranged'
+'Frost','@class:Mage','@specialization_role:Damage','@specialization_type:Ranged'
+'Brewmaster','@class:Monk','@specialization_role:Tank','@specialization_type:Melee'
+'Mistweaver','@class:Monk','@specialization_role:Healer','@specialization_type:Ranged'
+'Windwalker','@class:Monk','@specialization_role:Damage','@specialization_type:Melee'
+'Holy','@class:Paladin','@specialization_role:Healer','@specialization_type:Ranged'
+'Protection','@class:Paladin','@specialization_role:Tank','@specialization_type:Melee'
+'Retribution','@class:Paladin','@specialization_role:Damage','@specialization_type:Melee'
+'Discipline','@class:Priest','@specialization_role:Healer','@specialization_type:Ranged'
+'Holy','@class:Priest','@specialization_role:Healer','@specialization_type:Ranged'
+'Shadow','@class:Priest','@specialization_role:Damage','@specialization_type:Ranged'
+'Assassination','@class:Rogue','@specialization_role:Damage','@specialization_type:Melee'
+'Outlaw','@class:Rogue','@specialization_role:Damage','@specialization_type:Melee'
+'Subtlety','@class:Rogue','@specialization_role:Damage','@specialization_type:Melee'
+'Elemental','@class:Shaman','@specialization_role:Damage','@specialization_type:Ranged'
+'Enhancement','@class:Shaman','@specialization_role:Damage','@specialization_type:Melee'
+'Restoration','@class:Shaman','@specialization_role:Healer','@specialization_type:Ranged'
+'Affliction','@class:Warlock','@specialization_role:Damage','@specialization_type:Ranged'
+'Demonology','@class:Warlock','@specialization_role:Damage','@specialization_type:Ranged'
+'Destruction','@class:Warlock','@specialization_role:Damage','@specialization_type:Ranged'
+'Arms','@class:Warrior','@specialization_role:Damage','@specialization_type:Melee'
+'Fury','@class:Warrior','@specialization_role:Damage','@specialization_type:Melee'
+'Protection','@class:Warrior','@specialization_role:Tank','@specialization_type:Melee'
