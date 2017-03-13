@@ -3,7 +3,7 @@
 		<layout class="LoggerLayoutPattern">
 			<param name="conversionPattern" value="%date{Y-m-d H:i:s} [%logger::%class::%method::%line] %message %newline" />
 		</layout>
-		<param name="file" value="FrontPage.log" />
+		<param name="file" value="../config/log4php/FrontPage.log" />
 	</appender>
 	<root>
 		<level value="TRACE" />
