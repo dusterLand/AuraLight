@@ -1,0 +1,9 @@
+<configuration xmlns="http://logging.apache.org/log4php">
+	<appender name="AuraLight" class="LoggerAppenderFile">
+		<param name="file" value="AuraLight.log" />
+	</appender>
+	<root>
+		<level value="WARN" />
+		<appender_ref ref="AuraLight" />
+	</root>
+</configuration>

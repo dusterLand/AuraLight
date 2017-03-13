@@ -1,0 +1,12 @@
+<configuration xmlns="http://logging.apache.org/log4php">
+	<appender name="AL_FrontPage" class="LoggerAppenderFile">
+		<layout class="LoggerLayoutPattern">
+			<param name="conversionPattern" value="%date{Y-m-d H:i:s} [%logger::%class::%method::%line] %message %newline" />
+		</layout>
+		<param name="file" value="FrontPage.log" />
+	</appender>
+	<root>
+		<level value="TRACE" />
+		<appender_ref ref="AL_FrontPage" />
+	</root>
+</configuration>

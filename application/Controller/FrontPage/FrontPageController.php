@@ -1,19 +1,26 @@
 <?php
 
+// Define document root
+define( 'DOC_ROOT', getenv('DOCUMENT_ROOT').'/' );
+// Include logger
+include( 'log4php/Logger.php' );
 // Call Smarty connection script
-//require_once('../../smarty-dusterland.php');
-define( 'DOC_ROOT', getenv('DOCUMENT_ROOT').'/');
-require_once(DOC_ROOT .'/Controller/smarty-dusterland.php');
+require_once( DOC_ROOT .'/Controller/smarty-dusterland.php' );
 /**
  * Controller that will handle the application front page.
  */
 class FrontPageController {
 	
 	private $smarty;
+	private $log_frontpage;
 	/**
 	 * Constructor function.
 	 */
 	public function __construct() {
+		// Configure logging
+		Logger::configure( DOC_ROOT . '../config/log4php/frontpage.xml' );
+		$this->log_frontpage = Logger::getLogger( 'FrontPage' );
+		// Configure Smarty
 		$this->smarty = new Smarty;
 		$this->smarty->compile_check = true;
 		$this->smarty->debugging = true;
@@ -25,6 +32,7 @@ class FrontPageController {
 	 * Assign values for variables the page will use.
 	 */
 	private function AssignValues() {
+		$this->log_frontpage->trace('called');
 		$name1 = 'Tom';
 		$name2 = 'Gus';
 		$javascript = array(
@@ -40,6 +48,7 @@ class FrontPageController {
 	 * Render the page.
 	 */
 	public function DisplayPage() {
+		$this->log_frontpage->trace('called');
 		$this->AssignValues();
 		$this->smarty->display( $this->smarty->template_dir[0] . 'index.smarty' );
 	}
