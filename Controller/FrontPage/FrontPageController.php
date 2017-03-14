@@ -5,7 +5,7 @@ define( 'DOC_ROOT', getenv('DOCUMENT_ROOT').'/' );
 // Include logger
 include( 'log4php/Logger.php' );
 // Call Smarty connection script
-require_once( DOC_ROOT .'/Controller/smarty-dusterland.php' );
+require_once( DOC_ROOT .'../Controller/smarty-dusterland.php' );
 /**
  * Controller that will handle the application front page.
  */
@@ -24,9 +24,9 @@ class FrontPageController {
 		$this->smarty = new Smarty;
 		$this->smarty->compile_check = true;
 		$this->smarty->debugging = true;
-		$this->smarty->template_dir = DOC_ROOT . 'View/FrontPage/Template/';
-		$this->smarty->compile_dir = DOC_ROOT . 'View/FrontPage/Template_c/';
-		$this->smarty->config_dir = DOC_ROOT . 'View/FrontPage/Config/';
+		$this->smarty->template_dir = DOC_ROOT . '../View/FrontPage/Template/';
+		$this->smarty->compile_dir = DOC_ROOT . '../View/FrontPage/Template_c/';
+		$this->smarty->config_dir = DOC_ROOT . '../View/FrontPage/Config/';
 	}
 	/**
 	 * Assign values for variables the page will use.
