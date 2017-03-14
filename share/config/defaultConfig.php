@@ -10,4 +10,4 @@ $config['db']= array(
     'user'     => 'lisa_AL',
     'password' => 'SuperSecretPassword',
     'name'     => 'lisa_AL'
-)'
+);

@@ -10,15 +10,16 @@ $config = array();
 $smarty = new Smarty;
 $smarty->compile_check = true;
 $smarty->debugging = true;
-$smarty->template_dir =  '../View/FrontPage/Template/';
-$smarty->compile_dir = '../View/FrontPage/Template_c/';
-$smarty->config_dir = '../View/FrontPage/Config/';
+
+Logger::configure(dirname(__FILE__) .'/../share/config/log4php/defaultLog4PHP.xml');
+//$smarty->template_dir =  '../View/FrontPage/Template/';
+//$smarty->compile_dir = '../View/FrontPage/Template_c/';
+//$smarty->config_dir = '../View/FrontPage/Config/';
 
 $config['app'] = array(
 	'name' => 'AuraLight',
 	'name1' => 'Don',
 	'name2' => 'Stan',
-	'logConfFile' => Logger::configure(dirname(__FILE__) .'/../share/config/log4php/defaultLog4PHP.xml'),
 	'log_default' => Logger::getLogger( 'Default' )
 );
 //$configFile = dirname(__FILE__) . '/../config/defaultConfig.php';

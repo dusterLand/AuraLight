@@ -3,7 +3,7 @@
 		<layout class="LoggerLayoutPattern">
 			<param name="conversionPattern" value="%date{Y-m-d H:i:s} [%logger::%class::%method::%line] %message %newline" />
 		</layout>
-		<param name="file" value="../../var/logs/mainLogs.log" />
+		<param name="file" value="../var/logs/mainLogs.log" />
 	</appender>
 	<root>
 		<level value="TRACE" />
