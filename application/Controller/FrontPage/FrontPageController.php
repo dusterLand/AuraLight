@@ -5,7 +5,7 @@ define( 'DOC_ROOT', getenv('DOCUMENT_ROOT').'/' );
 // Include logger
 include( 'log4php/Logger.php' );
 // Call Smarty connection script
-require_once( DOC_ROOT .'../Controller/smarty-dusterland.php' );
+require_once( DOC_ROOT .'Controller/smarty-dusterland.php' );
 /**
  * Controller that will handle the application front page.
  */
