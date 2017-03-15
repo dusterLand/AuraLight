@@ -2,19 +2,14 @@
 //including global autoloader
 require_once dirname(__FILE__) . '/../vendor/autoload.php';
 
-
-//Init conifg data
+//Init config data
 $config = array();
-
 
 $smarty = new Smarty;
 $smarty->compile_check = true;
 $smarty->debugging = true;
 
 Logger::configure(dirname(__FILE__) .'/../share/config/log4php/defaultLog4PHP.xml');
-//$smarty->template_dir =  '../View/FrontPage/Template/';
-//$smarty->compile_dir = '../View/FrontPage/Template_c/';
-//$smarty->config_dir = '../View/FrontPage/Config/';
 
 $config['app'] = array(
 	'name' => 'AuraLight',
@@ -28,6 +23,3 @@ $configFile = dirname(__FILE__) . '/../share/config/defaultConfig.php';
 if (is_readable($configFile)) {
 	require_once $configFile;
 }
-
-
-		

@@ -6,11 +6,10 @@
 		"smarty/smarty": "3.1.*",
 		"components/jquery": "3.1.*",
 		"apache/log4php": "2.3.*"
-		
 	},
 	"autoload": {
 		"psr-4": {
-			"FrontPageApp\\": "application/lib/Controller"
+			"AuraLight\\": "application/lib/Controller"
 		}
 	}
 }

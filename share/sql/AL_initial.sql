@@ -60,6 +60,32 @@ create table al_class(
 );
 
 /*
+ * al_specialization_role - Damage, tank, healer
+ */
+ 
+drop table if exists al_specialization_role;
+ 
+create table al_specialization_role(
+	id int not null auto_increment,
+	name varchar(24) not null,
+	primary key (id)
+);
+
+/*
+ * al_specialization_type - Melee, ranged
+ */
+ 
+drop table if exists al_specialization_type;
+ 
+create table al_specialization_type(
+	id int not null auto_increment,
+	name varchar(24) not null,
+	id_class int not null,
+	primary key(id),
+	foreign key (id_class) references al_class(id) on delete cascade
+);
+
+/*
  * al_specialization - Class specialization
  */
 
@@ -73,48 +99,6 @@ create table al_specialization (
 	id_specialization_type int not null,
 	primary key (id),
 	foreign key (id_specialization_role) references al_specialization_role(id) on delete cascade
-);
-
-/*
- * al_specialization_role - Damage, tank, healer
- */
- 
- drop table if exists al_specialization_role;
- 
-create table al_specialization_role(
-	id int not null auto_increment,
-	name varchar(24) not null,
-	primary key (id)
-);
-
-/*
- * al_specialization_type - Melee, ranged
- */
- 
- drop table if exists al_specialization_type;
- 
-create table al_specialization_type(
-	id int not null auto_increment,
-	name varchar(24) not null,
-	id_class int not null,
-	primary key(id),
-	foreign key (id_class) references al_class(id) on delete cascade
-);
-
-/*
- * al_profession - Character professions/tradeskills
- */
-
-drop table if exists al_profession;
-
-create table al_profession (
-	id int not null auto_increment,
-	profession_name varchar(24) not null,
-	id_profession_type int not null,
-	id_profession_tier int not null,
-	primary key (id),
-	foreign key (id_profession_type) references al_profession_type(id) on delete cascade,
-	foreign key (id_profession_tier) references al_profession_tier(id)
 );
 
 /*
@@ -139,6 +123,22 @@ create table al_profession_tier (
 	id int not null auto_increment,
 	profession_tier varchar(16) not null,
 	primary key (id)
+);
+
+/*
+ * al_profession - Character professions/tradeskills
+ */
+
+drop table if exists al_profession;
+
+create table al_profession (
+	id int not null auto_increment,
+	profession_name varchar(24) not null,
+	id_profession_type int not null,
+	id_profession_tier int not null,
+	primary key (id),
+	foreign key (id_profession_type) references al_profession_type(id) on delete cascade,
+	foreign key (id_profession_tier) references al_profession_tier(id)
 );
 
 /*
