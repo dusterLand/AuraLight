@@ -22,8 +22,8 @@ $config['app'] = array(
 	'name2' => 'Stan',
 	'log_default' => Logger::getLogger( 'Default' )
 );
-//$configFile = dirname(__FILE__) . '/../config/defaultConfig.php';
-$configFile = dirname(__FILE__) . '../share/config/defaultConfig.php';
+
+$configFile = dirname(__FILE__) . '/../share/config/defaultConfig.php';
 
 if (is_readable($configFile)) {
 	require_once $configFile;
