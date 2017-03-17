@@ -16,17 +16,13 @@ class FrontPageController {
 	private $log_frontpage;
 	private $testlog;
 	
-	public function __construct($config,$smarty,$log_default,$conn) {
 	
-		//$this->name1 = $config['app']['name1'];
-		//$this->name2 = $config['app']['name2'];
-		$this->conn = $conn;
-		$log_default = $config['app']['log_default'];
 		
 	/**
 	 * Constructor function.
 	 */
-	public function __construct( $config, $smarty ) {
+	public function __construct( $config, $smarty, $conn ) {
+		$this->conn = $conn;
 		$this->name1 = $config['app']['name1'];
 		$this->name2 = $config['app']['name2'];
 		$this->testlog = new AL_Log;
@@ -59,26 +55,18 @@ class FrontPageController {
 	/**
 	 * Render the page.
 	 */
-	public function DisplayPage($smarty,$log_default) {
+	public function DisplayPage($smarty) {
 		
-		$sql = "SELECT id, race_name, race_reputation_name  FROM al_race";
-		$result = $this->conn->query($sql);
+		$this->sql = "SELECT id, race_name, race_reputation_name  FROM al_race";
+		$this->result = pg_exec($this->sql);
 
-		if ($result->num_rows > 0) {
-			
-			// output data of each row
-			while($row = $result->fetch_assoc()) {
-				$this->name1 = $row["race_reputation_name"];
-				$this->name2 = $row["race_name"];
-				
-			}
-		} else {
-			echo "0 results";
+		for ($lt = 0; $lt <pg_numrows($this->result); $lt++) {
+			$id = pg_result($this->result, $lt, 0);
+			$this->name1 = pg_result($this->result, $lt, 1);
+			$this->name2 = pg_result($this->result, $lt, 2);
 		}
-		$this->conn->close();
 		
 		
-	public function DisplayPage( $smarty ) {
 //		$this->log_frontpage->trace('called');
 		//global $smarty;
 		$this->AssignValues( $smarty );

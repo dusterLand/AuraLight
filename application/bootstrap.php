@@ -43,7 +43,7 @@ if( in_array( $request_uri, array_keys( $routes ))) {
 	$page = new $routes[ $request_uri ]($config, $smarty);
 	$page->DisplayPage( $smarty );
 } else {
-	$greeter = new AuraLight\Controller\FrontPage\FrontPageController($config,$smarty/*,$config['app']['log_default']*/);
+	$greeter = new AuraLight\Controller\FrontPage\FrontPageController($config,$smarty,$conn/*,$config['app']['log_default']*/);
 	$greeter->DisplayPage($smarty/*,$config['app']['log_default']*/);
 	//$log_default->info("Just logging");
 }
