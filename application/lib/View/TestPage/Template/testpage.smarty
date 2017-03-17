@@ -11,8 +11,5 @@
 	</head>
 	<body>
 		<p>Testing Smarty templating service.</p>
-		<p>{$name1} is not {$name2}</p>
-		<h3>Log:</h3>
-		<p>{$log}</p>
 	</body>
 </html>

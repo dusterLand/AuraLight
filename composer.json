@@ -9,7 +9,7 @@
 	},
 	"autoload": {
 		"psr-4": {
-			"AuraLight\\": "application/lib/Controller"
+			"AuraLight\\" : "application/lib/"
 		}
 	}
 }
