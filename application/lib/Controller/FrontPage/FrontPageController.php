@@ -6,19 +6,17 @@ use AuraLight\Common\Utility\AL_Log;
 
 class FrontPageController {
 
-	private $name1;
-	private $name2;
+	private $race;
+	private $reputation;
 	private $conn;
 	private $sql;
 	private $result;
 	private $log_frontpage;
+	private $races;
 	/**
 	 * Constructor function.
 	 */
-	public function __construct( $config, $smarty, $conn ) {
-		$this->conn = $conn;
-		$this->name1 = $config['app']['name1'];
-		$this->name2 = $config['app']['name2'];
+	public function __construct( $smarty ) {
 		$this->log_frontpage = new AL_Log( 'FrontPage' );
 		$smarty->template_dir =  '../lib/View/FrontPage/Template/';
 		$smarty->compile_dir = '../lib/View/FrontPage/Template_c/';
@@ -33,8 +31,12 @@ class FrontPageController {
 			'../../javascript/jquery/jquery-3.1.1.js',
 			'../../javascript/auralight.js',
 		);
-		$smarty->assign( 'name1', $this->name1 );
-		$smarty->assign( 'name2', $this->name2 );
+		$this->result = pg_query("SELECT id, race_name, race_reputation_name FROM al_race");
+		$data = array('races');
+		while($row = pg_fetch_assoc($this->result)) {
+			$data['races'][] = $row;
+		}
+		$smarty->assign( 'races', $data['races']);
 		$smarty->assign( 'stylesheet', '/CSS/index.css' );
 		$smarty->assign( 'javascript', $javascript );
 	}
@@ -43,13 +45,6 @@ class FrontPageController {
 	 */
 	public function DisplayPage( $smarty ) {
 		$this->log_frontpage->trace('called');
-		$this->sql = "SELECT id, race_name, race_reputation_name  FROM al_race";
-		$this->result = pg_exec($this->sql);
-		for ($lt = 0; $lt <pg_numrows($this->result); $lt++) {
-			$id = pg_result($this->result, $lt, 0);
-			$this->name1 = pg_result($this->result, $lt, 1);
-			$this->name2 = pg_result($this->result, $lt, 2);
-		}
 		$this->AssignValues( $smarty );
 		$smarty->display( $smarty->template_dir[0] . 'index.smarty' );
 	}

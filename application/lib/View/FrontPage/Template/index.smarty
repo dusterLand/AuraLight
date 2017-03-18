@@ -11,6 +11,8 @@
 	</head>
 	<body>
 		<p>Testing Smarty templating service.</p>
-		<p>{$name1} is not {$name2}</p>
+		{foreach $races as $row}
+		<p>{$row.race_name} is this {$row.race_reputation_name}</p>
+		{/foreach}
 	</body>
 </html>
