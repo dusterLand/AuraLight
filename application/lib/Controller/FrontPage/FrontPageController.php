@@ -15,7 +15,7 @@ class FrontPageController {
 	/**
 	 * Constructor function.
 	 */
-	public function __construct( $config, $smarty ) {
+	public function __construct( $config, $smarty, $conn ) {
 		$this->conn = $conn;
 		$this->name1 = $config['app']['name1'];
 		$this->name2 = $config['app']['name2'];
