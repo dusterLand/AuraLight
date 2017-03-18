@@ -42,7 +42,10 @@ if (is_readable($configFile)) {
 
 $connString = "host=" . $ini['db_host'] . " dbname=" . $ini['db_name']. " user=" . $ini['db_user'] . " password=" . $ini['db_password'];
 $conn = pg_connect($connString)
-    or die('Could not connect: ' . pg_last_error());
+   or die('Could not connect: ' . pg_last_error());
+if (isset($ini['db_schema'])){
+   $rs = pg_query('SET search_path to ' . $ini['db_schema']);
+}
 	
 //phpinfo();
 
