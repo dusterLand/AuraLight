@@ -241,4 +241,6 @@
 
 	grant usage on schema auralight to auralight;
 	grant insert, update, delete, select on all tables in schema auralight to auralight;
+	grant update, select, usage on all sequences in schema auralight to auralight;
+	
 
