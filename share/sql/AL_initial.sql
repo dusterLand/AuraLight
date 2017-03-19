@@ -76,9 +76,7 @@
 	create table auralight.al_specialization_type(
 		id SERIAL,
 		name varchar(24) NOT NULL,
-		id_class int NOT NULL,
-		primary key(id),
-		foreign key (id_class) references auralight.al_class(id) on delete cascade
+		primary key(id)
 	);
 	/*
 	 * auralight.al_specialization - Class specialization

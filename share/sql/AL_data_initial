@@ -1,6 +1,6 @@
 ---
-RACES -- race_name, race_reputation_name
----
+RACE -- race_name, race_reputation_name
+-
 'Human','Stormwind'
 'Dwarf','Ironforge'
 'Gnome','Gnomeregan'
@@ -17,18 +17,18 @@ RACES -- race_name, race_reputation_name
 'Pandaren','Huojin Pandaren'
 ---
 FACTION -- faction_name
----
+-
 'Alliance'
 'Horde'
 'Unaligned'
 ---
 GENDER -- gender_name
----
-'Female'
-'Male'
+-
+'female'
+'male'
 ---
 CLASS -- class_name
----
+-
 'Death Knight'
 'Demon Hunter'
 'Druid'
@@ -43,85 +43,85 @@ CLASS -- class_name
 'Warrior'
 ---
 SPECIALIZATION_ROLE -- name
----
+-
 'Damage'
 'Healer'
 'Tank'
 ---
-SPECIALIZATION_TYPE -- 
----
-'Melee'
-'Ranged'
+SPECIALIZATION_TYPE -- name
+-
+'melee'
+'ranged'
 ---
 SPECIALIZATION -- specialization_name, parent_class, id_specialization_role, id_specialization_type
----
-'Blood','@class:Death Knight','@specialization_role:Tank','@specialization_type:Melee'
-'Frost','@class:Death Knight','@specialization_role:Damage','@specialization_type:Melee'
-'Unholy','@class:Death Knight','@specialization_role:Damage','@specialization_type:Melee'
-'Chaos','@class:Demon Hunter','@specialization_role:Damage','@specialization_type:Melee'
-'Vengeance','@class:Demon Hunter','@specialization_role:Tank','@specialization_type:Melee'
-'Balance','@class:Druid','@specialization_role:Damage','@specialization_type:Ranged'
-'Feral','@class:Druid','@specialization_role:Damage','@specialization_type:Melee'
-'Guardian','@class:Druid','@specialization_role:Tank','@specialization_type:Melee'
-'Restoration''@class:Druid','@specialization_role:Healer','@specialization_type:Ranged'
-'Beast Mastery','@class:Hunter','@specialization_role:Damage','@specialization_type:Ranged'
-'Marksmanship','@class:Hunter','@specialization_role:Damage','@specialization_type:Ranged'
-'Survival','@class:Hunter','@specialization_role:Damage','@specialization_type:Melee'
-'Arcane','@class:Mage','@specialization_role:Damage','@specialization_type:Ranged'
-'Fire','@class:Mage','@specialization_role:Damage','@specialization_type:Ranged'
-'Frost','@class:Mage','@specialization_role:Damage','@specialization_type:Ranged'
-'Brewmaster','@class:Monk','@specialization_role:Tank','@specialization_type:Melee'
-'Mistweaver','@class:Monk','@specialization_role:Healer','@specialization_type:Ranged'
-'Windwalker','@class:Monk','@specialization_role:Damage','@specialization_type:Melee'
-'Holy','@class:Paladin','@specialization_role:Healer','@specialization_type:Ranged'
-'Protection','@class:Paladin','@specialization_role:Tank','@specialization_type:Melee'
-'Retribution','@class:Paladin','@specialization_role:Damage','@specialization_type:Melee'
-'Discipline','@class:Priest','@specialization_role:Healer','@specialization_type:Ranged'
-'Holy','@class:Priest','@specialization_role:Healer','@specialization_type:Ranged'
-'Shadow','@class:Priest','@specialization_role:Damage','@specialization_type:Ranged'
-'Assassination','@class:Rogue','@specialization_role:Damage','@specialization_type:Melee'
-'Outlaw','@class:Rogue','@specialization_role:Damage','@specialization_type:Melee'
-'Subtlety','@class:Rogue','@specialization_role:Damage','@specialization_type:Melee'
-'Elemental','@class:Shaman','@specialization_role:Damage','@specialization_type:Ranged'
-'Enhancement','@class:Shaman','@specialization_role:Damage','@specialization_type:Melee'
-'Restoration','@class:Shaman','@specialization_role:Healer','@specialization_type:Ranged'
-'Affliction','@class:Warlock','@specialization_role:Damage','@specialization_type:Ranged'
-'Demonology','@class:Warlock','@specialization_role:Damage','@specialization_type:Ranged'
-'Destruction','@class:Warlock','@specialization_role:Damage','@specialization_type:Ranged'
-'Arms','@class:Warrior','@specialization_role:Damage','@specialization_type:Melee'
-'Fury','@class:Warrior','@specialization_role:Damage','@specialization_type:Melee'
-'Protection','@class:Warrior','@specialization_role:Tank','@specialization_type:Melee'
+-
+'Blood','@class[class_name=Death Knight]','@specialization_role[name=Tank]','@specialization_type[name=melee]'
+'Frost','@class[class_name=Death Knight]','@specialization_role[name=Damage]','@specialization_type[name=melee]'
+'Unholy','@class[class_name=Death Knight]','@specialization_role[name=Damage]','@specialization_type[name=melee]'
+'Chaos','@class[class_name=Demon Hunter]','@specialization_role[name=Damage]','@specialization_type[name=melee]'
+'Vengeance','@class[class_name=Demon Hunter]','@specialization_role[name=Tank]','@specialization_type[name=melee]'
+'Balance','@class[class_name=Druid]','@specialization_role[name=Damage]','@specialization_type[name=ranged]'
+'Feral','@class[class_name=Druid]','@specialization_role[name=Damage]','@specialization_type[name=melee]'
+'Guardian','@class[class_name=Druid]','@specialization_role[name=Tank]','@specialization_type[name=melee]'
+'Restoration','@class[class_name=Druid]','@specialization_role[name=Healer]','@specialization_type[name=ranged]'
+'Beast Mastery','@class[class_name=Hunter]','@specialization_role[name=Damage]','@specialization_type[name=ranged]'
+'Marksmanship','@class[class_name=Hunter]','@specialization_role[name=Damage]','@specialization_type[name=ranged]'
+'Survival','@class[class_name=Hunter]','@specialization_role[name=Damage]','@specialization_type[name=melee]'
+'Arcane','@class[class_name=Mage]','@specialization_role[name=Damage]','@specialization_type[name=ranged]'
+'Fire','@class[class_name=Mage]','@specialization_role[name=Damage]','@specialization_type[name=ranged]'
+'Frost','@class[class_name=Mage]','@specialization_role[name=Damage]','@specialization_type[name=ranged]'
+'Brewmaster','@class[class_name=Monk]','@specialization_role[name=Tank]','@specialization_type[name=melee]'
+'Mistweaver','@class[class_name=Monk]','@specialization_role[name=Healer]','@specialization_type[name=ranged]'
+'Windwalker','@class[class_name=Monk]','@specialization_role[name=Damage]','@specialization_type[name=melee]'
+'Holy','@class[class_name=Paladin]','@specialization_role[name=Healer]','@specialization_type[name=ranged]'
+'Protection','@class[class_name=Paladin]','@specialization_role[name=Tank]','@specialization_type[name=melee]'
+'Retribution','@class[class_name=Paladin]','@specialization_role[name=Damage]','@specialization_type[name=melee]'
+'Discipline','@class[class_name=Priest]','@specialization_role[name=Healer]','@specialization_type[name=ranged]'
+'Holy','@class[class_name=Priest]','@specialization_role[name=Healer]','@specialization_type[name=ranged]'
+'Shadow','@class[class_name=Priest]','@specialization_role[name=Damage]','@specialization_type[name=ranged]'
+'Assassination','@class[class_name=Rogue]','@specialization_role[name=Damage]','@specialization_type[name=melee]'
+'Outlaw','@class[class_name=Rogue]','@specialization_role[name=Damage]','@specialization_type[name=melee]'
+'Subtlety','@class[class_name=Rogue]','@specialization_role[name=Damage]','@specialization_type[name=melee]'
+'Elemental','@class[class_name=Shaman]','@specialization_role[name=Damage]','@specialization_type[name=ranged]'
+'Enhancement','@class[class_name=Shaman]','@specialization_role[name=Damage]','@specialization_type[name=melee]'
+'Restoration','@class[class_name=Shaman]','@specialization_role[name=Healer]','@specialization_type[name=ranged]'
+'Affliction','@class[class_name=Warlock]','@specialization_role[name=Damage]','@specialization_type[name=ranged]'
+'Demonology','@class[class_name=Warlock]','@specialization_role[name=Damage]','@specialization_type[name=ranged]'
+'Destruction','@class[class_name=Warlock]','@specialization_role[name=Damage]','@specialization_type[name=ranged]'
+'Arms','@class[class_name=Warrior]','@specialization_role[name=Damage]','@specialization_type[name=melee]'
+'Fury','@class[class_name=Warrior]','@specialization_role[name=Damage]','@specialization_type[name=melee]'
+'Protection','@class[class_name=Warrior]','@specialization_role[name=Tank]','@specialization_type[name=melee]'
 ---
 PROFESSION_TYPE -- profession_type
----
-'Gathering'
-'Production'
+-
+'gathering'
+'production'
 ---
 PROFESSION_TIER -- profession_tier
----
-'Primary'
-'Secondary'
+-
+'primary'
+'secondary'
 ---
 PROFESSION -- profession_name, id_profession_type, id_profession_tier
----
-'Alchemy','@professionType:Production','@professionTier:Primary'
-'Archaeology','@professionType:Production','@professionTier:Secondary'
-'Blacksmithing','@professionType:Production','@professionTier:Primary'
-'Cooking','@professionType:Production','@professionTier:Secondary'
-'Enchanting','@professionType:Production','@professionTier:Primary'
-'Engineering','@professionType:Production','@professionTier:Primary'
-'First Aid','@professionType:Production','@professionTier:Secondary'
-'Fishing','@professionType:Gathering','@professionTier:Secondary'
-'Herbalism','@professionType:Gathering','@professionTier:Primary'
-'Inscription','@professionType:Production','@professionTier:Primary'
-'Jewelcrafting','@professionType:Production','@professionTier:Primary'
-'Leatherworking','@professionType:Production','@professionTier:Primary'
-'Mining','@professionType:Gathering','@professionTier:Primary'
-'Skinning','@professionType:Gathering','@professionTier:Primary'
-'Tailoring','@professionType:Production','@professionTier:Primary'
+-
+'Alchemy','@profession_type[profession_type=production]','@profession_tier[profession_tier=primary]'
+'Archaeology','@profession_type[profession_type=production]','@profession_tier[profession_tier=secondary]'
+'Blacksmithing','@profession_type[profession_type=production]','@profession_tier[profession_tier=primary]'
+'Cooking','@profession_type[profession_type=production]','@profession_tier[profession_tier=secondary]'
+'Enchanting','@profession_type[profession_type=production]','@profession_tier[profession_tier=primary]'
+'Engineering','@profession_type[profession_type=production]','@profession_tier[profession_tier=primary]'
+'First Aid','@profession_type[profession_type=production]','@profession_tier[profession_tier=secondary]'
+'Fishing','@profession_type[profession_type=gathering]','@profession_tier[profession_tier=secondary]'
+'Herbalism','@profession_type[profession_type=gathering]','@profession_tier[profession_tier=primary]'
+'Inscription','@profession_type[profession_type=production]','@profession_tier[profession_tier=primary]'
+'Jewelcrafting','@profession_type[profession_type=production]','@profession_tier[profession_tier=primary]'
+'Leatherworking','@profession_type[profession_type=production]','@profession_tier[profession_tier=primary]'
+'Mining','@profession_type[profession_type=gathering]','@profession_tier[profession_tier=primary]'
+'Skinning','@profession_type[profession_type=gathering]','@profession_tier[profession_tier=primary]'
+'Tailoring','@profession_type[profession_type=production]','@profession_tier[profession_tier=primary]'
 ---
 PLAYER -- player_username, player_email, player_name_first, player_name_last, player_name_middle
----
+-
 'LichKing56','a.menethil@icecrown.army.mil','Nathan','Deathknight','Jackson'
 'ImTheBestDemonHu','pikachu92@aol.com','Kyle','Demonhunter',null
 'TankBear7','padresfan2@yahoo.com','Kimberly','Druid',null
@@ -135,211 +135,226 @@ PLAYER -- player_username, player_email, player_name_first, player_name_last, pl
 'Lockerbie187','lockypoo28@yahoo.com','Lauren','Warlock',null
 'Warrter19','warrter19@gmail.com','Walter','Warrior','Donald'
 ---
-CHARACTER -- character_name_game, character_name_last, character_name_first, character_name_middle_first, character_name_middle_second, id_character_class, id_character_faction, id_character_gender, character_level, id_character_race, id_player_owner
+ACCOUNT - account_name, id_player_owner
+-
+'WoW1','@player[player_email=a.menethil@icecrown.army.mil]'
+'WoW1','@player[player_email=pikachu92@aol.com]'
+'WoW1','@player[player_email=padresfan2@yahoo.com]'
+'WoW1','@player[player_email=refinedshot@refinedshot.net]'
+'WoW1','@player[player_email=coldasice20@gmail.com]'
+'WoW1','@player[player_email=madskills236@mail.fortune.com]'
+'WoW1','@player[player_email=animehair209@ibm.com]'
+'WoW1','@player[player_email=ashensnow72@alnhofen.de]'
+'WoW1','@player[player_email=bloodyknife982@rogueacademy.edu]'
+'WoW1','@player[player_email=southern_horn@aol.com]'
+'WoW1','@player[player_email=lockypoo28@yahoo.com]'
+'WoW1','@player[player_email=warrter19@gmail.com]'
 ---
-'Kaidalsey',null,null,null,null,'@class:DeathKnight','@faction:Alliance','@gender:Male',58,'@race:Human','@playerEmail:a.menethil@icecrown.army.mil'
-'Masrielenesh','Badass','Hunter','Fucking','Demon','@class:DemonHunter','@faction:Horde','@gender:Male',99,'@race:BloodElf','@playerEmail:pikachu92@aol.com'
-'Vesaeliais','Sylendra','Halfmoon',null,null,'@class:Druid','@faction:Alliance','@gender:Female',87,'@race:NightElf','@playerEmail:padresfan2@yahoo.com'
-'Aviaeroeda',null,null,null,null,'@class:Hunter','@faction:Horde','@gender:Female',110,'@race:BloodElf','@playerEmail:refinedshot@refinedshot.net'
-'Sankaide',null,null,null,null,'@class:Mage','@faction:Alliance','@gender:Female',75,'@race:Human','@playerEmail:coldasice20@gmail.com'
-'Ruhangli',null,null,null,null,'@class:Monk','@faction:Horde','@gender:Male',14,'@race:Pandaren','@playerEmail:madskills236@mail.fortune.com'
-'Alandistus',null,null,null,null,'@class:Paladin','@faction:Horde','@gender:Male',106,'@race:BloodElf','@playerEmail:animehair209@ibm.com'
-'Geramyzn',null,null,null,null,'@class:Priest','@faction:Alliance','@gender:Male',79,'@race:Draenei','@playerEmail:ashensnow72@alnhofen.de'
-'Amesel',null,null,null,null,'@class:Rogue','@faction:Horde','@gender:Female',24,'@race:Undead','@playerEmail:bloodyknife982@rogueacademy.edu'
-'Arlourlan','Thunderhammer',null,null,null,'@class:Shaman','@faction:Alliance',104,'@race:Dwarf','@playerEmail:southern_horn@aol.com'
-'Uglazital',null,null,null,null,'@class:Warlock','@faction:Horde',110,'@race:Orc','@playerEmail:lockypoo28@yahoo.com'
-'Andushirn',null,'Cairne',null,null,'@class:Warrior','@faction:Horde',88,'@race:Tauren','@playerEmail:warrter19@gmail.com'
+CHARACTER -- character_name_game, character_name_last, character_name_first, character_name_middle_first, character_name_middle_second, id_character_class, id_character_faction, id_character_gender, character_level, id_character_race, id_account_owner
+-
+'Kaidalsey',null,null,null,null,'@class[class_name=Death Knight]','@faction[faction_name=Alliance]','@gender[gender_name=male]',58,'@race[race_name=Human]','@account[id_player_owner=[@player[player_email=a.menethil@icecrown.army.mil]]]'
+'Masrielenesh','Badass','Hunter','Fucking','Demon','@class[class_name=Demon Hunter]','@faction[faction_name=Horde]','@gender[gender_name=male]',99,'@race[race_name=Blood Elf]','@account[id_player_owner=[@player[player_email=pikachu92@aol.com]]]'
+'Vesaeliais','Sylendra','Halfmoon',null,null,'@class[class_name=Druid]','@faction[faction_name=Alliance]','@gender[gender_name=female]',87,'@race[race_name=Night Elf]','@account[id_player_owner=[@player[player_email=padresfan2@yahoo.com]]]'
+'Aviaeroeda',null,null,null,null,'@class[class_name=Hunter]','@faction[faction_name=Horde]','@gender[gender_name=female]',110,'@race[race_name=Blood Elf]','@account[id_player_owner=[@player[player_email=refinedshot@refinedshot.net]]]'
+'Sankaide',null,null,null,null,'@class[class_name=Mage]','@faction[faction_name=Alliance]','@gender[gender_name=female]',75,'@race[race_name=Human]','@account[id_player_owner=[@player[player_email=coldasice20@gmail.com]]]'
+'Ruhangli',null,null,null,null,'@class[class_name=Monk]','@faction[faction_name=Horde]','@gender[gender_name=male]',14,'@race[race_name=Pandaren&race_reputation_name=Huojin Pandaren]','@account[id_player_owner=[@player[player_email=madskills236@mail.fortune.com]]]'
+'Alandistus',null,null,null,null,'@class[class_name=Paladin]','@faction[faction_name=Horde]','@gender[gender_name=male]',106,'@race[race_name=Blood Elf]','@account[id_player_owner=[@player[player_email=animehair209@ibm.com]]]'
+'Geramyzn',null,null,null,null,'@class[class_name=Priest]','@faction[faction_name=Alliance]','@gender[gender_name=male]',79,'@race[race_name=Draenei]','@account[id_player_owner=[@player[player_email=ashensnow72@alnhofen.de]]]'
+'Amesel',null,null,null,null,'@class[class_name=Rogue]','@faction[faction_name=Horde]','@gender[gender_name=female]',24,'@race[race_name=Undead]','@account[id_player_owner=[@player[player_email=bloodyknife982@rogueacademy.edu]]]'
+'Arlourlan','Thunderhammer',null,null,null,'@class[class_name=Shaman]','@faction[faction_name=Alliance]','@gender[gender_name=male]',104,'@race[race_name=Dwarf]','@account[id_player_owner=[@player[player_email=southern_horn@aol.com]]]'
+'Uglazital',null,null,null,null,'@class[class_name=Warlock]','@faction[faction_name=Horde]','@gender[gender_name=male]',110,'@race[race_name=Orc]','@account[id_player_owner=[@player[player_email=lockypoo28@yahoo.com]]]'
+'Andushirn',null,'Cairne',null,null,'@class[class_name=Warrior]','@faction[faction_name=Horde]','@gender[gender_name=female]',88,'@race[race_name=Tauren]','@account[id_player_owner=[@player[player_email=warrter19@gmail.com]]]'
 ---
 RACE_FACTION -- id_race, id_faction
----
-'@race:Human','@faction:Alliance'
-'@race:Dwarf','@faction:Alliance'
-'@race:Gnome','@faction:Alliance'
-'@race:NightElf','@faction:Alliance'
-'@race:Draenei','@faction:Alliance'
-'@race:Worgen','@faction:Alliance'
-'@race:Pandaren[reputation:TushuiPandaren','@faction:Alliance'
-'@race:Orc','@faction:Horde'
-'@race:Troll','@faction:Horde'
-'@race:Tauren','@faction:Horde'
-'@race:Undead','@faction:Horde'
-'@race:BloodElf','@faction:Horde'
-'@race:Goblin','@faction:Horde'
-'@race:Pandaren[reputation:HuojinPandarenn]','@faction:Horde'
+-
+'@race[race_name=Human]','@faction[faction_name=Alliance]'
+'@race[race_name=Dwarf]','@faction[faction_name=Alliance]'
+'@race[race_name=Gnome]','@faction[faction_name=Alliance]'
+'@race[race_name=Night Elf]','@faction[faction_name=Alliance]'
+'@race[race_name=Draenei]','@faction[faction_name=Alliance]'
+'@race[race_name=Worgen]','@faction[faction_name=Alliance]'
+'@race[race_name=Pandaren&race_reputation_name=Tushui Pandaren]','@faction[faction_name=Alliance]'
+'@race[race_name=Orc]','@faction[faction_name=Horde]'
+'@race[race_name=Troll]','@faction[faction_name=Horde]'
+'@race[race_name=Tauren]','@faction[faction_name=Horde]'
+'@race[race_name=Undead]','@faction[faction_name=Horde]'
+'@race[race_name=Blood Elf]','@faction[faction_name=Horde]'
+'@race[race_name=Goblin]','@faction[faction_name=Horde]'
+'@race[race_name=Pandaren&race_reputation_name=Huojin Pandaren]','@faction[faction_name=Horde]'
 ---
 RACE_CLASS -- id_race, id_class
----
-'@race:Human','@class:Warrior'
-'@race:Human','@class:Paladin'
-'@race:Human','@class:Hunter'
-'@race:Human','@class:Rogue'
-'@race:Human','@class:Priest'
-'@race:Human','@class:Mage'
-'@race:Human','@class:Warlock'
-'@race:Human','@class:Monk'
-'@race:Human','@class:DeathKnight'
-'@race:Dwarf','@class:Warrior'
-'@race:Dwarf','@class:Paladin'
-'@race:Dwarf','@class:Hunter'
-'@race:Dwarf','@class:Rogue'
-'@race:Dwarf','@class:Priest'
-'@race:Dwarf','@class:Shaman'
-'@race:Dwarf','@class:Mage'
-'@race:Dwarf','@class:Warlock'
-'@race:Dwarf','@class:Monk'
-'@race:Dwarf','@class:DeathKnight'
-'@race:NightElf','@class:Warrior'
-'@race:NightElf','@class:Hunter'
-'@race:NightElf','@class:Rogue'
-'@race:NightElf','@class:Priest'
-'@race:NightElf','@class:Mage'
-'@race:NightElf','@class:Monk'
-'@race:NightElf','@class:Druid'
-'@race:NightElf','@class:DemonHunter'
-'@race:NightElf','@class:DeathKnight'
-'@race:Gnome','@class:Warrior'
-'@race:Gnome','@class:Hunter'
-'@race:Gnome','@class:Rogue'
-'@race:Gnome','@class:Priest'
-'@race:Gnome','@class:Mage'
-'@race:Gnome','@class:Warlock'
-'@race:Gnome','@class:Monk'
-'@race:Gnome','@class:DeathKnight'
-'@race:Draenei','@class:Warrior'
-'@race:Draenei','@class:Paladin'
-'@race:Draenei','@class:Hunter'
-'@race:Draenei','@class:Priest'
-'@race:Draenei','@class:Shaman'
-'@race:Draenei','@class:Mage'
-'@race:Draenei','@class:Monk'
-'@race:Draenei','@class:DeathKnight'
-'@race:Worgen','@class:Warrior'
-'@race:Worgen','@class:Hunter'
-'@race:Worgen','@class:Rogue'
-'@race:Worgen','@class:Priest'
-'@race:Worgen','@class:Mage'
-'@race:Worgen','@class:Warlock'
-'@race:Worgen','@class:Druid'
-'@race:Worgen','@class:DeathKnight'
-'@race:Pandaren[reputation:TushuiPandaren','@class:Warrior'
-'@race:Pandaren[reputation:TushuiPandaren','@class:Hunter'
-'@race:Pandaren[reputation:TushuiPandaren','@class:Rogue'
-'@race:Pandaren[reputation:TushuiPandaren','@class:Priest'
-'@race:Pandaren[reputation:TushuiPandaren','@class:Shaman'
-'@race:Pandaren[reputation:TushuiPandaren','@class:Mage'
-'@race:Pandaren[reputation:TushuiPandaren','@class:Monk'
-'@race:Pandaren[reputation:HuojinPandarenn]','@class:Warrior'
-'@race:Pandaren[reputation:HuojinPandarenn]','@class:Hunter'
-'@race:Pandaren[reputation:HuojinPandarenn]','@class:Rogue'
-'@race:Pandaren[reputation:HuojinPandarenn]','@class:Priest'
-'@race:Pandaren[reputation:HuojinPandarenn]','@class:Shaman'
-'@race:Pandaren[reputation:HuojinPandarenn]','@class:Mage'
-'@race:Pandaren[reputation:HuojinPandarenn]','@class:Monk'
-'@race:Orc','@class:Warrior'
-'@race:Orc','@class:Hunter'
-'@race:Orc','@class:Rogue'
-'@race:Orc','@class:Shaman'
-'@race:Orc','@class:Mage'
-'@race:Orc','@class:Warlock'
-'@race:Orc','@class:Monk'
-'@race:Orc','@class:DeathKnight'
-'@race:Troll','@class:Warrior'
-'@race:Troll','@class:Hunter'
-'@race:Troll','@class:Rogue'
-'@race:Troll','@class:Priest'
-'@race:Troll','@class:Shaman'
-'@race:Troll','@class:Mage'
-'@race:Troll','@class:Warlock'
-'@race:Troll','@class:Monk'
-'@race:Troll','@class:Druid'
-'@race:Troll','@class:DeathKnight'
-'@race:Tauren','@class:Warrior'
-'@race:Tauren','@class:Paladin'
-'@race:Tauren','@class:Hunter'
-'@race:Tauren','@class:Priest'
-'@race:Tauren','@class:Shaman'
-'@race:Tauren','@class:Monk'
-'@race:Tauren','@class:Druid'
-'@race:Tauren','@class:DeathKnight'
-'@race:Undead','@class:Warrior'
-'@race:Undead','@class:Hunter'
-'@race:Undead','@class:Rogue'
-'@race:Undead','@class:Priest'
-'@race:Undead','@class:Mage'
-'@race:Undead','@class:Warlock'
-'@race:Undead','@class:Monk'
-'@race:Undead','@class:DeathKnight'
-'@race:BloodElf','@class:Warrior'
-'@race:BloodElf','@class:Paladin'
-'@race:BloodElf','@class:Hunter'
-'@race:BloodElf','@class:Rogue'
-'@race:BloodElf','@class:Priest'
-'@race:BloodElf','@class:Mage'
-'@race:BloodElf','@class:Warlock'
-'@race:BloodElf','@class:Monk'
-'@race:BloodElf','@class:DemonHunter'
-'@race:BloodElf','@class:DeathKnight'
-'@race:Goblin','@class:Warrior'
-'@race:Goblin','@class:Hunter'
-'@race:Goblin','@class:Rogue'
-'@race:Goblin','@class:Priest'
-'@race:Goblin','@class:Shaman'
-'@race:Goblin','@class:Mage'
-'@race:Goblin','@class:Warlock'
-'@race:Goblin','@class:DeathKnight'
+-
+'@race[race_name=Human]','@class[class_name=Warrior]'
+'@race[race_name=Human]','@class[class_name=Paladin]'
+'@race[race_name=Human]','@class[class_name=Hunter]'
+'@race[race_name=Human]','@class[class_name=Rogue]'
+'@race[race_name=Human]','@class[class_name=Priest]'
+'@race[race_name=Human]','@class[class_name=Mage]'
+'@race[race_name=Human]','@class[class_name=Warlock]'
+'@race[race_name=Human]','@class[class_name=Monk]'
+'@race[race_name=Human]','@class[class_name=Death Knight]'
+'@race[race_name=Dwarf]','@class[class_name=Warrior]'
+'@race[race_name=Dwarf]','@class[class_name=Paladin]'
+'@race[race_name=Dwarf]','@class[class_name=Hunter]'
+'@race[race_name=Dwarf]','@class[class_name=Rogue]'
+'@race[race_name=Dwarf]','@class[class_name=Priest]'
+'@race[race_name=Dwarf]','@class[class_name=Shaman]'
+'@race[race_name=Dwarf]','@class[class_name=Mage]'
+'@race[race_name=Dwarf]','@class[class_name=Warlock]'
+'@race[race_name=Dwarf]','@class[class_name=Monk]'
+'@race[race_name=Dwarf]','@class[class_name=Death Knight]'
+'@race[race_name=Night Elf]','@class[class_name=Warrior]'
+'@race[race_name=Night Elf]','@class[class_name=Hunter]'
+'@race[race_name=Night Elf]','@class[class_name=Rogue]'
+'@race[race_name=Night Elf]','@class[class_name=Priest]'
+'@race[race_name=Night Elf]','@class[class_name=Mage]'
+'@race[race_name=Night Elf]','@class[class_name=Monk]'
+'@race[race_name=Night Elf]','@class[class_name=Druid]'
+'@race[race_name=Night Elf]','@class[class_name=Demon Hunter]'
+'@race[race_name=Night Elf]','@class[class_name=Death Knight]'
+'@race[race_name=Gnome]','@class[class_name=Warrior]'
+'@race[race_name=Gnome]','@class[class_name=Hunter]'
+'@race[race_name=Gnome]','@class[class_name=Rogue]'
+'@race[race_name=Gnome]','@class[class_name=Priest]'
+'@race[race_name=Gnome]','@class[class_name=Mage]'
+'@race[race_name=Gnome]','@class[class_name=Warlock]'
+'@race[race_name=Gnome]','@class[class_name=Monk]'
+'@race[race_name=Gnome]','@class[class_name=Death Knight]'
+'@race[race_name=Draenei]','@class[class_name=Warrior]'
+'@race[race_name=Draenei]','@class[class_name=Paladin]'
+'@race[race_name=Draenei]','@class[class_name=Hunter]'
+'@race[race_name=Draenei]','@class[class_name=Priest]'
+'@race[race_name=Draenei]','@class[class_name=Shaman]'
+'@race[race_name=Draenei]','@class[class_name=Mage]'
+'@race[race_name=Draenei]','@class[class_name=Monk]'
+'@race[race_name=Draenei]','@class[class_name=Death Knight]'
+'@race[race_name=Worgen]','@class[class_name=Warrior]'
+'@race[race_name=Worgen]','@class[class_name=Hunter]'
+'@race[race_name=Worgen]','@class[class_name=Rogue]'
+'@race[race_name=Worgen]','@class[class_name=Priest]'
+'@race[race_name=Worgen]','@class[class_name=Mage]'
+'@race[race_name=Worgen]','@class[class_name=Warlock]'
+'@race[race_name=Worgen]','@class[class_name=Druid]'
+'@race[race_name=Worgen]','@class[class_name=Death Knight]'
+'@race[race_name=Pandaren&race_reputation_name=Tushui Pandaren]','@class[class_name=Warrior]'
+'@race[race_name=Pandaren&race_reputation_name=Tushui Pandaren]','@class[class_name=Hunter]'
+'@race[race_name=Pandaren&race_reputation_name=Tushui Pandaren]','@class[class_name=Rogue]'
+'@race[race_name=Pandaren&race_reputation_name=Tushui Pandaren]','@class[class_name=Priest]'
+'@race[race_name=Pandaren&race_reputation_name=Tushui Pandaren]','@class[class_name=Shaman]'
+'@race[race_name=Pandaren&race_reputation_name=Tushui Pandaren]','@class[class_name=Mage]'
+'@race[race_name=Pandaren&race_reputation_name=Tushui Pandaren]','@class[class_name=Monk]'
+'@race[race_name=Pandaren&race_reputation_name=Huojin Pandaren]','@class[class_name=Warrior]'
+'@race[race_name=Pandaren&race_reputation_name=Huojin Pandaren]','@class[class_name=Hunter]'
+'@race[race_name=Pandaren&race_reputation_name=Huojin Pandaren]','@class[class_name=Rogue]'
+'@race[race_name=Pandaren&race_reputation_name=Huojin Pandaren]','@class[class_name=Priest]'
+'@race[race_name=Pandaren&race_reputation_name=Huojin Pandaren]','@class[class_name=Shaman]'
+'@race[race_name=Pandaren&race_reputation_name=Huojin Pandaren]','@class[class_name=Mage]'
+'@race[race_name=Pandaren&race_reputation_name=Huojin Pandaren]','@class[class_name=Monk]'
+'@race[race_name=Orc]','@class[class_name=Warrior]'
+'@race[race_name=Orc]','@class[class_name=Hunter]'
+'@race[race_name=Orc]','@class[class_name=Rogue]'
+'@race[race_name=Orc]','@class[class_name=Shaman]'
+'@race[race_name=Orc]','@class[class_name=Mage]'
+'@race[race_name=Orc]','@class[class_name=Warlock]'
+'@race[race_name=Orc]','@class[class_name=Monk]'
+'@race[race_name=Orc]','@class[class_name=Death Knight]'
+'@race[race_name=Troll]','@class[class_name=Warrior]'
+'@race[race_name=Troll]','@class[class_name=Hunter]'
+'@race[race_name=Troll]','@class[class_name=Rogue]'
+'@race[race_name=Troll]','@class[class_name=Priest]'
+'@race[race_name=Troll]','@class[class_name=Shaman]'
+'@race[race_name=Troll]','@class[class_name=Mage]'
+'@race[race_name=Troll]','@class[class_name=Warlock]'
+'@race[race_name=Troll]','@class[class_name=Monk]'
+'@race[race_name=Troll]','@class[class_name=Druid]'
+'@race[race_name=Troll]','@class[class_name=Death Knight]'
+'@race[race_name=Tauren]','@class[class_name=Warrior]'
+'@race[race_name=Tauren]','@class[class_name=Paladin]'
+'@race[race_name=Tauren]','@class[class_name=Hunter]'
+'@race[race_name=Tauren]','@class[class_name=Priest]'
+'@race[race_name=Tauren]','@class[class_name=Shaman]'
+'@race[race_name=Tauren]','@class[class_name=Monk]'
+'@race[race_name=Tauren]','@class[class_name=Druid]'
+'@race[race_name=Tauren]','@class[class_name=Death Knight]'
+'@race[race_name=Undead]','@class[class_name=Warrior]'
+'@race[race_name=Undead]','@class[class_name=Hunter]'
+'@race[race_name=Undead]','@class[class_name=Rogue]'
+'@race[race_name=Undead]','@class[class_name=Priest]'
+'@race[race_name=Undead]','@class[class_name=Mage]'
+'@race[race_name=Undead]','@class[class_name=Warlock]'
+'@race[race_name=Undead]','@class[class_name=Monk]'
+'@race[race_name=Undead]','@class[class_name=Death Knight]'
+'@race[race_name=Blood Elf]','@class[class_name=Warrior]'
+'@race[race_name=Blood Elf]','@class[class_name=Paladin]'
+'@race[race_name=Blood Elf]','@class[class_name=Hunter]'
+'@race[race_name=Blood Elf]','@class[class_name=Rogue]'
+'@race[race_name=Blood Elf]','@class[class_name=Priest]'
+'@race[race_name=Blood Elf]','@class[class_name=Mage]'
+'@race[race_name=Blood Elf]','@class[class_name=Warlock]'
+'@race[race_name=Blood Elf]','@class[class_name=Monk]'
+'@race[race_name=Blood Elf]','@class[class_name=Demon Hunter]'
+'@race[race_name=Blood Elf]','@class[class_name=Death Knight]'
+'@race[race_name=Goblin]','@class[class_name=Warrior]'
+'@race[race_name=Goblin]','@class[class_name=Hunter]'
+'@race[race_name=Goblin]','@class[class_name=Rogue]'
+'@race[race_name=Goblin]','@class[class_name=Priest]'
+'@race[race_name=Goblin]','@class[class_name=Shaman]'
+'@race[race_name=Goblin]','@class[class_name=Mage]'
+'@race[race_name=Goblin]','@class[class_name=Warlock]'
+'@race[race_name=Goblin]','@class[class_name=Death Knight]'
 ---
 CHARACTER_PROFESSIONS -- id_character, id_profession, profession_skill_level
----
-'@character[character_name_game:Kaidalsey]','@profession[profession_name:Skinning]',581
-'@character[character_name_game:Kaidalsey]','@profession[profession_name:Alchemy]',654
-'@character[character_name_game:Kaidalsey]','@profession[profession_name:Fishing]',565
-'@character[character_name_game:Kaidalsey]','@profession[profession_name:Fishing]',676
-'@character[character_name_game:Masrielenesh]','@profession[profession_name:Archaeology]',319
-'@character[character_name_game:Masrielenesh]','@profession[profession_name:FirstAid]',597
-'@character[character_name_game:Masrielenesh]','@profession[profession_name:Fishing]',250
-'@character[character_name_game:Masrielenesh]','@profession[profession_name:Alchemy]',118
-'@character[character_name_game:Masrielenesh]','@profession[profession_name:Skinning]',202
-'@character[character_name_game:Vesaeliais]','@profession[profession_name:Jewelcrafting]',68
-'@character[character_name_game:Vesaeliais]','@profession[profession_name:Leatherworking]',25
-'@character[character_name_game:Aviaeroeda]','@profession[profession_name:Herbalism]',689
-'@character[character_name_game:Aviaeroeda]','@profession[profession_name:Cooking]',398
-'@character[character_name_game:Aviaeroeda]','@profession[profession_name:Inscription]',24
-'@character[character_name_game:Sankaide]','@profession[profession_name:Herbalism]',642
-'@character[character_name_game:Sankaide]','@profession[profession_name:Engineering]',600
-'@character[character_name_game:Sankaide]','@profession[profession_name:Cooking]',772
-'@character[character_name_game:Ruhangli]','@profession[profession_name:Archaeology]',772
-'@character[character_name_game:Ruhangli]','@profession[profession_name:Fishing]',723
-'@character[character_name_game:Ruhangli]','@profession[profession_name:Jewelcrafting]',604
-'@character[character_name_game:Ruhangli]','@profession[profession_name:Leatherworking]',602
-'@character[character_name_game:Alandistus]','@profession[profession_name:Engineering]',470
-'@character[character_name_game:Alandistus]','@profession[profession_name:Alchemy]',109
-'@character[character_name_game:Geramyzn]','@profession[profession_name:Engineering]',569
-'@character[character_name_game:Geramyzn]','@profession[profession_name:Inscription]',96
-'@character[character_name_game:Amesel]','@profession[profession_name:Herbalism]',63
-'@character[character_name_game:Amesel]','@profession[profession_name:Engineering]',499
-'@character[character_name_game:Amesel]','@profession[profession_name:Archaeology]',670
-'@character[character_name_game:Arlourlan]','@profession[profession_name:Archaeology]',291
-'@character[character_name_game:Arlourlan]','@profession[profession_name:Skinning]',790
-'@character[character_name_game:Arlourlan]','@profession[profession_name:Herbalism]',66
-'@character[character_name_game:Uglazital]','@profession[profession_name:Fishing]',460
-'@character[character_name_game:Uglazital]','@profession[profession_name:Tailoring]',357
-'@character[character_name_game:Uglazital]','@profession[profession_name:Cooking]',62
-'@character[character_name_game:Uglazital]','@profession[profession_name:Mining]',715
-'@character[character_name_game:Uglazital]','@profession[profession_name:Archaeology]',62
-'@character[character_name_game:Andushirn]','@profession[profession_name:Jewelcrafting]',686
-'@character[character_name_game:Andushirn]','@profession[profession_name:Fishing]',728
-'@character[character_name_game:Andushirn]','@profession[profession_name:Skinning]',411
+-
+'@character[character_name_game=Kaidalsey]','@profession[profession_name=Skinning]',581
+'@character[character_name_game=Kaidalsey]','@profession[profession_name=Alchemy]',654
+'@character[character_name_game=Kaidalsey]','@profession[profession_name=Fishing]',565
+'@character[character_name_game=Kaidalsey]','@profession[profession_name=Fishing]',676
+'@character[character_name_game=Masrielenesh]','@profession[profession_name=Archaeology]',319
+'@character[character_name_game=Masrielenesh]','@profession[profession_name=First Aid]',597
+'@character[character_name_game=Masrielenesh]','@profession[profession_name=Fishing]',250
+'@character[character_name_game=Masrielenesh]','@profession[profession_name=Alchemy]',118
+'@character[character_name_game=Masrielenesh]','@profession[profession_name=Skinning]',202
+'@character[character_name_game=Vesaeliais]','@profession[profession_name=Jewelcrafting]',68
+'@character[character_name_game=Vesaeliais]','@profession[profession_name=Leatherworking]',25
+'@character[character_name_game=Aviaeroeda]','@profession[profession_name=Herbalism]',689
+'@character[character_name_game=Aviaeroeda]','@profession[profession_name=Cooking]',398
+'@character[character_name_game=Aviaeroeda]','@profession[profession_name=Inscription]',24
+'@character[character_name_game=Sankaide]','@profession[profession_name=Herbalism]',642
+'@character[character_name_game=Sankaide]','@profession[profession_name=Engineering]',600
+'@character[character_name_game=Sankaide]','@profession[profession_name=Cooking]',772
+'@character[character_name_game=Ruhangli]','@profession[profession_name=Archaeology]',772
+'@character[character_name_game=Ruhangli]','@profession[profession_name=Fishing]',723
+'@character[character_name_game=Ruhangli]','@profession[profession_name=Jewelcrafting]',604
+'@character[character_name_game=Ruhangli]','@profession[profession_name=Leatherworking]',602
+'@character[character_name_game=Alandistus]','@profession[profession_name=Engineering]',470
+'@character[character_name_game=Alandistus]','@profession[profession_name=Alchemy]',109
+'@character[character_name_game=Geramyzn]','@profession[profession_name=Engineering]',569
+'@character[character_name_game=Geramyzn]','@profession[profession_name=Inscription]',96
+'@character[character_name_game=Amesel]','@profession[profession_name=Herbalism]',63
+'@character[character_name_game=Amesel]','@profession[profession_name=Engineering]',499
+'@character[character_name_game=Amesel]','@profession[profession_name=Archaeology]',670
+'@character[character_name_game=Arlourlan]','@profession[profession_name=Archaeology]',291
+'@character[character_name_game=Arlourlan]','@profession[profession_name=Skinning]',790
+'@character[character_name_game=Arlourlan]','@profession[profession_name=Herbalism]',66
+'@character[character_name_game=Uglazital]','@profession[profession_name=Fishing]',460
+'@character[character_name_game=Uglazital]','@profession[profession_name=Tailoring]',357
+'@character[character_name_game=Uglazital]','@profession[profession_name=Cooking]',62
+'@character[character_name_game=Uglazital]','@profession[profession_name=Mining]',715
+'@character[character_name_game=Uglazital]','@profession[profession_name=Archaeology]',62
+'@character[character_name_game=Andushirn]','@profession[profession_name=Jewelcrafting]',686
+'@character[character_name_game=Andushirn]','@profession[profession_name=Fishing]',728
+'@character[character_name_game=Andushirn]','@profession[profession_name=Skinning]',411
 ---
 OBJECTIVE_SCOPE -- objective_scope
----
+-
 'player'
 'character'
 ---
 OBJECTIVE_TYPE -- objective_type
----
+-
 'profession'
 'level'
 'reputation'
 ---
 OBJECTIVE -- id_objective_scope, id_player_owner, id_character, id_objective_type, objective_context, objective_target_value
----
+-

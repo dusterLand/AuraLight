@@ -11,3 +11,7 @@ pear install log4php/package_name
 Composer setup
 https://getcomposer.org/doc/00-intro.md
 Composer-Setup.exe
+
+KDiff3:
+https://sourceforge.net/projects/kdiff3/files/kdiff3/0.9.98/KDiff3-64bit-Setup_0.9.98-2.exe/download
+

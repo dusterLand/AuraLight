@@ -1,4 +1,2 @@
 <?php
-
-
 define('AppCacheEnable', false);
