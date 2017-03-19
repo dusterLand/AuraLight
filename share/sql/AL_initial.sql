@@ -21,6 +21,7 @@ drop table if exists al_profession_type cascade;
 drop table if exists al_profession_tier cascade;
 drop table if exists al_profession cascade;
 drop table if exists al_player cascade;
+drop table if exists al_account cascade;
 drop table if exists al_character cascade;
 drop table if exists al_race_faction cascade;
 drop table if exists al_race_class cascade;
@@ -133,6 +134,18 @@ create table al_player (
 );
 
 /*
+* al_account - Accounts associated with a player
+*/
+create table al_account (
+	id SERIAL,
+	account_name varchar(36) NOT NULL,
+	id_player_owner UUID NOT NULL,
+	primary key (id),
+	foreign key (id_player_owner) references al_player(id) on delete cascade
+	
+);
+
+/*
  * al_character - Individual characters
  */
 create table al_character(
@@ -147,13 +160,13 @@ create table al_character(
 	id_character_gender int NOT NULL,
 	character_level int NOT NULL,
 	id_character_race int NOT NULL,
-	id_player_owner UUID NOT NULL,
+	id_account_owner int NOT NULL,
 	primary key (id),
 	foreign key (id_character_class) references al_class(id) on delete cascade,
 	foreign key (id_character_faction) references al_faction(id) on delete cascade,
 	foreign key (id_character_gender) references al_gender(id) on delete cascade,
 	foreign key (id_character_race) references al_race(id) on delete cascade,
-	foreign key (id_player_owner) references al_player(id) on delete cascade
+	foreign key (id_account_owner) references al_account(id) on delete cascade
 	
 );
 
