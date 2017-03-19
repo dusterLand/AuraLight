@@ -1,0 +1,5 @@
+<div id="auralight_menu">
+	<div id="al_menu_title">AuraLight</div>
+	<div class="al_menu_item" name="front_page">Front Page</div>
+	<div class="clear"></div>
+</div>

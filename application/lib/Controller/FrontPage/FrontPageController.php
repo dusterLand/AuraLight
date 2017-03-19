@@ -31,13 +31,17 @@ class FrontPageController {
 			'../../javascript/jquery/jquery-3.1.1.js',
 			'../../javascript/auralight.js',
 		);
+		$stylesheets = array(
+			'/CSS/index.css',
+			'/CSS/al_menu.css',
+		);
 		$this->result = pg_query("SELECT id, race_name, race_reputation_name FROM al_race");
 		$data = array('races');
 		while($row = pg_fetch_assoc($this->result)) {
 			$data['races'][] = $row;
 		}
 		$smarty->assign( 'races', $data['races']);
-		$smarty->assign( 'stylesheet', '/CSS/index.css' );
+		$smarty->assign( 'stylesheets', $stylesheets );
 		$smarty->assign( 'javascript', $javascript );
 	}
 	/**

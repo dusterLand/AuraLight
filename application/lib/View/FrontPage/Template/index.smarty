@@ -3,13 +3,17 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 		<title>AuraLight Smarty Testbed</title>
+		{foreach $stylesheets as $stylesheet}
 		<link rel="stylesheet" type="text/css" href="{$stylesheet}" />
+		{foreachelse}
+		{/foreach}
 		{foreach $javascript as $jsfile}
 		<script type="text/javascript" src="{$jsfile}"></script>
 		{foreachelse}
 		{/foreach}
 	</head>
 	<body>
+		{include file='../../al_menu.smarty'}
 		<p>Testing Smarty templating service.</p>
 		{foreach $races as $row}
 		<p>{$row.race_name} is this {$row.race_reputation_name}</p>

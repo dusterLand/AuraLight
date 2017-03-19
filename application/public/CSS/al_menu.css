@@ -1,0 +1,32 @@
+.al_menu_item {
+	float: left;
+	font-size: 120%;
+	margin: 0.3em;
+	padding: 0.3em;
+}
+
+.al_menu_item:hover {
+	background-color: #4477ee;
+	cursor: pointer;
+}
+
+#al_menu_title {
+	font-size: 200%;
+	font-weight: bold;
+	padding: 0.2em 0em 0.4em 0.4em;
+}
+
+#al_menu_title:hover {
+	cursor: pointer;
+}
+
+#auralight_menu {
+	background: linear-gradient( #323232, #3060b0 );
+	background-color: #3060b0;
+	color: #ffff00;
+	font-family: Calibri, sans-serif;
+}
+
+.clear {
+	clear: both;
+}
