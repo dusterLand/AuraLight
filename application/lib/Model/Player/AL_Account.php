@@ -7,18 +7,24 @@ use AuraLight\Common\Utility\AL_Log;
 
 class AL_Account {
 
-	private $name;
+	private $account_name;
 	
 	function __construct($account_name) {
 	//Should we pass in player name to get the account name(s)
-		$this->name = $account_name;
+		$this->account_name = $account_name;
 	}
 	
-	function set_account_name($new_account_name) {
-		$this->name = $new_account_name;
+	private static $sql_account_name= <<<'SQL'
+	select account_name from al_account where id_player_owner = $1
+SQL;
+	
+	public function account_name($player_id,$new_account_name=NULL) {
+		if(!(isset( $his->account_name ))){
+			$results=pg_query_params(static::$sql_account_name,  array(':player_id'=>$player_id));
+			$row = pg_fetch_assoc ($results);
+			$this->account_name = $row;
+		}
+		return $this->account_name;
 	}
 	
-	function get_account_name() {
-		return $this->name;
-	}
 }

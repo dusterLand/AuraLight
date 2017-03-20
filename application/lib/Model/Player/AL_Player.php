@@ -3,6 +3,7 @@
 namespace AuraLight\Model\Player;
 
 use AuraLight\Common\Utility\AL_Log;
+use AuraLight\Model\Player\AL_Account;
 
 
 class AL_Player {
@@ -108,7 +109,10 @@ SQL;
 	public function get_attributes(){
 		//First we need to get which accounts are part of the player
 		//Next we need to get which toons are part of this account
-		$this->accounts = AL_Account::get_account_name();
+		$this->player = new AL_Player($this->player_id);
+		$this->accounts = new AL_Account($this->player_id);
+		$this->accounts->account_name($this->player_id);
+		var_dump ($this->accounts);
 	}
 	
 }

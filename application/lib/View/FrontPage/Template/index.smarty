@@ -14,7 +14,10 @@
 	</head>
 	<body>
 		{include file='../../al_menu.smarty'}
-		<p>{$playername} with email: {$playeremail} and full name: {$player_first_name} {$player_middle_name} {$player_last_name} with password {$player_password}</p>
+		<p>{$playername} with email: {$playeremail} and full name: {$player_first_name} {$player_middle_name} {$player_last_name} with password {$player_password} with the following accounts: </p>
+		{foreach $accounts as $atts}
+		<p>Account: {$atts.account_name}</p>
+		{/foreach}
 		{foreach $races as $row}
 		<p>{$row.race_name} is this {$row.race_reputation_name}</p>
 		{/foreach}

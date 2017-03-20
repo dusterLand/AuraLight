@@ -5,6 +5,7 @@ namespace AuraLight\Controller\FrontPage;
 use AuraLight\Common\Utility\AL_Log;
 use AuraLight\Model\Manager\AL_GameManager;
 
+
 class FrontPageController {
 
 	private $race;
@@ -14,6 +15,8 @@ class FrontPageController {
 	private $result;
 	private $log_frontpage;
 	private $races;
+	private $accounts;
+	
 	/**
 	 * Constructor function.
 	 */
@@ -43,12 +46,17 @@ class FrontPageController {
 		while($row = pg_fetch_assoc($this->result)) {
 			$data['races'][] = $row;
 		}
+		$atts = array('accounts');
+		foreach($player->get_attributes() as $key => $val) {
+			$atts['accounts'][] = $val;
+		}
 		$smarty->assign( 'playername', $player->username());
 		$smarty->assign( 'playeremail', $player->email());
 		$smarty->assign( 'player_last_name', $player->name_last());
 		$smarty->assign( 'player_middle_name', $player->name_middle());
 		$smarty->assign( 'player_first_name', $player->name_first());
 		$smarty->assign( 'player_password', $player->password());
+		$smarty->assign( 'accounts', $atts['accounts']);
 		$smarty->assign( 'races', $data['races']);
 		$smarty->assign( 'stylesheets', $stylesheets );
 		$smarty->assign( 'javascript', $javascript );

@@ -19,6 +19,7 @@ class AL_GameManager {
 		$this->player->name_middle();
 		$this->player->name_last();
 		$this->player->password();
+		$this->player->get_attributes();
 		//var_dump ($this->player);
 		
 		return $this->player;
