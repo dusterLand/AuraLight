@@ -120,20 +120,20 @@ PROFESSION -- profession_name, id_profession_type, id_profession_tier
 'Skinning','@profession_type[profession_type=gathering]','@profession_tier[profession_tier=primary]'
 'Tailoring','@profession_type[profession_type=production]','@profession_tier[profession_tier=primary]'
 ---
-PLAYER -- player_username, player_email, player_name_first, player_name_last, player_name_middle
+PLAYER -- player_username, player_email, player_name_first, player_name_last, player_name_middle, player_password
 -
-'LichKing56','a.menethil@icecrown.army.mil','Nathan','Deathknight','Jackson'
-'ImTheBestDemonHu','pikachu92@aol.com','Kyle','Demonhunter',null
-'TankBear7','padresfan2@yahoo.com','Kimberly','Druid',null
-'Thoridal1','refinedshot@refinedshot.net','Adam','Hunter','Bartholomew'
-'Ic3W0m4nx','coldasice20@gmail.com','Jennifer','Mage',null
-'37BreakWalker37','madskills236@mail.fortune.com','Gregory','Monk','Van'
-'HammerT1me','animehair209@ibm.com','Carlos','Paladin','J.'
-'FatherFire688','ashensnow72@alnhofen.de','Ulrich','Priest',null
-'St4bulots','bloodyknife982@rogueacademy.edu','Garth','Rogue','Death'
-'788AtlantaFalcs','southern_horn@aol.com','William','Shaman',null
-'Lockerbie187','lockypoo28@yahoo.com','Lauren','Warlock',null
-'Warrter19','warrter19@gmail.com','Walter','Warrior','Donald'
+'LichKing56','a.menethil@icecrown.army.mil','Nathan','Deathknight','Jackson','passking56'
+'ImTheBestDemonHu','pikachu92@aol.com','Kyle','Demonhunter',null,'str8demon'
+'TankBear7','padresfan2@yahoo.com','Kimberly','Druid',null,'st33lpaw'
+'Thoridal1','refinedshot@refinedshot.net','Adam','Hunter','Bartholomew','b0wy3r'
+'Ic3W0m4nx','coldasice20@gmail.com','Jennifer','Mage',null,'c4m3r0n'
+'37BreakWalker37','madskills236@mail.fortune.com','Gregory','Monk','Van','bigmoney'
+'HammerT1me','animehair209@ibm.com','Carlos','Paladin','J.','bl1zz4rd'
+'FatherFire688','ashensnow72@alnhofen.de','Ulrich','Priest',null,'germanman'
+'St4bulots','bloodyknife982@rogueacademy.edu','Garth','Rogue','Death','emokingxxxx'
+'788AtlantaFalcs','southern_horn@aol.com','William','Shaman',null,'falconsrule'
+'Lockerbie187','lockypoo28@yahoo.com','Lauren','Warlock',null,'fly3r'
+'Warrter19','warrter19@gmail.com','Walter','Warrior','Donald','mybeltisbig'
 ---
 ACCOUNT - account_name, id_player_owner
 -
