@@ -48,6 +48,7 @@ class FrontPageController {
 		$smarty->assign( 'player_last_name', $player->name_last());
 		$smarty->assign( 'player_middle_name', $player->name_middle());
 		$smarty->assign( 'player_first_name', $player->name_first());
+		$smarty->assign( 'player_password', $player->password());
 		$smarty->assign( 'races', $data['races']);
 		$smarty->assign( 'stylesheets', $stylesheets );
 		$smarty->assign( 'javascript', $javascript );

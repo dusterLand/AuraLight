@@ -9,7 +9,7 @@ class AL_GameManager {
 	private $player;
 	
 	public function __construct(){
-		$this->player_id = "684ffcdb-f66e-4987-9a0c-f45e4376f5d6";
+		$this->player_id = "78db8576-b292-494d-b385-b9bffb5d3887";
 	}
 	public function displayManager (){
 		$this->player = new AL_Player($this->player_id);
@@ -18,6 +18,7 @@ class AL_GameManager {
 		$this->player->name_first();
 		$this->player->name_middle();
 		$this->player->name_last();
+		$this->player->password();
 		//var_dump ($this->player);
 		
 		return $this->player;

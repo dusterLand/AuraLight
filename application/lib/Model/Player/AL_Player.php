@@ -41,12 +41,16 @@ SQL;
 	select player_name_last from al_player where id = $1
 SQL;
 
+	private static $sql_password= <<<'SQL'
+	select player_password from al_player where id = $1
+SQL;
+
 	
 	public function username($new_name=NULL) {
 		if(!(isset( $this->username))){
 			$results=pg_query_params(static::$sql_username,  array(':player_id'=>$this->player_id));
-			$row = pg_fetch_assoc ($results,0);
-			$this->username = $row;
+			$row = pg_fetch_row ($results);
+			$this->username = $row[0];
 		}
 		return $this->username;
 	}
@@ -55,9 +59,9 @@ SQL;
 	public function email($new_email=NULL) {
 		if(!(isset( $this->email))){
 			$results=pg_query_params(static::$sql_email,  array(':player_id'=>$this->player_id));
-			$row = pg_fetch_assoc ($results,0);
+			$row = pg_fetch_row ($results);
 			//var_dump ($row);
-			$this->email = $row;
+			$this->email = $row[0];
 		}
 		return $this->email;
 	}
@@ -65,8 +69,8 @@ SQL;
 	public function name_first($new_name_first=NULL) {
 		if(!(isset( $his->name_first ))){
 			$results=pg_query_params(static::$sql_name_first,  array(':player_id'=>$this->player_id));
-			$row = pg_fetch_assoc ($results,0);
-			$this->name_first = $row;
+			$row = pg_fetch_row ($results);
+			$this->name_first = $row[0];
 		}
 		return $this->name_first;
 	}
@@ -74,8 +78,8 @@ SQL;
 	public function name_middle($new_name_middle=NULL) {
 		if(!(isset( $his->name_middle ))){
 			$results=pg_query_params(static::$sql_name_middle,  array(':player_id'=>$this->player_id));
-			$row = pg_fetch_assoc ($results,0);
-			$this->name_middle = $row;
+			$row = pg_fetch_row ($results);
+			$this->name_middle = $row[0];
 		}
 		return $this->name_middle;
 	}
@@ -84,10 +88,19 @@ SQL;
 	public function name_last($new_name_last=NULL) {
 		if(!(isset( $his->name_last ))){
 			$results=pg_query_params(static::$sql_name_last,  array(':player_id'=>$this->player_id));
-			$row = pg_fetch_assoc ($results,0);
-			$this->name_last = $row;
+			$row = pg_fetch_row ($results);
+			$this->name_last = $row[0];
 		}
 		return $this->name_last;
+	}
+	
+	public function password($new_player=NULL) {
+		if(!(isset( $his->player ))){
+			$results=pg_query_params(static::$sql_password,  array(':player_id'=>$this->player_id));
+			$row = pg_fetch_row ($results);
+			$this->password = $row[0];
+		}
+		return $this->password;
 	}
 	
 	
