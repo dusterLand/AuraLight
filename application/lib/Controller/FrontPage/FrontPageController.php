@@ -3,6 +3,7 @@
 namespace AuraLight\Controller\FrontPage;
 
 use AuraLight\Common\Utility\AL_Log;
+use AuraLight\Model\Manager\AL_GameManager;
 
 class FrontPageController {
 
@@ -27,6 +28,8 @@ class FrontPageController {
 	 */
 	private function AssignValues( $smarty ) {
 		$this->log_frontpage->trace('called');
+		$gameManager = new AL_GameManager();
+		$player=$gameManager->displayManager(); 
 		$javascript = array(
 			'../../javascript/jquery/jquery-3.1.1.js',
 			'../../javascript/auralight.js',
@@ -40,6 +43,11 @@ class FrontPageController {
 		while($row = pg_fetch_assoc($this->result)) {
 			$data['races'][] = $row;
 		}
+		$smarty->assign( 'playername', $player->username());
+		$smarty->assign( 'playeremail', $player->email());
+		$smarty->assign( 'player_last_name', $player->name_last());
+		$smarty->assign( 'player_middle_name', $player->name_middle());
+		$smarty->assign( 'player_first_name', $player->name_first());
 		$smarty->assign( 'races', $data['races']);
 		$smarty->assign( 'stylesheets', $stylesheets );
 		$smarty->assign( 'javascript', $javascript );

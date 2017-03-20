@@ -14,7 +14,7 @@
 	</head>
 	<body>
 		{include file='../../al_menu.smarty'}
-		<p>Testing Smarty templating service.</p>
+		<p>{$playername} with email: {$playeremail} and full name: {$player_first_name} {$player_middle_name} {$player_last_name}</p>
 		{foreach $races as $row}
 		<p>{$row.race_name} is this {$row.race_reputation_name}</p>
 		{/foreach}
