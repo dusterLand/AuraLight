@@ -11,6 +11,7 @@
 }
 
 #al_menu_title {
+	float: left;
 	font-size: 200%;
 	font-weight: bold;
 	padding: 0.2em 0em 0.4em 0.4em;
@@ -27,6 +28,64 @@
 	font-family: Calibri, sans-serif;
 }
 
+.login_button {
+	background-color: #880000;
+	border: 1px black solid;
+	color: white;
+	float: right;
+	font-family: Calibri, sans-serif;
+	font-size: 120%;
+	font-weight: bold;
+	margin-right: 0.2em;
+}
+
+.login_button:hover {
+	background-color: #ff0000;
+	color: black;
+	cursor: pointer;
+}
+
+#login_fields {
+	float: right;
+}
+
 .clear {
 	clear: both;
+}
+
+#test_login {
+/*	background-color: #880000;
+	color: white;
+	float: right;
+	font-size: 120%;
+	font-weight: bold; */
+	padding: 0.3em;
+}
+
+#test_login:hover {
+/*	background-color: #ff0000;
+	color: black;
+	cursor: pointer;*/
+}
+/*
+input[type="password"] {
+	background: green;
+}
+*/
+textarea, input[type="password"] {
+	background-color: #5588cc;
+	border: 1px black solid;
+	color: white;
+	font-family: Consolas, monospace;
+	font-size: 90%;
+	margin-right: 0.5em;
+	padding: 0.2em;
+	resize: none;
+	width: 8em;
+}
+
+@-moz-document url-prefix() {
+	textarea, input[type="password"] {
+		height: 1.1em;
+	}
 }

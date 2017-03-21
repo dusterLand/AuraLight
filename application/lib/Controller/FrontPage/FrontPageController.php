@@ -21,19 +21,41 @@ class FrontPageController {
 	/**
 	 * Constructor function.
 	 */
-	public function __construct( $smarty ) {
+	public function __construct() {
 		$this->log_frontpage = new AL_Log( 'FrontPage' );
+		global $smarty;
 		$smarty->template_dir =  '../lib/View/FrontPage/Template/';
 		$smarty->compile_dir = '../lib/View/FrontPage/Template_c/';
 		$smarty->config_dir = '../lib/View/FrontPage/Config/';
 	}
 	/**
+	 * Process user login.
+	 */
+	public function UserLogin() {
+		$this->log_frontpage->trace( __FUNCTION__ . ' called');
+		if( isset( $_REQUEST['username']) && isset( $_REQUEST['password'])) {
+			$username = $_REQUEST['username'];
+			$password = $_REQUEST['password'];
+		} else {
+			exit( 'Bad request, handle this.' );
+		}
+		$this->log_frontpage->trace( $username, __FUNCTION__ . '$username' );
+		$this->log_frontpage->trace( $password, __FUNCTION__ . '$password' );
+//		TODO: You're here, Jason
+		$this->DisplayPage(); // temp until you get more done
+//		exit( "We made it here!" );
+//		$user = new AL_Player;
+//		$this=>active_login = AL_PlayerManager::Authenticate( $username, $password, $user );
+//		$this->active_login = true;
+	}
+	/**
 	 * Assign needed values.
 	 */
-	private function AssignValues( $smarty ) {
-		$this->log_frontpage->trace('called');
+	private function AssignValues() {
+		$this->log_frontpage->trace( __FUNCTION__ . ' called');
+		global $smarty;
 		$playerManager = new AL_PlayerManager();
-		$player=$playerManager->displayManager(); 
+		$player = $playerManager->displayManager(); 
 		$javascript = array(
 			'../../javascript/jquery/jquery-3.1.1.js',
 			'../../javascript/auralight.js',
@@ -53,9 +75,10 @@ class FrontPageController {
 		//$atts = $player->get_attributes();
 		//exit(print_r(count($atts),true));
 		$accts = array();
-		foreach($player->get_attributes() as $at){
-			//exit(print_r($at,true));
-			$accts[]=$at->account_name();
+		$this->log_frontpage->trace( $player->get_attributes(), __FUNCTION__ . ' $player->get_attributes()');
+		foreach( $player->get_attributes() as $at ){
+			// exit(print_r($at,true));
+			$accts[] = $at->account_name();
 			
 		}
 		//exit(print_r($atts,true));
@@ -64,7 +87,7 @@ class FrontPageController {
 			//$atts['accounts'] = $val;
 			//var_dump($val);
 		//}
-		
+//		$smarty->assign( 'active_login', $this->active_login );
 		$smarty->assign( 'playername', $player->username());
 		$smarty->assign( 'playeremail', $player->email());
 		$smarty->assign( 'player_last_name', $player->name_last());
@@ -79,8 +102,9 @@ class FrontPageController {
 	/**
 	 * Render the page.
 	 */
-	public function DisplayPage( $smarty ) {
-		$this->log_frontpage->trace('called');
+	public function DisplayPage() {
+		$this->log_frontpage->trace( __FUNCTION__ . ' called');
+		global $smarty;
 		$this->AssignValues( $smarty );
 		$smarty->display( $smarty->template_dir[0] . 'index.smarty' );
 	}

@@ -94,7 +94,7 @@ $currentTable = '';
 $lineNumber = 0;
 $insertMode = false;
 $keys = array();
-$sourceFile = fopen( '../AuraLight/share/sql/AL_data_initial', 'r' );
+$sourceFile = fopen( '../sql/AL_data_initial', 'r' );
 if( $sourceFile ) {
 	while(( $line = fgets( $sourceFile )) !== false ) {
 		$lineNumber++;

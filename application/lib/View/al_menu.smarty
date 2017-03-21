@@ -1,5 +1,19 @@
 <div id="auralight_menu">
-	<div id="al_menu_title">AuraLight</div>
-	<div class="al_menu_item" name="front_page">Front Page</div>
+	<form action="/frontpage/UserLogin" method="post" id="loginForm">
+		<div id="al_menu_title_container">
+			<div id="al_menu_title">AuraLight</div>
+			<div id="login_fields">
+				<textarea name="username" rows="1" form="loginForm" maxlength="12" placeholder="Username"></textarea><br />
+				<input type="password" name="password" rows="1" form="loginForm" maxlength="12" placeholder="Password"></textarea>
+			</div>
+			<div class="clear"></div>
+		</div>
+		<div class="al_menu_item" name="front_page">Front Page</div>
+		<div id="test_login">
+			<form action="submit">
+				<button type="submit" class="login_button">Login</button>
+			</form>
+		</div>
+	</form>
 	<div class="clear"></div>
 </div>

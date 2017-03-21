@@ -2,7 +2,7 @@
 <html lang="en">
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-		<title>AuraLight Smarty Testbed</title>
+		<title>AuraLight (DEVELOPMENT)</title>
 		{foreach $stylesheets as $stylesheet}
 		<link rel="stylesheet" type="text/css" href="{$stylesheet}" />
 		{foreachelse}

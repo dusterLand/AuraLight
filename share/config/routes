@@ -1,1 +1,3 @@
-/testpage,AuraLight\Controller\TestPage\TestPageController
+'/testpage', AuraLight\Controller\TestPage\TestPageController
+'/frontpage', AuraLight\Controller\FrontPage\FrontPageController
+'/frontpage/UserLogin', AuraLight\Controller\FrontPage\FrontPageController\UserLogin

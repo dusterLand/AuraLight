@@ -14,11 +14,15 @@ class AL_Log {
 	/**
 	 * TODO: Implement severity fence handling
 	 */
-	public function log( $message, $severity ) {
+	public function log( $data, $message = null, $severity = 'trace' ) {
 		$dateTime = date( "Y-m-d H:i:s" );
 		$logFile = fopen( '../var/logs/' . trim($this->streamName) . '.log', 'a' );
 		if( $logFile !== false ) {
-			$logMessage = '[' . $dateTime . '] ' . $message;
+			$logMessage = '[' . $dateTime . '] ';
+			if( isset( $message )) {
+				$logMessage .= $message . ': ';
+			}
+			$logMessage .= print_r( $data, true );
 			fwrite( $logFile, $logMessage . "\n" );
 			fclose( $logFile );
 		} else {
@@ -29,19 +33,19 @@ class AL_Log {
 	/**
 	 *
 	 */
-	public function warn( $message ) {
-		$this->log( $message, 'warn' );
+	public function warn( $data, $message = null ) {
+		$this->log( $data, $message, 'warn' );
 	}
 	/**
 	 *
 	 */
-	public function info( $message ) {
-		$this->log( $message, 'info' );
+	public function info( $data, $message = null ) {
+		$this->log( $data, $message, 'info' );
 	}
 	/**
 	 *
 	 */
-	public function trace( $message ) {
-		$this->log( $message, 'trace' );
+	public function trace( $data, $message = null ) {
+		$this->log( $data, $message, 'trace' );
 	}
 }
