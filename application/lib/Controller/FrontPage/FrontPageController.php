@@ -3,7 +3,7 @@
 namespace AuraLight\Controller\FrontPage;
 
 use AuraLight\Common\Utility\AL_Log;
-use AuraLight\Model\Manager\AL_GameManager;
+use AuraLight\Model\Manager\AL_PlayerManager;
 
 
 class FrontPageController {
@@ -16,6 +16,7 @@ class FrontPageController {
 	private $log_frontpage;
 	private $races;
 	private $accounts;
+	private $atts;
 	
 	/**
 	 * Constructor function.
@@ -31,8 +32,8 @@ class FrontPageController {
 	 */
 	private function AssignValues( $smarty ) {
 		$this->log_frontpage->trace('called');
-		$gameManager = new AL_GameManager();
-		$player=$gameManager->displayManager(); 
+		$playerManager = new AL_PlayerManager();
+		$player=$playerManager->displayManager(); 
 		$javascript = array(
 			'../../javascript/jquery/jquery-3.1.1.js',
 			'../../javascript/auralight.js',
@@ -46,17 +47,31 @@ class FrontPageController {
 		while($row = pg_fetch_assoc($this->result)) {
 			$data['races'][] = $row;
 		}
-		$atts = array('accounts');
-		foreach($player->get_attributes() as $key => $val) {
-			$atts['accounts'][] = $val;
+		//$ad = $player->get_attributes();
+		//var_dump ($ad);
+		//$atts = array($player->get_attributes());
+		//$atts = $player->get_attributes();
+		//exit(print_r(count($atts),true));
+		$accts = array();
+		foreach($player->get_attributes() as $at){
+			//exit(print_r($at,true));
+			$accts[]=$at->account_name();
+			
 		}
+		//exit(print_r($atts,true));
+		//var_dump ($atts);
+		//foreach($atts as $val) {
+			//$atts['accounts'] = $val;
+			//var_dump($val);
+		//}
+		
 		$smarty->assign( 'playername', $player->username());
 		$smarty->assign( 'playeremail', $player->email());
 		$smarty->assign( 'player_last_name', $player->name_last());
 		$smarty->assign( 'player_middle_name', $player->name_middle());
 		$smarty->assign( 'player_first_name', $player->name_first());
 		$smarty->assign( 'player_password', $player->password());
-		$smarty->assign( 'accounts', $atts['accounts']);
+		$smarty->assign( 'accounts', $accts);
 		$smarty->assign( 'races', $data['races']);
 		$smarty->assign( 'stylesheets', $stylesheets );
 		$smarty->assign( 'javascript', $javascript );

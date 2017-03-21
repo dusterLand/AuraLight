@@ -3,7 +3,7 @@
 namespace AuraLight\Model\Manager;
 use AuraLight\Model\Player\AL_Player;
 
-class AL_GameManager {
+class AL_PlayerManager {
 	
 	private $player_id;
 	private $player;
