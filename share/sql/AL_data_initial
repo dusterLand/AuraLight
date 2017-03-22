@@ -149,6 +149,18 @@ ACCOUNT - account_name, id_player_owner
 'WoW1','@player[player_email=southern_horn@aol.com]'
 'WoW1','@player[player_email=lockypoo28@yahoo.com]'
 'WoW1','@player[player_email=warrter19@gmail.com]'
+'WoW2','@player[player_email=a.menethil@icecrown.army.mil]'
+'WoW2','@player[player_email=pikachu92@aol.com]'
+'WoW2','@player[player_email=padresfan2@yahoo.com]'
+'WoW2','@player[player_email=refinedshot@refinedshot.net]'
+'WoW2','@player[player_email=coldasice20@gmail.com]'
+'WoW2','@player[player_email=madskills236@mail.fortune.com]'
+'WoW2','@player[player_email=animehair209@ibm.com]'
+'WoW2','@player[player_email=ashensnow72@alnhofen.de]'
+'WoW2','@player[player_email=bloodyknife982@rogueacademy.edu]'
+'WoW2','@player[player_email=southern_horn@aol.com]'
+'WoW2','@player[player_email=lockypoo28@yahoo.com]'
+'WoW2','@player[player_email=warrter19@gmail.com]'
 ---
 CHARACTER -- character_name_game, character_name_last, character_name_first, character_name_middle_first, character_name_middle_second, id_character_class, id_character_faction, id_character_gender, character_level, id_character_race, id_account_owner
 -
