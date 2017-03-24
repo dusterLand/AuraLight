@@ -1,0 +1,2155 @@
+{
+	"tables": [
+		{
+			"name": "race",
+			"keys": [ "race_name", "race_reputation_name"],
+			"values": [
+				[
+					{
+						"query_type": "simple",
+						"data_type": "string",
+						"value": "Human"
+					}, {
+						"query_type": "simple",
+						"data_type": "string",
+						"value": "Stormwind"
+					}
+				], [
+					{
+						"query_type": "simple",
+						"data_type": "string",
+						"value": "Dwarf"
+					}, {
+						"query_type": "simple",
+						"data_type": "string",
+						"value": "Ironforge"
+					}
+				], [
+					{
+						"query_type": "simple",
+						"data_type": "string",
+						"value": "Gnome"
+					}, {
+						"query_type": "simple",
+						"data_type": "string",
+						"value": "Gnomeregan"
+					}
+				], [
+					{
+						"query_type": "simple",
+						"data_type": "string",
+						"value": "Night Elf"
+					}, {
+						"query_type": "simple",
+						"data_type": "string",
+						"value": "Darnassus"
+					}
+				], [
+					{
+						"query_type": "simple",
+						"data_type": "string",
+						"value": "Draenei"
+					}, {
+						"query_type": "simple",
+						"data_type": "string",
+						"value": "Exodar"
+					}
+				], [
+					{
+						"query_type": "simple",
+						"data_type": "string",
+						"value": "Worgen"
+					}, {
+						"query_type": "simple",
+						"data_type": "string",
+						"value": "Gilneas"
+					}
+				], [
+					{
+						"query_type": "simple",
+						"data_type": "string",
+						"value": "Pandaren"
+					}, {
+						"query_type": "simple",
+						"data_type": "string",
+						"value": "Tushui Pandaren"
+					}
+				], [
+					{
+						"query_type": "simple",
+						"data_type": "string",
+						"value": "Orc"
+					}, {
+						"query_type": "simple",
+						"data_type": "string",
+						"value": "Orgrimmar"
+					}
+				], [
+					{
+						"query_type": "simple",
+						"data_type": "string",
+						"value": "Troll"
+					}, {
+						"query_type": "simple",
+						"data_type": "string",
+						"value": "Darkspear Trolls"
+					}
+				], [
+					{
+						"query_type": "simple",
+						"data_type": "string",
+						"value": "Tauren"
+					}, {
+						"query_type": "simple",
+						"data_type": "string",
+						"value": "Thunder Bluff"
+					}
+				], [
+					{
+						"query_type": "simple",
+						"data_type": "string",
+						"value": "Undead"
+					}, {
+						"query_type": "simple",
+						"data_type": "string",
+						"value": "Undercity"
+					}
+				], [
+					{
+						"query_type": "simple",
+						"data_type": "string",
+						"value": "Blood Elf"
+					}, {
+						"query_type": "simple",
+						"data_type": "string",
+						"value": "Silvermoon City"
+					}
+				], [
+					{
+						"query_type": "simple",
+						"data_type": "string",
+						"value": "Goblin"
+					}, {
+						"query_type": "simple",
+						"data_type": "string",
+						"value": "Bilgewater Cartel"
+					}
+				], [
+					{
+						"query_type": "simple",
+						"data_type": "string",
+						"value": "Pandaren"
+					}, {
+						"query_type": "simple",
+						"data_type": "string",
+						"value": "Huojin Pandaren"
+					}
+				]
+			]
+		}, {
+			"name": "faction",
+			"keys": [ "faction_name" ],
+			"values": [
+				[
+					{
+						"query_type": "simple",
+						"data_type": "string",
+						"value": "Alliance"
+					}
+				], [
+					{
+						"query_type": "simple",
+						"data_type": "string",
+						"value": "Horde"
+					}
+				], [
+					{
+						"query_type": "simple",
+						"data_type": "string",
+						"value": "Unaligned"
+					}
+				]
+			]
+		}, {
+			"name": "gender",
+			"keys": [ "gender_name" ],
+			"values": [
+				[
+					{
+						"query_type": "simple",
+						"data_type": "string",
+						"value": "female"
+					}
+				], [
+					{
+						"query_type": "simple",
+						"data_type": "string",
+						"value": "male"
+					}
+				]
+			]
+		}, {
+			"name": "class",
+			"keys": [ "class_name" ],
+			"values": [
+				[
+					{
+						"query_type": "simple",
+						"data_type": "string",
+						"value": "Death Knight"
+					}
+				], [
+					{
+						"query_type": "simple",
+						"data_type": "string",
+						"value": "Demon Hunter"
+					}
+				], [
+					{
+						"query_type": "simple",
+						"data_type": "string",
+						"value": "Druid"
+					}
+				], [
+					{
+						"query_type": "simple",
+						"data_type": "string",
+						"value": "Hunter"
+					}
+				], [
+					{
+						"query_type": "simple",
+						"data_type": "string",
+						"value": "Mage"
+					}
+				], [
+					{
+						"query_type": "simple",
+						"data_type": "string",
+						"value": "Monk"
+					}
+				], [
+					{
+						"query_type": "simple",
+						"data_type": "string",
+						"value": "Paladin"
+					}
+				], [
+					{
+						"query_type": "simple",
+						"data_type": "string",
+						"value": "Priest"
+					}
+				], [
+					{
+						"query_type": "simple",
+						"data_type": "string",
+						"value": "Rogue"
+					}
+				], [
+					{
+						"query_type": "simple",
+						"data_type": "string",
+						"value": "Shaman"
+					}
+				], [
+					{
+						"query_type": "simple",
+						"data_type": "string",
+						"value": "Warlock"
+					}
+				], [
+					{
+						"query_type": "simple",
+						"data_type": "string",
+						"value": "Warrior"
+					}
+				]
+			]
+		}, {
+			"name": "specialization_role",
+			"keys": [ "specialization_role_name" ],
+			"values": [
+				[
+					{
+						"query_type": "simple",
+						"data_type": "string",
+						"value": "Damage"
+					}
+				], [
+					{
+						"query_type": "simple",
+						"data_type": "string",
+						"value": "Healer"
+					}
+				], [
+					{
+						"query_type": "simple",
+						"data_type": "string",
+						"value": "Tank"
+					}
+				]
+			]
+		}, {
+			"name": "specialization_type",
+			"keys": [ "specialization_type_name" ],
+			"values": [
+				[
+					{
+						"query_type": "simple",
+						"data_type": "string",
+						"value": "melee"
+					}
+				], [
+					{
+						"query_type": "simple",
+						"data_type": "string",
+						"value": "ranged"
+					}
+				]
+			]
+		}, {
+			"name": "specialization",
+			"keys": [ "specialization_name", "id_parent_class", "id_specialization_role", "id_specialization_type" ],
+			"values": [
+				[
+					{
+						"query_type": "simple",
+						"data_type": "string",
+						"value": "Blood"
+					}, {
+						"query_type": "complex",
+						"data_type": "integer",
+						"value": {
+							"query_type": "subquery",
+							"data_type": "integer",
+							"source_table": "class",
+							"source_values": [ "id" ],
+							"source_parameters": [
+								{
+									"key": "class_name",
+									"value": "Death Knight"
+								}
+							]
+						}
+					}, {
+						"query_type": "complex",
+						"data_type": "integer",
+						"value": {
+							"query_type": "subquery",
+							"data_type": "integer",
+							"source_table": "specialization_role",
+							"source_values": [ "id" ],
+							"source_parameters": [
+								{
+									"key": "specialization_role_name",
+									"value": "Tank"
+								}
+							]
+						}
+					}, {
+						"query_type": "complex",
+						"data_type": "integer",
+						"value": {
+							"query_type": "subquery",
+							"data_type": "integer",
+							"source_table": "specialization_type",
+							"source_values": [ "id" ],
+							"source_parameters": [
+								{
+									"key": "specialization_type_name",
+									"value": "melee"
+								}
+							]
+						}
+					}
+				], [
+					{
+						"query_type": "simple",
+						"data_type": "string",
+						"value": "Frost"
+					}, {
+						"query_type": "complex",
+						"data_type": "integer",
+						"value": {
+							"query_type": "subquery",
+							"data_type": "integer",
+							"source_table": "class",
+							"source_values": [ "id" ],
+							"source_parameters": [
+								{
+									"key": "class_name",
+									"value": "Death Knight"
+								}
+							]
+						}
+					}, {
+						"query_type": "complex",
+						"data_type": "integer",
+						"value": {
+							"query_type": "subquery",
+							"data_type": "integer",
+							"source_table": "specialization_role",
+							"source_values": [ "id" ],
+							"source_parameters": [
+								{
+									"key": "specialization_role_name",
+									"value": "Damage"
+								}
+							]
+						}
+					}, {
+						"query_type": "complex",
+						"data_type": "integer",
+						"value": {
+							"query_type": "subquery",
+							"data_type": "integer",
+							"source_table": "specialization_type",
+							"source_values": [ "id" ],
+							"source_parameters": [
+								{
+									"key": "specialization_type_name",
+									"value": "melee"
+								}
+							]
+						}
+					}
+				], [
+					{
+						"query_type": "simple",
+						"data_type": "string",
+						"value": "Unholy"
+					}, {
+						"query_type": "complex",
+						"data_type": "integer",
+						"value": {
+							"query_type": "subquery",
+							"data_type": "integer",
+							"source_table": "class",
+							"source_values": [ "id" ],
+							"source_parameters": [
+								{
+									"key": "class_name",
+									"value": "Death Knight"
+								}
+							]
+						}
+					}, {
+						"query_type": "complex",
+						"data_type": "integer",
+						"value": {
+							"query_type": "subquery",
+							"data_type": "integer",
+							"source_table": "specialization_role",
+							"source_values": [ "id" ],
+							"source_parameters": [
+								{
+									"key": "specialization_role_name",
+									"value": "Damage"
+								}
+							]
+						}
+					}, {
+						"query_type": "complex",
+						"data_type": "integer",
+						"value": {
+							"query_type": "subquery",
+							"data_type": "integer",
+							"source_table": "specialization_type",
+							"source_values": [ "id" ],
+							"source_parameters": [
+								{
+									"key": "specialization_type_name",
+									"value": "melee"
+								}
+							]
+						}
+					}
+				], [
+					{
+						"query_type": "simple",
+						"data_type": "string",
+						"value": "Chaos"
+					}, {
+						"query_type": "complex",
+						"data_type": "integer",
+						"value": {
+							"query_type": "subquery",
+							"data_type": "integer",
+							"source_table": "class",
+							"source_values": [ "id" ],
+							"source_parameters": [
+								{
+									"key": "class_name",
+									"value": "Demon Hunter"
+								}
+							]
+						}
+					}, {
+						"query_type": "complex",
+						"data_type": "integer",
+						"value": {
+							"query_type": "subquery",
+							"data_type": "integer",
+							"source_table": "specialization_role",
+							"source_values": [ "id" ],
+							"source_parameters": [
+								{
+									"key": "specialization_role_name",
+									"value": "Damage"
+								}
+							]
+						}
+					}, {
+						"query_type": "complex",
+						"data_type": "integer",
+						"value": {
+							"query_type": "subquery",
+							"data_type": "integer",
+							"source_table": "specialization_type",
+							"source_values": [ "id" ],
+							"source_parameters": [
+								{
+									"key": "specialization_type_name",
+									"value": "melee"
+								}
+							]
+						}
+					}
+				], [
+					{
+						"query_type": "simple",
+						"data_type": "string",
+						"value": "Vengeance"
+					}, {
+						"query_type": "complex",
+						"data_type": "integer",
+						"value": {
+							"query_type": "subquery",
+							"data_type": "integer",
+							"source_table": "class",
+							"source_values": [ "id" ],
+							"source_parameters": [
+								{
+									"key": "class_name",
+									"value": "Demon Hunter"
+								}
+							]
+						}
+					}, {
+						"query_type": "complex",
+						"data_type": "integer",
+						"value": {
+							"query_type": "subquery",
+							"data_type": "integer",
+							"source_table": "specialization_role",
+							"source_values": [ "id" ],
+							"source_parameters": [
+								{
+									"key": "specialization_role_name",
+									"value": "Tank"
+								}
+							]
+						}
+					}, {
+						"query_type": "complex",
+						"data_type": "integer",
+						"value": {
+							"query_type": "subquery",
+							"data_type": "integer",
+							"source_table": "specialization_type",
+							"source_values": [ "id" ],
+							"source_parameters": [
+								{
+									"key": "specialization_type_name",
+									"value": "melee"
+								}
+							]
+						}
+					}
+				], [
+					{
+						"query_type": "simple",
+						"data_type": "string",
+						"value": "Balance"
+					}, {
+						"query_type": "complex",
+						"data_type": "integer",
+						"value": {
+							"query_type": "subquery",
+							"data_type": "integer",
+							"source_table": "class",
+							"source_values": [ "id" ],
+							"source_parameters": [
+								{
+									"key": "class_name",
+									"value": "Druid"
+								}
+							]
+						}
+					}, {
+						"query_type": "complex",
+						"data_type": "integer",
+						"value": {
+							"query_type": "subquery",
+							"data_type": "integer",
+							"source_table": "specialization_role",
+							"source_values": [ "id" ],
+							"source_parameters": [
+								{
+									"key": "specialization_role_name",
+									"value": "Damage"
+								}
+							]
+						}
+					}, {
+						"query_type": "complex",
+						"data_type": "integer",
+						"value": {
+							"query_type": "subquery",
+							"data_type": "integer",
+							"source_table": "specialization_type",
+							"source_values": [ "id" ],
+							"source_parameters": [
+								{
+									"key": "specialization_type_name",
+									"value": "ranged"
+								}
+							]
+						}
+					}
+				], [
+					{
+						"query_type": "simple",
+						"data_type": "string",
+						"value": "Feral"
+					}, {
+						"query_type": "complex",
+						"data_type": "integer",
+						"value": {
+							"query_type": "subquery",
+							"data_type": "integer",
+							"source_table": "class",
+							"source_values": [ "id" ],
+							"source_parameters": [
+								{
+									"key": "class_name",
+									"value": "Druid"
+								}
+							]
+						}
+					}, {
+						"query_type": "complex",
+						"data_type": "integer",
+						"value": {
+							"query_type": "subquery",
+							"data_type": "integer",
+							"source_table": "specialization_role",
+							"source_values": [ "id" ],
+							"source_parameters": [
+								{
+									"key": "specialization_role_name",
+									"value": "Damage"
+								}
+							]
+						}
+					}, {
+						"query_type": "complex",
+						"data_type": "integer",
+						"value": {
+							"query_type": "subquery",
+							"data_type": "integer",
+							"source_table": "specialization_type",
+							"source_values": [ "id" ],
+							"source_parameters": [
+								{
+									"key": "specialization_type_name",
+									"value": "melee"
+								}
+							]
+						}
+					}
+				], [
+					{
+						"query_type": "simple",
+						"data_type": "string",
+						"value": "Guardian"
+					}, {
+						"query_type": "complex",
+						"data_type": "integer",
+						"value": {
+							"query_type": "subquery",
+							"data_type": "integer",
+							"source_table": "class",
+							"source_values": [ "id" ],
+							"source_parameters": [
+								{
+									"key": "class_name",
+									"value": "Druid"
+								}
+							]
+						}
+					}, {
+						"query_type": "complex",
+						"data_type": "integer",
+						"value": {
+							"query_type": "subquery",
+							"data_type": "integer",
+							"source_table": "specialization_role",
+							"source_values": [ "id" ],
+							"source_parameters": [
+								{
+									"key": "specialization_role_name",
+									"value": "Tank"
+								}
+							]
+						}
+					}, {
+						"query_type": "complex",
+						"data_type": "integer",
+						"value": {
+							"query_type": "subquery",
+							"data_type": "integer",
+							"source_table": "specialization_type",
+							"source_values": [ "id" ],
+							"source_parameters": [
+								{
+									"key": "specialization_type_name",
+									"value": "melee"
+								}
+							]
+						}
+					}
+				], [
+					{
+						"query_type": "simple",
+						"data_type": "string",
+						"value": "Restoration"
+					}, {
+						"query_type": "complex",
+						"data_type": "integer",
+						"value": {
+							"query_type": "subquery",
+							"data_type": "integer",
+							"source_table": "class",
+							"source_values": [ "id" ],
+							"source_parameters": [
+								{
+									"key": "class_name",
+									"value": "Druid"
+								}
+							]
+						}
+					}, {
+						"query_type": "complex",
+						"data_type": "integer",
+						"value": {
+							"query_type": "subquery",
+							"data_type": "integer",
+							"source_table": "specialization_role",
+							"source_values": [ "id" ],
+							"source_parameters": [
+								{
+									"key": "specialization_role_name",
+									"value": "Healer"
+								}
+							]
+						}
+					}, {
+						"query_type": "complex",
+						"data_type": "integer",
+						"value": {
+							"query_type": "subquery",
+							"data_type": "integer",
+							"source_table": "specialization_type",
+							"source_values": [ "id" ],
+							"source_parameters": [
+								{
+									"key": "specialization_type_name",
+									"value": "ranged"
+								}
+							]
+						}
+					}
+				], [
+					{
+						"query_type": "simple",
+						"data_type": "string",
+						"value": "Beast Mastery"
+					}, {
+						"query_type": "complex",
+						"data_type": "integer",
+						"value": {
+							"query_type": "subquery",
+							"data_type": "integer",
+							"source_table": "class",
+							"source_values": [ "id" ],
+							"source_parameters": [
+								{
+									"key": "class_name",
+									"value": "Hunter"
+								}
+							]
+						}
+					}, {
+						"query_type": "complex",
+						"data_type": "integer",
+						"value": {
+							"query_type": "subquery",
+							"data_type": "integer",
+							"source_table": "specialization_role",
+							"source_values": [ "id" ],
+							"source_parameters": [
+								{
+									"key": "specialization_role_name",
+									"value": "Damage"
+								}
+							]
+						}
+					}, {
+						"query_type": "complex",
+						"data_type": "integer",
+						"value": {
+							"query_type": "subquery",
+							"data_type": "integer",
+							"source_table": "specialization_type",
+							"source_values": [ "id" ],
+							"source_parameters": [
+								{
+									"key": "specialization_type_name",
+									"value": "ranged"
+								}
+							]
+						}
+					}
+				], [
+					{
+						"query_type": "simple",
+						"data_type": "string",
+						"value": "Marksmanship"
+					}, {
+						"query_type": "complex",
+						"data_type": "integer",
+						"value": {
+							"query_type": "subquery",
+							"data_type": "integer",
+							"source_table": "class",
+							"source_values": [ "id" ],
+							"source_parameters": [
+								{
+									"key": "class_name",
+									"value": "Hunter"
+								}
+							]
+						}
+					}, {
+						"query_type": "complex",
+						"data_type": "integer",
+						"value": {
+							"query_type": "subquery",
+							"data_type": "integer",
+							"source_table": "specialization_role",
+							"source_values": [ "id" ],
+							"source_parameters": [
+								{
+									"key": "specialization_role_name",
+									"value": "Damage"
+								}
+							]
+						}
+					}, {
+						"query_type": "complex",
+						"data_type": "integer",
+						"value": {
+							"query_type": "subquery",
+							"data_type": "integer",
+							"source_table": "specialization_type",
+							"source_values": [ "id" ],
+							"source_parameters": [
+								{
+									"key": "specialization_type_name",
+									"value": "ranged"
+								}
+							]
+						}
+					}
+				], [
+					{
+						"query_type": "simple",
+						"data_type": "string",
+						"value": "Survival"
+					}, {
+						"query_type": "complex",
+						"data_type": "integer",
+						"value": {
+							"query_type": "subquery",
+							"data_type": "integer",
+							"source_table": "class",
+							"source_values": [ "id" ],
+							"source_parameters": [
+								{
+									"key": "class_name",
+									"value": "Hunter"
+								}
+							]
+						}
+					}, {
+						"query_type": "complex",
+						"data_type": "integer",
+						"value": {
+							"query_type": "subquery",
+							"data_type": "integer",
+							"source_table": "specialization_role",
+							"source_values": [ "id" ],
+							"source_parameters": [
+								{
+									"key": "specialization_role_name",
+									"value": "Damage"
+								}
+							]
+						}
+					}, {
+						"query_type": "complex",
+						"data_type": "integer",
+						"value": {
+							"query_type": "subquery",
+							"data_type": "integer",
+							"source_table": "specialization_type",
+							"source_values": [ "id" ],
+							"source_parameters": [
+								{
+									"key": "specialization_type_name",
+									"value": "ranged"
+								}
+							]
+						}
+					}
+				], [
+					{
+						"query_type": "simple",
+						"data_type": "string",
+						"value": "Arcane"
+					}, {
+						"query_type": "complex",
+						"data_type": "integer",
+						"value": {
+							"query_type": "subquery",
+							"data_type": "integer",
+							"source_table": "class",
+							"source_values": [ "id" ],
+							"source_parameters": [
+								{
+									"key": "class_name",
+									"value": "Mage"
+								}
+							]
+						}
+					}, {
+						"query_type": "complex",
+						"data_type": "integer",
+						"value": {
+							"query_type": "subquery",
+							"data_type": "integer",
+							"source_table": "specialization_role",
+							"source_values": [ "id" ],
+							"source_parameters": [
+								{
+									"key": "specialization_role_name",
+									"value": "Damage"
+								}
+							]
+						}
+					}, {
+						"query_type": "complex",
+						"data_type": "integer",
+						"value": {
+							"query_type": "subquery",
+							"data_type": "integer",
+							"source_table": "specialization_type",
+							"source_values": [ "id" ],
+							"source_parameters": [
+								{
+									"key": "specialization_type_name",
+									"value": "ranged"
+								}
+							]
+						}
+					}
+				], [
+					{
+						"query_type": "simple",
+						"data_type": "string",
+						"value": "Fire"
+					}, {
+						"query_type": "complex",
+						"data_type": "integer",
+						"value": {
+							"query_type": "subquery",
+							"data_type": "integer",
+							"source_table": "class",
+							"source_values": [ "id" ],
+							"source_parameters": [
+								{
+									"key": "class_name",
+									"value": "Mage"
+								}
+							]
+						}
+					}, {
+						"query_type": "complex",
+						"data_type": "integer",
+						"value": {
+							"query_type": "subquery",
+							"data_type": "integer",
+							"source_table": "specialization_role",
+							"source_values": [ "id" ],
+							"source_parameters": [
+								{
+									"key": "specialization_role_name",
+									"value": "Damage"
+								}
+							]
+						}
+					}, {
+						"query_type": "complex",
+						"data_type": "integer",
+						"value": {
+							"query_type": "subquery",
+							"data_type": "integer",
+							"source_table": "specialization_type",
+							"source_values": [ "id" ],
+							"source_parameters": [
+								{
+									"key": "specialization_type_name",
+									"value": "ranged"
+								}
+							]
+						}
+					}
+				], [
+					{
+						"query_type": "simple",
+						"data_type": "string",
+						"value": "Frost"
+					}, {
+						"query_type": "complex",
+						"data_type": "integer",
+						"value": {
+							"query_type": "subquery",
+							"data_type": "integer",
+							"source_table": "class",
+							"source_values": [ "id" ],
+							"source_parameters": [
+								{
+									"key": "class_name",
+									"value": "Mage"
+								}
+							]
+						}
+					}, {
+						"query_type": "complex",
+						"data_type": "integer",
+						"value": {
+							"query_type": "subquery",
+							"data_type": "integer",
+							"source_table": "specialization_role",
+							"source_values": [ "id" ],
+							"source_parameters": [
+								{
+									"key": "specialization_role_name",
+									"value": "Damage"
+								}
+							]
+						}
+					}, {
+						"query_type": "complex",
+						"data_type": "integer",
+						"value": {
+							"query_type": "subquery",
+							"data_type": "integer",
+							"source_table": "specialization_type",
+							"source_values": [ "id" ],
+							"source_parameters": [
+								{
+									"key": "specialization_type_name",
+									"value": "ranged"
+								}
+							]
+						}
+					}
+				], [
+					{
+						"query_type": "simple",
+						"data_type": "string",
+						"value": "Brewmaster"
+					}, {
+						"query_type": "complex",
+						"data_type": "integer",
+						"value": {
+							"query_type": "subquery",
+							"data_type": "integer",
+							"source_table": "class",
+							"source_values": [ "id" ],
+							"source_parameters": [
+								{
+									"key": "class_name",
+									"value": "Monk"
+								}
+							]
+						}
+					}, {
+						"query_type": "complex",
+						"data_type": "integer",
+						"value": {
+							"query_type": "subquery",
+							"data_type": "integer",
+							"source_table": "specialization_role",
+							"source_values": [ "id" ],
+							"source_parameters": [
+								{
+									"key": "specialization_role_name",
+									"value": "Tank"
+								}
+							]
+						}
+					}, {
+						"query_type": "complex",
+						"data_type": "integer",
+						"value": {
+							"query_type": "subquery",
+							"data_type": "integer",
+							"source_table": "specialization_type",
+							"source_values": [ "id" ],
+							"source_parameters": [
+								{
+									"key": "specialization_type_name",
+									"value": "melee"
+								}
+							]
+						}
+					}
+				], [
+					{
+						"query_type": "simple",
+						"data_type": "string",
+						"value": "Mistweaver"
+					}, {
+						"query_type": "complex",
+						"data_type": "integer",
+						"value": {
+							"query_type": "subquery",
+							"data_type": "integer",
+							"source_table": "class",
+							"source_values": [ "id" ],
+							"source_parameters": [
+								{
+									"key": "class_name",
+									"value": "Monk"
+								}
+							]
+						}
+					}, {
+						"query_type": "complex",
+						"data_type": "integer",
+						"value": {
+							"query_type": "subquery",
+							"data_type": "integer",
+							"source_table": "specialization_role",
+							"source_values": [ "id" ],
+							"source_parameters": [
+								{
+									"key": "specialization_role_name",
+									"value": "Healer"
+								}
+							]
+						}
+					}, {
+						"query_type": "complex",
+						"data_type": "integer",
+						"value": {
+							"query_type": "subquery",
+							"data_type": "integer",
+							"source_table": "specialization_type",
+							"source_values": [ "id" ],
+							"source_parameters": [
+								{
+									"key": "specialization_type_name",
+									"value": "ranged"
+								}
+							]
+						}
+					}
+				], [
+					{
+						"query_type": "simple",
+						"data_type": "string",
+						"value": "Windwalker"
+					}, {
+						"query_type": "complex",
+						"data_type": "integer",
+						"value": {
+							"query_type": "subquery",
+							"data_type": "integer",
+							"source_table": "class",
+							"source_values": [ "id" ],
+							"source_parameters": [
+								{
+									"key": "class_name",
+									"value": "Monk"
+								}
+							]
+						}
+					}, {
+						"query_type": "complex",
+						"data_type": "integer",
+						"value": {
+							"query_type": "subquery",
+							"data_type": "integer",
+							"source_table": "specialization_role",
+							"source_values": [ "id" ],
+							"source_parameters": [
+								{
+									"key": "specialization_role_name",
+									"value": "Damage"
+								}
+							]
+						}
+					}, {
+						"query_type": "complex",
+						"data_type": "integer",
+						"value": {
+							"query_type": "subquery",
+							"data_type": "integer",
+							"source_table": "specialization_type",
+							"source_values": [ "id" ],
+							"source_parameters": [
+								{
+									"key": "specialization_type_name",
+									"value": "melee"
+								}
+							]
+						}
+					}
+				], [
+					{
+						"query_type": "simple",
+						"data_type": "string",
+						"value": "Holy"
+					}, {
+						"query_type": "complex",
+						"data_type": "integer",
+						"value": {
+							"query_type": "subquery",
+							"data_type": "integer",
+							"source_table": "class",
+							"source_values": [ "id" ],
+							"source_parameters": [
+								{
+									"key": "class_name",
+									"value": "Paladin"
+								}
+							]
+						}
+					}, {
+						"query_type": "complex",
+						"data_type": "integer",
+						"value": {
+							"query_type": "subquery",
+							"data_type": "integer",
+							"source_table": "specialization_role",
+							"source_values": [ "id" ],
+							"source_parameters": [
+								{
+									"key": "specialization_role_name",
+									"value": "Healer"
+								}
+							]
+						}
+					}, {
+						"query_type": "complex",
+						"data_type": "integer",
+						"value": {
+							"query_type": "subquery",
+							"data_type": "integer",
+							"source_table": "specialization_type",
+							"source_values": [ "id" ],
+							"source_parameters": [
+								{
+									"key": "specialization_type_name",
+									"value": "ranged"
+								}
+							]
+						}
+					}
+				], [
+					{
+						"query_type": "simple",
+						"data_type": "string",
+						"value": "Protection"
+					}, {
+						"query_type": "complex",
+						"data_type": "integer",
+						"value": {
+							"query_type": "subquery",
+							"data_type": "integer",
+							"source_table": "class",
+							"source_values": [ "id" ],
+							"source_parameters": [
+								{
+									"key": "class_name",
+									"value": "Paladin"
+								}
+							]
+						}
+					}, {
+						"query_type": "complex",
+						"data_type": "integer",
+						"value": {
+							"query_type": "subquery",
+							"data_type": "integer",
+							"source_table": "specialization_role",
+							"source_values": [ "id" ],
+							"source_parameters": [
+								{
+									"key": "specialization_role_name",
+									"value": "Tank"
+								}
+							]
+						}
+					}, {
+						"query_type": "complex",
+						"data_type": "integer",
+						"value": {
+							"query_type": "subquery",
+							"data_type": "integer",
+							"source_table": "specialization_type",
+							"source_values": [ "id" ],
+							"source_parameters": [
+								{
+									"key": "specialization_type_name",
+									"value": "melee"
+								}
+							]
+						}
+					}
+				], [
+					{
+						"query_type": "simple",
+						"data_type": "string",
+						"value": "Retribution"
+					}, {
+						"query_type": "complex",
+						"data_type": "integer",
+						"value": {
+							"query_type": "subquery",
+							"data_type": "integer",
+							"source_table": "class",
+							"source_values": [ "id" ],
+							"source_parameters": [
+								{
+									"key": "class_name",
+									"value": "Paladin"
+								}
+							]
+						}
+					}, {
+						"query_type": "complex",
+						"data_type": "integer",
+						"value": {
+							"query_type": "subquery",
+							"data_type": "integer",
+							"source_table": "specialization_role",
+							"source_values": [ "id" ],
+							"source_parameters": [
+								{
+									"key": "specialization_role_name",
+									"value": "Damage"
+								}
+							]
+						}
+					}, {
+						"query_type": "complex",
+						"data_type": "integer",
+						"value": {
+							"query_type": "subquery",
+							"data_type": "integer",
+							"source_table": "specialization_type",
+							"source_values": [ "id" ],
+							"source_parameters": [
+								{
+									"key": "specialization_type_name",
+									"value": "melee"
+								}
+							]
+						}
+					}
+				], [
+					{
+						"query_type": "simple",
+						"data_type": "string",
+						"value": "Discipline"
+					}, {
+						"query_type": "complex",
+						"data_type": "integer",
+						"value": {
+							"query_type": "subquery",
+							"data_type": "integer",
+							"source_table": "class",
+							"source_values": [ "id" ],
+							"source_parameters": [
+								{
+									"key": "class_name",
+									"value": "Priest"
+								}
+							]
+						}
+					}, {
+						"query_type": "complex",
+						"data_type": "integer",
+						"value": {
+							"query_type": "subquery",
+							"data_type": "integer",
+							"source_table": "specialization_role",
+							"source_values": [ "id" ],
+							"source_parameters": [
+								{
+									"key": "specialization_role_name",
+									"value": "Healer"
+								}
+							]
+						}
+					}, {
+						"query_type": "complex",
+						"data_type": "integer",
+						"value": {
+							"query_type": "subquery",
+							"data_type": "integer",
+							"source_table": "specialization_type",
+							"source_values": [ "id" ],
+							"source_parameters": [
+								{
+									"key": "specialization_type_name",
+									"value": "ranged"
+								}
+							]
+						}
+					}
+				], [
+					{
+						"query_type": "simple",
+						"data_type": "string",
+						"value": "Holy"
+					}, {
+						"query_type": "complex",
+						"data_type": "integer",
+						"value": {
+							"query_type": "subquery",
+							"data_type": "integer",
+							"source_table": "class",
+							"source_values": [ "id" ],
+							"source_parameters": [
+								{
+									"key": "class_name",
+									"value": "Priest"
+								}
+							]
+						}
+					}, {
+						"query_type": "complex",
+						"data_type": "integer",
+						"value": {
+							"query_type": "subquery",
+							"data_type": "integer",
+							"source_table": "specialization_role",
+							"source_values": [ "id" ],
+							"source_parameters": [
+								{
+									"key": "specialization_role_name",
+									"value": "Healer"
+								}
+							]
+						}
+					}, {
+						"query_type": "complex",
+						"data_type": "integer",
+						"value": {
+							"query_type": "subquery",
+							"data_type": "integer",
+							"source_table": "specialization_type",
+							"source_values": [ "id" ],
+							"source_parameters": [
+								{
+									"key": "specialization_type_name",
+									"value": "ranged"
+								}
+							]
+						}
+					}
+				], [
+					{
+						"query_type": "simple",
+						"data_type": "string",
+						"value": "Shadow"
+					}, {
+						"query_type": "complex",
+						"data_type": "integer",
+						"value": {
+							"query_type": "subquery",
+							"data_type": "integer",
+							"source_table": "class",
+							"source_values": [ "id" ],
+							"source_parameters": [
+								{
+									"key": "class_name",
+									"value": "Priest"
+								}
+							]
+						}
+					}, {
+						"query_type": "complex",
+						"data_type": "integer",
+						"value": {
+							"query_type": "subquery",
+							"data_type": "integer",
+							"source_table": "specialization_role",
+							"source_values": [ "id" ],
+							"source_parameters": [
+								{
+									"key": "specialization_role_name",
+									"value": "Damage"
+								}
+							]
+						}
+					}, {
+						"query_type": "complex",
+						"data_type": "integer",
+						"value": {
+							"query_type": "subquery",
+							"data_type": "integer",
+							"source_table": "specialization_type",
+							"source_values": [ "id" ],
+							"source_parameters": [
+								{
+									"key": "specialization_type_name",
+									"value": "ranged"
+								}
+							]
+						}
+					}
+				], [
+					{
+						"query_type": "simple",
+						"data_type": "string",
+						"value": "Assassination"
+					}, {
+						"query_type": "complex",
+						"data_type": "integer",
+						"value": {
+							"query_type": "subquery",
+							"data_type": "integer",
+							"source_table": "class",
+							"source_values": [ "id" ],
+							"source_parameters": [
+								{
+									"key": "class_name",
+									"value": "Rogue"
+								}
+							]
+						}
+					}, {
+						"query_type": "complex",
+						"data_type": "integer",
+						"value": {
+							"query_type": "subquery",
+							"data_type": "integer",
+							"source_table": "specialization_role",
+							"source_values": [ "id" ],
+							"source_parameters": [
+								{
+									"key": "specialization_role_name",
+									"value": "Damage"
+								}
+							]
+						}
+					}, {
+						"query_type": "complex",
+						"data_type": "integer",
+						"value": {
+							"query_type": "subquery",
+							"data_type": "integer",
+							"source_table": "specialization_type",
+							"source_values": [ "id" ],
+							"source_parameters": [
+								{
+									"key": "specialization_type_name",
+									"value": "melee"
+								}
+							]
+						}
+					}
+				], [
+					{
+						"query_type": "simple",
+						"data_type": "string",
+						"value": "Outlaw"
+					}, {
+						"query_type": "complex",
+						"data_type": "integer",
+						"value": {
+							"query_type": "subquery",
+							"data_type": "integer",
+							"source_table": "class",
+							"source_values": [ "id" ],
+							"source_parameters": [
+								{
+									"key": "class_name",
+									"value": "Rogue"
+								}
+							]
+						}
+					}, {
+						"query_type": "complex",
+						"data_type": "integer",
+						"value": {
+							"query_type": "subquery",
+							"data_type": "integer",
+							"source_table": "specialization_role",
+							"source_values": [ "id" ],
+							"source_parameters": [
+								{
+									"key": "specialization_role_name",
+									"value": "Damage"
+								}
+							]
+						}
+					}, {
+						"query_type": "complex",
+						"data_type": "integer",
+						"value": {
+							"query_type": "subquery",
+							"data_type": "integer",
+							"source_table": "specialization_type",
+							"source_values": [ "id" ],
+							"source_parameters": [
+								{
+									"key": "specialization_type_name",
+									"value": "melee"
+								}
+							]
+						}
+					}
+				], [
+					{
+						"query_type": "simple",
+						"data_type": "string",
+						"value": "Subtlety"
+					}, {
+						"query_type": "complex",
+						"data_type": "integer",
+						"value": {
+							"query_type": "subquery",
+							"data_type": "integer",
+							"source_table": "class",
+							"source_values": [ "id" ],
+							"source_parameters": [
+								{
+									"key": "class_name",
+									"value": "Rogue"
+								}
+							]
+						}
+					}, {
+						"query_type": "complex",
+						"data_type": "integer",
+						"value": {
+							"query_type": "subquery",
+							"data_type": "integer",
+							"source_table": "specialization_role",
+							"source_values": [ "id" ],
+							"source_parameters": [
+								{
+									"key": "specialization_role_name",
+									"value": "Damage"
+								}
+							]
+						}
+					}, {
+						"query_type": "complex",
+						"data_type": "integer",
+						"value": {
+							"query_type": "subquery",
+							"data_type": "integer",
+							"source_table": "specialization_type",
+							"source_values": [ "id" ],
+							"source_parameters": [
+								{
+									"key": "specialization_type_name",
+									"value": "melee"
+								}
+							]
+						}
+					}
+				], [
+					{
+						"query_type": "simple",
+						"data_type": "string",
+						"value": "Elemental"
+					}, {
+						"query_type": "complex",
+						"data_type": "integer",
+						"value": {
+							"query_type": "subquery",
+							"data_type": "integer",
+							"source_table": "class",
+							"source_values": [ "id" ],
+							"source_parameters": [
+								{
+									"key": "class_name",
+									"value": "Shaman"
+								}
+							]
+						}
+					}, {
+						"query_type": "complex",
+						"data_type": "integer",
+						"value": {
+							"query_type": "subquery",
+							"data_type": "integer",
+							"source_table": "specialization_role",
+							"source_values": [ "id" ],
+							"source_parameters": [
+								{
+									"key": "specialization_role_name",
+									"value": "Damage"
+								}
+							]
+						}
+					}, {
+						"query_type": "complex",
+						"data_type": "integer",
+						"value": {
+							"query_type": "subquery",
+							"data_type": "integer",
+							"source_table": "specialization_type",
+							"source_values": [ "id" ],
+							"source_parameters": [
+								{
+									"key": "specialization_type_name",
+									"value": "ranged"
+								}
+							]
+						}
+					}
+				], [
+					{
+						"query_type": "simple",
+						"data_type": "string",
+						"value": "Enhancement"
+					}, {
+						"query_type": "complex",
+						"data_type": "integer",
+						"value": {
+							"query_type": "subquery",
+							"data_type": "integer",
+							"source_table": "class",
+							"source_values": [ "id" ],
+							"source_parameters": [
+								{
+									"key": "class_name",
+									"value": "Shaman"
+								}
+							]
+						}
+					}, {
+						"query_type": "complex",
+						"data_type": "integer",
+						"value": {
+							"query_type": "subquery",
+							"data_type": "integer",
+							"source_table": "specialization_role",
+							"source_values": [ "id" ],
+							"source_parameters": [
+								{
+									"key": "specialization_role_name",
+									"value": "Damage"
+								}
+							]
+						}
+					}, {
+						"query_type": "complex",
+						"data_type": "integer",
+						"value": {
+							"query_type": "subquery",
+							"data_type": "integer",
+							"source_table": "specialization_type",
+							"source_values": [ "id" ],
+							"source_parameters": [
+								{
+									"key": "specialization_type_name",
+									"value": "melee"
+								}
+							]
+						}
+					}
+				], [
+					{
+						"query_type": "simple",
+						"data_type": "string",
+						"value": "Restoration"
+					}, {
+						"query_type": "complex",
+						"data_type": "integer",
+						"value": {
+							"query_type": "subquery",
+							"data_type": "integer",
+							"source_table": "class",
+							"source_values": [ "id" ],
+							"source_parameters": [
+								{
+									"key": "class_name",
+									"value": "Shaman"
+								}
+							]
+						}
+					}, {
+						"query_type": "complex",
+						"data_type": "integer",
+						"value": {
+							"query_type": "subquery",
+							"data_type": "integer",
+							"source_table": "specialization_role",
+							"source_values": [ "id" ],
+							"source_parameters": [
+								{
+									"key": "specialization_role_name",
+									"value": "Healer"
+								}
+							]
+						}
+					}, {
+						"query_type": "complex",
+						"data_type": "integer",
+						"value": {
+							"query_type": "subquery",
+							"data_type": "integer",
+							"source_table": "specialization_type",
+							"source_values": [ "id" ],
+							"source_parameters": [
+								{
+									"key": "specialization_type_name",
+									"value": "ranged"
+								}
+							]
+						}
+					}
+				], [
+					{
+						"query_type": "simple",
+						"data_type": "string",
+						"value": "Affliction"
+					}, {
+						"query_type": "complex",
+						"data_type": "integer",
+						"value": {
+							"query_type": "subquery",
+							"data_type": "integer",
+							"source_table": "class",
+							"source_values": [ "id" ],
+							"source_parameters": [
+								{
+									"key": "class_name",
+									"value": "Warlock"
+								}
+							]
+						}
+					}, {
+						"query_type": "complex",
+						"data_type": "integer",
+						"value": {
+							"query_type": "subquery",
+							"data_type": "integer",
+							"source_table": "specialization_role",
+							"source_values": [ "id" ],
+							"source_parameters": [
+								{
+									"key": "specialization_role_name",
+									"value": "Damage"
+								}
+							]
+						}
+					}, {
+						"query_type": "complex",
+						"data_type": "integer",
+						"value": {
+							"query_type": "subquery",
+							"data_type": "integer",
+							"source_table": "specialization_type",
+							"source_values": [ "id" ],
+							"source_parameters": [
+								{
+									"key": "specialization_type_name",
+									"value": "ranged"
+								}
+							]
+						}
+					}
+				], [
+					{
+						"query_type": "simple",
+						"data_type": "string",
+						"value": "Demonology"
+					}, {
+						"query_type": "complex",
+						"data_type": "integer",
+						"value": {
+							"query_type": "subquery",
+							"data_type": "integer",
+							"source_table": "class",
+							"source_values": [ "id" ],
+							"source_parameters": [
+								{
+									"key": "class_name",
+									"value": "Warlock"
+								}
+							]
+						}
+					}, {
+						"query_type": "complex",
+						"data_type": "integer",
+						"value": {
+							"query_type": "subquery",
+							"data_type": "integer",
+							"source_table": "specialization_role",
+							"source_values": [ "id" ],
+							"source_parameters": [
+								{
+									"key": "specialization_role_name",
+									"value": "Damage"
+								}
+							]
+						}
+					}, {
+						"query_type": "complex",
+						"data_type": "integer",
+						"value": {
+							"query_type": "subquery",
+							"data_type": "integer",
+							"source_table": "specialization_type",
+							"source_values": [ "id" ],
+							"source_parameters": [
+								{
+									"key": "specialization_type_name",
+									"value": "ranged"
+								}
+							]
+						}
+					}
+				], [
+					{
+						"query_type": "simple",
+						"data_type": "string",
+						"value": "Destruction"
+					}, {
+						"query_type": "complex",
+						"data_type": "integer",
+						"value": {
+							"query_type": "subquery",
+							"data_type": "integer",
+							"source_table": "class",
+							"source_values": [ "id" ],
+							"source_parameters": [
+								{
+									"key": "class_name",
+									"value": "Warlock"
+								}
+							]
+						}
+					}, {
+						"query_type": "complex",
+						"data_type": "integer",
+						"value": {
+							"query_type": "subquery",
+							"data_type": "integer",
+							"source_table": "specialization_role",
+							"source_values": [ "id" ],
+							"source_parameters": [
+								{
+									"key": "specialization_role_name",
+									"value": "Damage"
+								}
+							]
+						}
+					}, {
+						"query_type": "complex",
+						"data_type": "integer",
+						"value": {
+							"query_type": "subquery",
+							"data_type": "integer",
+							"source_table": "specialization_type",
+							"source_values": [ "id" ],
+							"source_parameters": [
+								{
+									"key": "specialization_type_name",
+									"value": "ranged"
+								}
+							]
+						}
+					}
+				], [
+					{
+						"query_type": "simple",
+						"data_type": "string",
+						"value": "Arms"
+					}, {
+						"query_type": "complex",
+						"data_type": "integer",
+						"value": {
+							"query_type": "subquery",
+							"data_type": "integer",
+							"source_table": "class",
+							"source_values": [ "id" ],
+							"source_parameters": [
+								{
+									"key": "class_name",
+									"value": "Warrior"
+								}
+							]
+						}
+					}, {
+						"query_type": "complex",
+						"data_type": "integer",
+						"value": {
+							"query_type": "subquery",
+							"data_type": "integer",
+							"source_table": "specialization_role",
+							"source_values": [ "id" ],
+							"source_parameters": [
+								{
+									"key": "specialization_role_name",
+									"value": "Damage"
+								}
+							]
+						}
+					}, {
+						"query_type": "complex",
+						"data_type": "integer",
+						"value": {
+							"query_type": "subquery",
+							"data_type": "integer",
+							"source_table": "specialization_type",
+							"source_values": [ "id" ],
+							"source_parameters": [
+								{
+									"key": "specialization_type_name",
+									"value": "melee"
+								}
+							]
+						}
+					}
+				], [
+					{
+						"query_type": "simple",
+						"data_type": "string",
+						"value": "Fury"
+					}, {
+						"query_type": "complex",
+						"data_type": "integer",
+						"value": {
+							"query_type": "subquery",
+							"data_type": "integer",
+							"source_table": "class",
+							"source_values": [ "id" ],
+							"source_parameters": [
+								{
+									"key": "class_name",
+									"value": "Warrior"
+								}
+							]
+						}
+					}, {
+						"query_type": "complex",
+						"data_type": "integer",
+						"value": {
+							"query_type": "subquery",
+							"data_type": "integer",
+							"source_table": "specialization_role",
+							"source_values": [ "id" ],
+							"source_parameters": [
+								{
+									"key": "specialization_role_name",
+									"value": "Damage"
+								}
+							]
+						}
+					}, {
+						"query_type": "complex",
+						"data_type": "integer",
+						"value": {
+							"query_type": "subquery",
+							"data_type": "integer",
+							"source_table": "specialization_type",
+							"source_values": [ "id" ],
+							"source_parameters": [
+								{
+									"key": "specialization_type_name",
+									"value": "melee"
+								}
+							]
+						}
+					}
+				], [
+					{
+						"query_type": "simple",
+						"data_type": "string",
+						"value": "Protection"
+					}, {
+						"query_type": "complex",
+						"data_type": "integer",
+						"value": {
+							"query_type": "subquery",
+							"data_type": "integer",
+							"source_table": "class",
+							"source_values": [ "id" ],
+							"source_parameters": [
+								{
+									"key": "class_name",
+									"value": "Warrior"
+								}
+							]
+						}
+					}, {
+						"query_type": "complex",
+						"data_type": "integer",
+						"value": {
+							"query_type": "subquery",
+							"data_type": "integer",
+							"source_table": "specialization_role",
+							"source_values": [ "id" ],
+							"source_parameters": [
+								{
+									"key": "specialization_role_name",
+									"value": "Tank"
+								}
+							]
+						}
+					}, {
+						"query_type": "complex",
+						"data_type": "integer",
+						"value": {
+							"query_type": "subquery",
+							"data_type": "integer",
+							"source_table": "specialization_type",
+							"source_values": [ "id" ],
+							"source_parameters": [
+								{
+									"key": "specialization_type_name",
+									"value": "melee"
+								}
+							]
+						}
+					}
+				]
+			]
+		}
+	]
+}

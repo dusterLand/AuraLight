@@ -67,7 +67,7 @@ create table auralight.al_class(
  */
 create table auralight.al_specialization_role(
 	id SERIAL,
-	name varchar(24) NOT NULL,
+	specialization_role_name varchar(24) NOT NULL,
 	primary key (id)
 );
 /*
@@ -75,7 +75,7 @@ create table auralight.al_specialization_role(
  */
 create table auralight.al_specialization_type(
 	id SERIAL,
-	name varchar(24) NOT NULL,
+	specialization_type_name varchar(24) NOT NULL,
 	primary key(id)
 );
 /*
