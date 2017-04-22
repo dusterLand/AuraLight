@@ -84,7 +84,7 @@ create table auralight.al_specialization_type(
 create table auralight.al_specialization (
 	id SERIAL,
 	specialization_name varchar(24) NOT NULL,
-	parent_class int NOT NULL,
+	id_parent_class int NOT NULL,
 	id_specialization_role int NOT NULL,
 	id_specialization_type int NOT NULL,
 	primary key (id),
