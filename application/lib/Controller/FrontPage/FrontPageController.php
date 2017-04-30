@@ -3,8 +3,8 @@
 namespace AuraLight\Controller\FrontPage;
 
 use AuraLight\Common\Utility\AL_Log;
+use AuraLight\Common\Utility\AL_Utility;
 use AuraLight\Model\Manager\AL_PlayerManager;
-
 
 class FrontPageController {
 
@@ -57,8 +57,8 @@ class FrontPageController {
 		$playerManager = new AL_PlayerManager();
 		$player = $playerManager->displayManager(); 
 		$javascript = array(
-			'../../javascript/jquery/jquery-3.1.1.js',
-			'../../javascript/auralight.js',
+			'/javascript/jquery/jquery-3.2.1.js',
+			'/javascript/auralight.js',
 		);
 		$stylesheets = array(
 			'/CSS/index.css',
@@ -98,6 +98,7 @@ class FrontPageController {
 		$smarty->assign( 'races', $data['races']);
 		$smarty->assign( 'stylesheets', $stylesheets );
 		$smarty->assign( 'javascript', $javascript );
+		$smarty->assign( 'tool_fullname', AL_Utility::TOOL_FULLNAME );
 	}
 	/**
 	 * Render the page.

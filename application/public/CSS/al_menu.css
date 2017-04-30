@@ -73,9 +73,9 @@ input[type="password"] {
 }
 */
 textarea, input[type="password"] {
-	background-color: #5588cc;
+	background-color: #3060a0;
 	border: 1px black solid;
-	color: white;
+	color: white !important;
 	font-family: Consolas, monospace;
 	font-size: 90%;
 	margin-right: 0.5em;

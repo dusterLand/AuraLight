@@ -1,7 +1,7 @@
 <div id="auralight_menu">
 	<form action="/frontpage/UserLogin" method="post" id="loginForm">
 		<div id="al_menu_title_container">
-			<div id="al_menu_title">AuraLight</div>
+			<div id="al_menu_title">{$tool_fullname}</div>
 			<div id="login_fields">
 				<textarea name="username" rows="1" form="loginForm" maxlength="12" placeholder="Username"></textarea><br />
 				<input type="password" name="password" rows="1" form="loginForm" maxlength="12" placeholder="Password"></textarea>

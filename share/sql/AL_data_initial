@@ -42,18 +42,18 @@ CLASS -- class_name
 'Warlock'
 'Warrior'
 ---
-SPECIALIZATION_ROLE -- name
+SPECIALIZATION_ROLE -- specialization_role_name
 -
 'Damage'
 'Healer'
 'Tank'
 ---
-SPECIALIZATION_TYPE -- name
+SPECIALIZATION_TYPE -- specialization_type_name
 -
 'melee'
 'ranged'
 ---
-SPECIALIZATION -- specialization_name, parent_class, id_specialization_role, id_specialization_type
+SPECIALIZATION -- specialization_name, id_parent_class, id_specialization_role, id_specialization_type
 -
 'Blood','@class[class_name=Death Knight]','@specialization_role[name=Tank]','@specialization_type[name=melee]'
 'Frost','@class[class_name=Death Knight]','@specialization_role[name=Damage]','@specialization_type[name=melee]'
@@ -164,18 +164,18 @@ ACCOUNT - account_name, id_player_owner
 ---
 CHARACTER -- character_name_game, character_name_last, character_name_first, character_name_middle_first, character_name_middle_second, id_character_class, id_character_faction, id_character_gender, character_level, id_character_race, id_account_owner
 -
-'Kaidalsey',null,null,null,null,'@class[class_name=Death Knight]','@faction[faction_name=Alliance]','@gender[gender_name=male]',58,'@race[race_name=Human]','@account[id_player_owner=[@player[player_email=a.menethil@icecrown.army.mil]]]'
-'Masrielenesh','Badass','Hunter','Fucking','Demon','@class[class_name=Demon Hunter]','@faction[faction_name=Horde]','@gender[gender_name=male]',99,'@race[race_name=Blood Elf]','@account[id_player_owner=[@player[player_email=pikachu92@aol.com]]]'
-'Vesaeliais','Sylendra','Halfmoon',null,null,'@class[class_name=Druid]','@faction[faction_name=Alliance]','@gender[gender_name=female]',87,'@race[race_name=Night Elf]','@account[id_player_owner=[@player[player_email=padresfan2@yahoo.com]]]'
-'Aviaeroeda',null,null,null,null,'@class[class_name=Hunter]','@faction[faction_name=Horde]','@gender[gender_name=female]',110,'@race[race_name=Blood Elf]','@account[id_player_owner=[@player[player_email=refinedshot@refinedshot.net]]]'
-'Sankaide',null,null,null,null,'@class[class_name=Mage]','@faction[faction_name=Alliance]','@gender[gender_name=female]',75,'@race[race_name=Human]','@account[id_player_owner=[@player[player_email=coldasice20@gmail.com]]]'
-'Ruhangli',null,null,null,null,'@class[class_name=Monk]','@faction[faction_name=Horde]','@gender[gender_name=male]',14,'@race[race_name=Pandaren&race_reputation_name=Huojin Pandaren]','@account[id_player_owner=[@player[player_email=madskills236@mail.fortune.com]]]'
-'Alandistus',null,null,null,null,'@class[class_name=Paladin]','@faction[faction_name=Horde]','@gender[gender_name=male]',106,'@race[race_name=Blood Elf]','@account[id_player_owner=[@player[player_email=animehair209@ibm.com]]]'
-'Geramyzn',null,null,null,null,'@class[class_name=Priest]','@faction[faction_name=Alliance]','@gender[gender_name=male]',79,'@race[race_name=Draenei]','@account[id_player_owner=[@player[player_email=ashensnow72@alnhofen.de]]]'
-'Amesel',null,null,null,null,'@class[class_name=Rogue]','@faction[faction_name=Horde]','@gender[gender_name=female]',24,'@race[race_name=Undead]','@account[id_player_owner=[@player[player_email=bloodyknife982@rogueacademy.edu]]]'
-'Arlourlan','Thunderhammer',null,null,null,'@class[class_name=Shaman]','@faction[faction_name=Alliance]','@gender[gender_name=male]',104,'@race[race_name=Dwarf]','@account[id_player_owner=[@player[player_email=southern_horn@aol.com]]]'
-'Uglazital',null,null,null,null,'@class[class_name=Warlock]','@faction[faction_name=Horde]','@gender[gender_name=male]',110,'@race[race_name=Orc]','@account[id_player_owner=[@player[player_email=lockypoo28@yahoo.com]]]'
-'Andushirn',null,'Cairne',null,null,'@class[class_name=Warrior]','@faction[faction_name=Horde]','@gender[gender_name=female]',88,'@race[race_name=Tauren]','@account[id_player_owner=[@player[player_email=warrter19@gmail.com]]]'
+'Kaidalsey',null,null,null,null,'@class[class_name=Death Knight]','@faction[faction_name=Alliance]','@gender[gender_name=male]',58,'@race[race_name=Human]','@account[id_player_owner=[@player[player_email=a.menethil@icecrown.army.mil]]&account_name=WoW1]'
+'Masrielenesh','Badass','Hunter','Fucking','Demon','@class[class_name=Demon Hunter]','@faction[faction_name=Horde]','@gender[gender_name=male]',99,'@race[race_name=Blood Elf]','@account[id_player_owner=[@player[player_email=pikachu92@aol.com]]&account_name=WoW1]'
+'Vesaeliais','Sylendra','Halfmoon',null,null,'@class[class_name=Druid]','@faction[faction_name=Alliance]','@gender[gender_name=female]',87,'@race[race_name=Night Elf]','@account[id_player_owner=[@player[player_email=padresfan2@yahoo.com]]&account_name=WoW1]'
+'Aviaeroeda',null,null,null,null,'@class[class_name=Hunter]','@faction[faction_name=Horde]','@gender[gender_name=female]',110,'@race[race_name=Blood Elf]','@account[id_player_owner=[@player[player_email=refinedshot@refinedshot.net]]&account_name=WoW1]'
+'Sankaide',null,null,null,null,'@class[class_name=Mage]','@faction[faction_name=Alliance]','@gender[gender_name=female]',75,'@race[race_name=Human]','@account[id_player_owner=[@player[player_email=coldasice20@gmail.com]]&account_name=WoW1]'
+'Ruhangli',null,null,null,null,'@class[class_name=Monk]','@faction[faction_name=Horde]','@gender[gender_name=male]',14,'@race[race_name=Pandaren&race_reputation_name=Huojin Pandaren]','@account[id_player_owner=[@player[player_email=madskills236@mail.fortune.com]&account_name=WoW1]]'
+'Alandistus',null,null,null,null,'@class[class_name=Paladin]','@faction[faction_name=Horde]','@gender[gender_name=male]',106,'@race[race_name=Blood Elf]','@account[id_player_owner=[@player[player_email=animehair209@ibm.com]]&account_name=WoW1]'
+'Geramyzn',null,null,null,null,'@class[class_name=Priest]','@faction[faction_name=Alliance]','@gender[gender_name=male]',79,'@race[race_name=Draenei]','@account[id_player_owner=[@player[player_email=ashensnow72@alnhofen.de]]&account_name=WoW1]'
+'Amesel',null,null,null,null,'@class[class_name=Rogue]','@faction[faction_name=Horde]','@gender[gender_name=female]',24,'@race[race_name=Undead]','@account[id_player_owner=[@player[player_email=bloodyknife982@rogueacademy.edu]]&account_name=WoW1]'
+'Arlourlan','Thunderhammer',null,null,null,'@class[class_name=Shaman]','@faction[faction_name=Alliance]','@gender[gender_name=male]',104,'@race[race_name=Dwarf]','@account[id_player_owner=[@player[player_email=southern_horn@aol.com]]&account_name=WoW1]'
+'Uglazital',null,null,null,null,'@class[class_name=Warlock]','@faction[faction_name=Horde]','@gender[gender_name=male]',110,'@race[race_name=Orc]','@account[id_player_owner=[@player[player_email=lockypoo28@yahoo.com]]&account_name=WoW1]'
+'Andushirn',null,'Cairne',null,null,'@class[class_name=Warrior]','@faction[faction_name=Horde]','@gender[gender_name=female]',88,'@race[race_name=Tauren]','@account[id_player_owner=[@player[player_email=warrter19@gmail.com]]&account_name=WoW1]'
 ---
 RACE_FACTION -- id_race, id_faction
 -
@@ -320,7 +320,7 @@ CHARACTER_PROFESSIONS -- id_character, id_profession, profession_skill_level
 '@character[character_name_game=Kaidalsey]','@profession[profession_name=Skinning]',581
 '@character[character_name_game=Kaidalsey]','@profession[profession_name=Alchemy]',654
 '@character[character_name_game=Kaidalsey]','@profession[profession_name=Fishing]',565
-'@character[character_name_game=Kaidalsey]','@profession[profession_name=Fishing]',676
+'@character[character_name_game=Kaidalsey]','@profession[profession_name=First Aid]',676
 '@character[character_name_game=Masrielenesh]','@profession[profession_name=Archaeology]',319
 '@character[character_name_game=Masrielenesh]','@profession[profession_name=First Aid]',597
 '@character[character_name_game=Masrielenesh]','@profession[profession_name=Fishing]',250

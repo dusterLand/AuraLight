@@ -4,3 +4,20 @@ body {
 	font-family: Consolas, sans-serif;
 	font-size: 10pt;
 }
+
+#home_bottom { text-align: right; }
+
+#button_test_jquery {
+	background: #3080a0;
+	border: 1px black solid;
+	border-radius: 0.2em;
+	color: white;
+	display: inline-block;
+	padding: 0.1em 0.2em;
+}
+
+#button_test_jquery:hover {
+	background: #60b0ff;
+	color: black;
+	cursor: pointer;
+}
