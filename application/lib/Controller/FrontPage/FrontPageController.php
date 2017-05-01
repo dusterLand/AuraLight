@@ -17,6 +17,8 @@ class FrontPageController {
 	private $races;
 	private $accounts;
 	private $atts;
+	private $active_login;
+	private $player_manager;
 	
 	/**
 	 * Constructor function.
@@ -39,14 +41,19 @@ class FrontPageController {
 		} else {
 			exit( 'Bad request, handle this.' );
 		}
-		$this->log_frontpage->trace( $username, __FUNCTION__ . '$username' );
-		$this->log_frontpage->trace( $password, __FUNCTION__ . '$password' );
+		if(!( isset( $this->player_manager ) && $this->player_manager !== null )) {
+			$this->player_manager = new AL_PlayerManager();
+		}
+		$this->log_frontpage->trace( $username, __FUNCTION__ . ' $username' );
+		$this->log_frontpage->trace( $password, __FUNCTION__ . ' $password' );
 //		TODO: You're here, Jason
-		$this->DisplayPage(); // temp until you get more done
+//		$this->DisplayPage(); // temp until you get more done
 //		exit( "We made it here!" );
 //		$user = new AL_Player;
-//		$this=>active_login = AL_PlayerManager::Authenticate( $username, $password, $user );
+		$this->active_login = $this->player_manager->Authenticate( $username, $password );
 //		$this->active_login = true;
+		$active_login_message = $this->active_login;
+		$this->log_frontpage->trace( $this->active_login, __FUNCTION__ . ' $this->active_login' );
 	}
 	/**
 	 * Assign needed values.

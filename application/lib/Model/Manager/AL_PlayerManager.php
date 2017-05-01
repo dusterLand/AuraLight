@@ -44,4 +44,40 @@ SQL;
 		
 		return $this->player;
 	}
+	// SQL to check DB for username/password match
+	private static $sql_check_db_username_password = <<<'SQL'
+select id, player_username
+from al_player
+where player_username = $1
+and player_password = $2;
+SQL;
+	/**
+	 *
+	 */
+	public function Authenticate( $username, $password ) {
+		$this->log_gamemanager->trace( __FUNCTION__ . ' called' );
+		$this->log_gamemanager->trace( $username, __FUNCTION__ . ' $username' );
+		$this->log_gamemanager->trace( $password, __FUNCTION__ . ' $password' );
+		global $conn;
+		$result_player_id = pg_query_params( $conn, static::$sql_check_db_username_password, array(
+			$username,
+			$password
+		));
+		$results = array();
+		$pg_results = pg_fetch_all( $result_player_id );
+		$this->log_gamemanager->trace( $pg_results, __FUNCTION__ . ' $pg_results' );
+		if( count( $pg_results ) > 1 ) {
+			exit( 'Authenticate: ERROR: Too many results returned' );
+		} else {
+			// YOU'RE HERE, JASON
+			// generate new player here?
+		}
+		while( $row = pg_fetch_row( $result_player_id )) {
+			$this->player_id = $row[0];
+			break;
+		}
+		$this->log_gamemanager->trace( $this->player_id, __FUNCTION__ . ': $this->player_id [2]' );
+		$success = false;
+		return $success;
+	}
 }
