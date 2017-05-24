@@ -22,7 +22,6 @@ class AL_Player {
 	public function __construct( $player_id) {
 		$this->log_player = new AL_Log( 'Player' );
 		$this->player_id = $player_id;
-		
 	}
 	// create a statement (sql) with parameters from above
 	private static $sql_email = <<<'SQL'
@@ -131,11 +130,11 @@ SQL;
 	//should this really be in another class? I think so but where do we put it
 	public function get_attributes(){
 		$this->log_player->trace( __FUNCTION__ . ' called');
-		//First we need to get which accounts are part of the player
-		//Next we need to get which toons are part of this account
-		//$this->player = new AL_Player($this->player_id);
+		// First we need to get which accounts are part of the player
+		// Next we need to get which toons are part of this account
+		// $this->player = new AL_Player($this->player_id);
 		if(!(isset( $this->accounts ))){
-			$results=pg_query_params(static::$sql_account_name, array(':player_id'=>$this->player_id));
+			$results = pg_query_params(static::$sql_account_name, array(':player_id'=>$this->player_id));
 			//exit(print_r(count($results),true));
 			while($row = pg_fetch_assoc($results)) {
 				$this->log_player->trace($row, __FUNCTION__ . ' $row');
@@ -148,5 +147,14 @@ SQL;
 		//exit(print_r(count($this->accounts),true));
 		return $this->accounts;
 		//var_dump ($this->accounts);
+	}
+	// SQL to retrieve all available player data
+	private static $sql_retrieve_player_data = <<<'SQL'
+SQL;
+	/**
+	 * Populate all available player data.
+	 */
+	public function PopulateData() {
+		$this->log_player->trace( __FUNCTION__ . ' called');
 	}
 }

@@ -34,7 +34,7 @@ class FrontPageController {
 	 * Process user login.
 	 */
 	public function UserLogin() {
-		$this->log_frontpage->trace( __FUNCTION__ . ' called');
+		$this->log_frontpage->trace( __FUNCTION__ . ' called' );
 		if( isset( $_REQUEST['username']) && isset( $_REQUEST['password'])) {
 			$username = $_REQUEST['username'];
 			$password = $_REQUEST['password'];
@@ -46,13 +46,12 @@ class FrontPageController {
 		}
 		$this->log_frontpage->trace( $username, __FUNCTION__ . ' $username' );
 		$this->log_frontpage->trace( $password, __FUNCTION__ . ' $password' );
-//		TODO: You're here, Jason
-//		$this->DisplayPage(); // temp until you get more done
-//		exit( "We made it here!" );
-//		$user = new AL_Player;
 		$this->active_login = $this->player_manager->Authenticate( $username, $password );
-//		$this->active_login = true;
-		$active_login_message = $this->active_login;
+		if( $this->active_login === null ) {
+			exit( 'UserLogin: ERROR: No valid login' );
+		} else {
+			exit( 'UserLogin: SUCCESS: Valid login: ' . $this->active_login );
+		}
 		$this->log_frontpage->trace( $this->active_login, __FUNCTION__ . ' $this->active_login' );
 	}
 	/**
@@ -62,7 +61,7 @@ class FrontPageController {
 		$this->log_frontpage->trace( __FUNCTION__ . ' called');
 		global $smarty;
 		$playerManager = new AL_PlayerManager();
-		$player = $playerManager->displayManager(); 
+		$player = $playerManager->Player(); 
 		$javascript = array(
 			'/javascript/jquery/jquery-3.2.1.js',
 			'/javascript/auralight.js',

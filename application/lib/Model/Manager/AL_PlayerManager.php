@@ -2,6 +2,7 @@
 
 namespace AuraLight\Model\Manager;
 use AuraLight\Common\Utility\AL_Log;
+use AuraLight\Common\Utility\AL_Utility;
 use AuraLight\Model\Player\AL_Player;
 
 class AL_PlayerManager {
@@ -20,19 +21,21 @@ SQL;
 	public function __construct(){
 		$this->log_gamemanager = new AL_Log( 'GameManager' );
 		global $conn;
-		$result_player_id = pg_query( $conn, static::$sql_retrieve_test_player_id );
+/*		$result_player_id = pg_query( $conn, static::$sql_retrieve_test_player_id );
 		while( $row = pg_fetch_row( $result_player_id )) {
 			$this->player_id = $row[0];
 		}
 		$this->log_gamemanager->trace( $this->player_id, __FUNCTION__ . ': $this->player_id' );
-//		$this->player_id = "78db8576-b292-494d-b385-b9bffb5d3887";
+		$this->player_id = "78db8576-b292-494d-b385-b9bffb5d3887"; */
 	}
 	/**
-	 *
+	 * Instantiate and return a player object.
 	 */
-	public function displayManager (){
+	public function Player() {
 		$this->log_gamemanager->trace( __FUNCTION__ . ' called');
-		$this->player = new AL_Player($this->player_id);
+		$this->log_gamemanager->trace( $this->player_id, __FUNCTION__ . ' $this->player_id');
+		$this->player = new AL_Player( $this->player_id );
+		$this->player->PopulateData();
 		$this->player->email();
 		$this->player->username();
 		$this->player->name_first();
@@ -52,13 +55,19 @@ where player_username = $1
 and player_password = $2;
 SQL;
 	/**
+	 * Authenticate a user based on a provided username and password combination.
 	 *
+	 * @param string $username Username provided
+	 * @param string $password Password provided
+	 * @return mixed $session_id Will return a session ID for a valid user, or null for a failed
+	 *	authentication
 	 */
 	public function Authenticate( $username, $password ) {
 		$this->log_gamemanager->trace( __FUNCTION__ . ' called' );
 		$this->log_gamemanager->trace( $username, __FUNCTION__ . ' $username' );
 		$this->log_gamemanager->trace( $password, __FUNCTION__ . ' $password' );
 		global $conn;
+		$session_id = null;
 		$result_player_id = pg_query_params( $conn, static::$sql_check_db_username_password, array(
 			$username,
 			$password
@@ -69,15 +78,14 @@ SQL;
 		if( count( $pg_results ) > 1 ) {
 			exit( 'Authenticate: ERROR: Too many results returned' );
 		} else {
-			// YOU'RE HERE, JASON
-			// generate new player here?
-		}
-		while( $row = pg_fetch_row( $result_player_id )) {
-			$this->player_id = $row[0];
-			break;
+			while( $row = pg_fetch_row( $result_player_id )) {
+				$this->player_id = $row[0];
+				break;
+			}
+			$this->log_gamemanager->trace( $this->player_id, __FUNCTION__ . ' $this->player_id' );
+			$session_id = AL_Utility::Session( $this->player_id );
 		}
 		$this->log_gamemanager->trace( $this->player_id, __FUNCTION__ . ': $this->player_id [2]' );
-		$success = false;
-		return $success;
+		return $session_id;
 	}
 }

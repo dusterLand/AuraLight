@@ -29,6 +29,7 @@ drop table if exists auralight.al_character_professions cascade;
 drop table if exists auralight.al_objective_scope cascade;
 drop table if exists auralight.al_objective_type cascade;
 drop table if exists auralight.al_objective cascade;
+drop table if exists auralight.al_session cascade;
 /*
  * auralight.al_race - Races to which characters belong
  */
@@ -234,6 +235,15 @@ create table auralight.al_objective (
 	foreign key (id_objective_type) references auralight.al_objective_type(id) on delete cascade,
 	foreign key (id_character) references auralight.al_character(id) on delete cascade,
 	foreign key (id_player_owner) references auralight.al_player(id) on delete cascade
+);
+/*
+ * auralight.al_session
+ */
+create table auralight.al_session (
+	id UUID DEFAULT gen_random_uuid(),
+	id_player UUID NOT NULL,
+	session_data JSON NOT NULL,
+	primary key (id)
 );
 
 grant usage on schema auralight to auralight;
