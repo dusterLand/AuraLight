@@ -24,7 +24,6 @@ SQL;
 	 * @return string $existing_session DB ID for the player's session
 	 */
 	public static function Session( $id_player ) {
-//		print_r( 'incoming $id_player: ' . var_dump( $id_player . "\n\n" ));
 		global $conn;
 		$existing_session;
 		$result_existing_session = pg_query_params( $conn, static::$sql_check_session_id, array(
@@ -32,13 +31,11 @@ SQL;
 		));
 		$pg_results = pg_fetch_all( $result_existing_session );
 		if( !$pg_results ) {
-			exit( 'No results and shit.' );  <-- YOU ARE HERE
 			$result_existing_session = pg_query_params( $conn, static::$sql_create_session_id, array(
-				$id_player
+				$id_player,
 			));
 		}
 		$pg_results2 = pg_fetch_all( $result_existing_session );
-		print_r( var_dump( $pg_results2 ));
 		while( $row = pg_fetch_row( $result_existing_session )) {
 			$existing_session = $row[0];
 			break;

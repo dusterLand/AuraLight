@@ -23,3 +23,6 @@ $(function() {
 	"use strict";
 	// your functions here
 });
+
+Change Git default comment character, to a carat, for example:
+git config core.commentChar = "^"

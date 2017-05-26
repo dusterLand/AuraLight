@@ -44,7 +44,6 @@ SQL;
 		$this->player->password();
 		$this->player->get_attributes();
 		//var_dump ($this->player);
-		
 		return $this->player;
 	}
 	// SQL to check DB for username/password match
@@ -75,17 +74,44 @@ SQL;
 		$results = array();
 		$pg_results = pg_fetch_all( $result_player_id );
 		$this->log_gamemanager->trace( $pg_results, __FUNCTION__ . ' $pg_results' );
-		if( count( $pg_results ) > 1 ) {
-			exit( 'Authenticate: ERROR: Too many results returned' );
-		} else {
+		if( !$pg_results ) {
+			return null;
+		}
+		if( count( $pg_results) === 1 ) {
 			while( $row = pg_fetch_row( $result_player_id )) {
 				$this->player_id = $row[0];
 				break;
 			}
 			$this->log_gamemanager->trace( $this->player_id, __FUNCTION__ . ' $this->player_id' );
 			$session_id = AL_Utility::Session( $this->player_id );
+		} else {
+			exit( 'Authenticate: ERROR: Too many results returned' );
 		}
 		$this->log_gamemanager->trace( $this->player_id, __FUNCTION__ . ': $this->player_id [2]' );
 		return $session_id;
+	}
+	// SQL to return a player ID given an associated session ID
+	private static $sql_retrieve_player_from_session = <<<'SQL'
+select id_player from auralight.al_session where id = $1;
+SQL;
+	/**
+	 * Given a session ID, return an associated player object
+	 *
+	 * @param string $id_session DB ID of a session
+	 * @return AL_Player $player Player object associated with given session ID
+	 */
+	public function PlayerBySession( $id_session ) {
+		$this->log_gamemanager->trace( __FUNCTION__ . ' called' );
+		$this->log_gamemanager->trace( $id_session, __FUNCTION__ . ' $id_session' );
+		global $conn;
+		$result_player_id = pg_query_params( $conn, static::$sql_retrieve_player_from_session, array(
+			$id_session
+		));
+		$pg_results = pg_fetch_all( $result_player_id );
+		while( $row = pg_fetch_row( $result_player_id )) {
+			$this->player_id = $row[0];
+		}
+		$player = $this->Player();
+		return $player;
 	}
 }

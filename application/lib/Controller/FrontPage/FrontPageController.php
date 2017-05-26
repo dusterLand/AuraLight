@@ -31,6 +31,16 @@ class FrontPageController {
 		$smarty->config_dir = '../lib/View/FrontPage/Config/';
 	}
 	/**
+	 * Set (if needed) and return player manager.
+	 */
+	private function playerManager() {
+		$this->log_frontpage->trace( __FUNCTION__ . 'called' );
+		if( !(isset( $this->player_manager )) ) {
+			$this->player_manager = new AL_PlayerManager();
+		}
+		return $this->player_manager;
+	}
+	/**
 	 * Process user login.
 	 */
 	public function UserLogin() {
@@ -41,18 +51,23 @@ class FrontPageController {
 		} else {
 			exit( 'Bad request, handle this.' );
 		}
-		if(!( isset( $this->player_manager ) && $this->player_manager !== null )) {
-			$this->player_manager = new AL_PlayerManager();
-		}
 		$this->log_frontpage->trace( $username, __FUNCTION__ . ' $username' );
 		$this->log_frontpage->trace( $password, __FUNCTION__ . ' $password' );
-		$this->active_login = $this->player_manager->Authenticate( $username, $password );
-		if( $this->active_login === null ) {
-			exit( 'UserLogin: ERROR: No valid login' );
-		} else {
-			exit( 'UserLogin: SUCCESS: Valid login: ' . $this->active_login );
+		$this->active_login = $this->playerManager()->Authenticate( $username, $password );
+		if( $this->active_login !== null ) {
+			$_SESSION['id'] = $this->active_login;
 		}
 		$this->log_frontpage->trace( $this->active_login, __FUNCTION__ . ' $this->active_login' );
+		$this->DisplayPage();
+	}
+	/**
+	 * Process user logout.
+	 */
+	public function UserLogout() {
+		$this->log_frontpage->trace( __FUNCTION__ . ' called' );
+		session_unset();
+		$this->active_login = false;
+		$this->DisplayPage();
 	}
 	/**
 	 * Assign needed values.
@@ -60,8 +75,10 @@ class FrontPageController {
 	private function AssignValues() {
 		$this->log_frontpage->trace( __FUNCTION__ . ' called');
 		global $smarty;
-		$playerManager = new AL_PlayerManager();
-		$player = $playerManager->Player(); 
+		$player;
+		if( $this->active_login ) {
+			$player = $this->playerManager()->PlayerBySession( $this->active_login );
+		}
 		$javascript = array(
 			'/javascript/jquery/jquery-3.2.1.js',
 			'/javascript/auralight.js',
@@ -81,11 +98,14 @@ class FrontPageController {
 		//$atts = $player->get_attributes();
 		//exit(print_r(count($atts),true));
 		$accts = array();
-		$this->log_frontpage->trace( $player->get_attributes(), __FUNCTION__ . ' $player->get_attributes()');
-		foreach( $player->get_attributes() as $at ){
-			// exit(print_r($at,true));
-			$accts[] = $at->account_name();
-			
+		if( $this->active_login ) {
+			$this->log_frontpage->trace( $player->get_attributes(), __FUNCTION__ . ' $player->get_attributes()');
+		}
+		if( isset( $player )) {
+			foreach( $player->get_attributes() as $at ){
+				// exit(print_r($at,true));
+				$accts[] = $at->account_name();
+			}
 		}
 		//exit(print_r($atts,true));
 		//var_dump ($atts);
@@ -93,13 +113,21 @@ class FrontPageController {
 			//$atts['accounts'] = $val;
 			//var_dump($val);
 		//}
-//		$smarty->assign( 'active_login', $this->active_login );
-		$smarty->assign( 'playername', $player->username());
-		$smarty->assign( 'playeremail', $player->email());
-		$smarty->assign( 'player_last_name', $player->name_last());
-		$smarty->assign( 'player_middle_name', $player->name_middle());
-		$smarty->assign( 'player_first_name', $player->name_first());
-		$smarty->assign( 'player_password', $player->password());
+		$smarty->assign( 'user_login', ($this->active_login ? true : false) );
+		$this->log_frontpage->trace( ($this->active_login ? 'true' : 'false' ), __FUNCTION__ . ' $this->active_login');
+		if( $this->active_login ) {
+//			$smarty->assign( 'user_login', true );
+			$smarty->assign( 'login_username', $player->username() );
+		}
+		$smarty->assign( 'active_login', $this->active_login );
+		if( $this->active_login ) {
+			$smarty->assign( 'playername', $player->username());
+			$smarty->assign( 'playeremail', $player->email());
+			$smarty->assign( 'player_last_name', $player->name_last());
+			$smarty->assign( 'player_middle_name', $player->name_middle());
+			$smarty->assign( 'player_first_name', $player->name_first());
+			$smarty->assign( 'player_password', $player->password());
+		}
 		$smarty->assign( 'accounts', $accts);
 		$smarty->assign( 'races', $data['races']);
 		$smarty->assign( 'stylesheets', $stylesheets );

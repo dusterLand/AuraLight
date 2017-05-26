@@ -242,7 +242,7 @@ create table auralight.al_objective (
 create table auralight.al_session (
 	id UUID DEFAULT gen_random_uuid(),
 	id_player UUID NOT NULL,
-	session_data JSON NOT NULL,
+	session_data JSON,
 	primary key (id)
 );
 
