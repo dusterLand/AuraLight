@@ -36,9 +36,8 @@ $(function() {
 			'data': 'butt',
 			'dataType': 'json'
 		}).done( function( data ) {
-			var jData = jQuery.parseJSON( data );
-			alert( jData.data );
-			console.log( jData );
+			alert( data.data );
+			console.log( data );
 		}, "json").always( function() {
 			console.log( "AJAX complete.");
 		});

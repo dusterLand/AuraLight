@@ -155,9 +155,7 @@ class FrontPageController {
 			'success' => 1,
 		);
 		$this->log_frontpage->trace( $json_response, __FUNCTION__ . ' $json_response');
-//		echo( print_r( $json_response ));
+		header('Content-Type: application/json');
 		echo( json_encode( $json_response ));
-//		return json_encode( $json_response );
-//		return $json_response;
 	}
 }
