@@ -31,45 +31,6 @@ class FrontPageController {
 		$smarty->config_dir = '../lib/View/FrontPage/Config/';
 	}
 	/**
-	 * Set (if needed) and return player manager.
-	 */
-	private function playerManager() {
-		$this->log_frontpage->trace( __FUNCTION__ . 'called' );
-		if( !(isset( $this->player_manager )) ) {
-			$this->player_manager = new AL_PlayerManager();
-		}
-		return $this->player_manager;
-	}
-	/**
-	 * Process user login.
-	 */
-	public function UserLogin() {
-		$this->log_frontpage->trace( __FUNCTION__ . ' called' );
-		if( isset( $_REQUEST['username']) && isset( $_REQUEST['password'])) {
-			$username = $_REQUEST['username'];
-			$password = $_REQUEST['password'];
-		} else {
-			exit( 'Bad request, handle this.' );
-		}
-		$this->log_frontpage->trace( $username, __FUNCTION__ . ' $username' );
-		$this->log_frontpage->trace( $password, __FUNCTION__ . ' $password' );
-		$this->active_login = $this->playerManager()->Authenticate( $username, $password );
-		if( $this->active_login !== null ) {
-			$_SESSION['id'] = $this->active_login;
-		}
-		$this->log_frontpage->trace( $this->active_login, __FUNCTION__ . ' $this->active_login' );
-		$this->DisplayPage();
-	}
-	/**
-	 * Process user logout.
-	 */
-	public function UserLogout() {
-		$this->log_frontpage->trace( __FUNCTION__ . ' called' );
-		session_unset();
-		$this->active_login = false;
-		$this->DisplayPage();
-	}
-	/**
 	 * Assign needed values.
 	 */
 	private function AssignValues() {
@@ -135,6 +96,45 @@ class FrontPageController {
 		$smarty->assign( 'tool_fullname', AL_Utility::TOOL_FULLNAME );
 	}
 	/**
+	 * Set (if needed) and return player manager.
+	 */
+	private function playerManager() {
+		$this->log_frontpage->trace( __FUNCTION__ . 'called' );
+		if( !(isset( $this->player_manager )) ) {
+			$this->player_manager = new AL_PlayerManager();
+		}
+		return $this->player_manager;
+	}
+	/**
+	 * Process user login.
+	 */
+	public function UserLogin() {
+		$this->log_frontpage->trace( __FUNCTION__ . ' called' );
+		if( isset( $_REQUEST['username']) && isset( $_REQUEST['password'])) {
+			$username = $_REQUEST['username'];
+			$password = $_REQUEST['password'];
+		} else {
+			exit( 'Bad request, handle this.' );
+		}
+		$this->log_frontpage->trace( $username, __FUNCTION__ . ' $username' );
+		$this->log_frontpage->trace( $password, __FUNCTION__ . ' $password' );
+		$this->active_login = $this->playerManager()->Authenticate( $username, $password );
+		if( $this->active_login !== null ) {
+			$_SESSION['id'] = $this->active_login;
+		}
+		$this->log_frontpage->trace( $this->active_login, __FUNCTION__ . ' $this->active_login' );
+		$this->DisplayPage();
+	}
+	/**
+	 * Process user logout.
+	 */
+	public function UserLogout() {
+		$this->log_frontpage->trace( __FUNCTION__ . ' called' );
+		session_unset();
+		$this->active_login = false;
+		$this->DisplayPage();
+	}
+	/**
 	 * Render the page.
 	 */
 	public function DisplayPage() {
@@ -142,5 +142,22 @@ class FrontPageController {
 		global $smarty;
 		$this->AssignValues( $smarty );
 		$smarty->display( $smarty->template_dir[0] . 'index.smarty' );
+	}
+	/**
+	 * Testing jQuery AJAX post returns
+	 */
+	public function Becky() {
+		$this->log_frontpage->trace( __FUNCTION__ . ' called');
+		$this->log_frontpage->trace( $_REQUEST, __FUNCTION__ . ' $_REQUEST');
+		$json_response = array(
+			'data' => 'Look at her butt.',
+			'message' => 'Oscar Mike Golf, Becky',
+			'success' => 1,
+		);
+		$this->log_frontpage->trace( $json_response, __FUNCTION__ . ' $json_response');
+//		echo( print_r( $json_response ));
+		echo( json_encode( $json_response ));
+//		return json_encode( $json_response );
+//		return $json_response;
 	}
 }

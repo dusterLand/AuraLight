@@ -1,8 +1,10 @@
 $(function() {
 	"use strict";
+	// Front page link
 	$('#al_menu_item[name=front_page]').on( 'click', function() {
 		window.location.href = '/';
 	});
+	// Title is front page link
 	$('#al_menu_title').on( 'click', function () {
 		window.location.href = '/';
 	});
@@ -14,6 +16,7 @@ $(function() {
 		console.log( 'jQuery test successful' );
 		alert( 'jQuery test successful' );
 	});
+	// Dunno why this has params, can probably be cleaned up...
 	$('#test_login').on( 'click', function() {
 		var $params = array(
 			'LichKing56',
@@ -25,5 +28,19 @@ $(function() {
 //		'url': '/FrontPage/userlogin',
 //		'data': $params,
 //		)
+	});
+	// Testing jQuery post AJAX
+	$('#button_test_post_return').on( 'click', function() {
+		console.log( 'test jQuery post button clicked' );
+		$.post( '/frontpage/Becky', {
+			'data': 'butt',
+			'dataType': 'json'
+		}).done( function( data ) {
+			var jData = jQuery.parseJSON( data );
+			alert( jData.data );
+			console.log( jData );
+		}, "json").always( function() {
+			console.log( "AJAX complete.");
+		});
 	});
 });

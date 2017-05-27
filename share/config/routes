@@ -2,3 +2,4 @@
 '/frontpage', AuraLight\Controller\FrontPage\FrontPageController
 '/frontpage/UserLogin', AuraLight\Controller\FrontPage\FrontPageController\UserLogin
 '/frontpage/UserLogout', AuraLight\Controller\FrontPage\FrontPageController\UserLogout
+'/frontpage/Becky', AuraLight\Controller\FrontPage\FrontPageController\Becky

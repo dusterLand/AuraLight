@@ -21,3 +21,18 @@ body {
 	color: black;
 	cursor: pointer;
 }
+
+#button_test_post_return {
+	background: #3080a0;
+	border: 1px black solid;
+	border-radius: 0.2em;
+	color: white;
+	display: inline-block;
+	padding: 0.1em 0.2em;
+}
+
+#button_test_post_return:hover {
+	background: #60b0ff;
+	color: black;
+	cursor: pointer;
+}
