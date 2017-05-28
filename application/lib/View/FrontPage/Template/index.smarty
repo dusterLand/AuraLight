@@ -25,7 +25,6 @@
 			{/foreach}
 		<div id="home_bottom">
 			<div id="button_test_jquery">Test JQuery</div>
-			<div id="button_test_post_return">Test Post Return</div>
 		</div>
 	</body>
 </html>
