@@ -1,37 +1,25 @@
 <div id="auralight_menu">
-	{if $user_login}
-		<form action="/frontpage/UserLogout" method="post" id="logoutForm">
-	{else}
-		<form action="/frontpage/UserLogin" method="post" id="loginForm">
-	{/if}
-		<div id="al_menu_title_container">
-			<div id="al_menu_title">{$tool_fullname}</div>
-			{if $user_login}
-				<div id="login_information">
-					Logged in as: <b>{$login_username|default:null}</b>
-				</div>
-			{else}
-				<div id="login_fields">
-					<textarea name="username" rows="1" form="loginForm" maxlength="12" placeholder="Username"></textarea><br />
-					<input type="password" name="password" rows="1" form="loginForm" maxlength="12" placeholder="Password"></textarea>
-				</div>
-			{/if}
-			<div class="clear"></div>
-		</div>
-		<div class="al_menu_item" name="front_page">Front Page</div>
-		{if !$user_login}
-			<div id="test_login">
-				<form action="submit">
-					<button type="submit" class="login_button">Login</button>
-				</form>
+	<div id="al_menu_title_container">
+		<div id="al_menu_title">{$tool_fullname}</div>
+		{if $user_login}
+			<div id="login_information">
+				Logged in as: <b>{$login_username|default:null}</b>
 			</div>
 		{else}
-			<div id="test_logout">
-				<form action="submit">
-					<button type="submit" class="logout_button">Logout</button>
-				</form>
+			<div id="login_fields">
+				<input id="username" type="text" name="username" rows="1" form="loginForm" maxlength="12" placeholder="Username"></input><br />
+				<input id="userpass" type="password" name="password" rows="1" form="loginForm" maxlength="12" placeholder="Password"></input>
 			</div>
 		{/if}
-	</form>
+		<div class="clear"></div>
+	</div>
+	<div class="al_menu_item" name="front_page">Front Page</div>
+	<div id="login_button_container">
+	{if !$user_login}
+		<button id="submit_login" class="login_button">Login</button>
+	{else}
+		<button id="submit_logout" class="logout_button">Logout</button>
+	{/if}
+	</div>
 	<div class="clear"></div>
 </div>

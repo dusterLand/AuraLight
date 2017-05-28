@@ -1,4 +1,6 @@
 <?php
+// start session
+session_start();
 // include global autoloader
 require_once dirname(__FILE__) . '/../vendor/autoload.php';
 // include bootstrap logger

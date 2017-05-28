@@ -8,38 +8,30 @@ $(function() {
 	$('#al_menu_title').on( 'click', function () {
 		window.location.href = '/';
 	});
-//	$('body').on( 'click', '#button_test_jquery', function() {
-//		console.log( 'click' );
-//		alert( 'jQuery test successful.' );
-//	});
+	// Test jQuery button
 	$('#button_test_jquery').on( 'click', function () {
 		console.log( 'jQuery test successful' );
 		alert( 'jQuery test successful' );
 	});
-	// Dunno why this has params, can probably be cleaned up...
-	$('#test_login').on( 'click', function() {
-		var $params = array(
-			'LichKing56',
-			'filler'
-		);
-//		var $username = 'LichKing56';
-//		var $password = 'filler';
-//		$.post(
-//		'url': '/FrontPage/userlogin',
-//		'data': $params,
-//		)
-	});
-	// Testing jQuery post AJAX
-	$('#button_test_post_return').on( 'click', function() {
-		console.log( 'test jQuery post button clicked' );
-		$.post( '/frontpage/Becky', {
-			'data': 'butt',
+	// Process login
+	$( 'body' ).on( 'click', '#submit_login', function() {
+		var login_username = $('input#username').val();
+		var login_userpass = $('input#userpass').val();
+		$.post( '/frontpage/UserLogin', {
+			'username': login_username,
+			'userpass': login_userpass,
 			'dataType': 'json'
 		}).done( function( data ) {
-			alert( data.data );
-			console.log( data );
-		}, "json").always( function() {
-			console.log( "AJAX complete.");
+			location.reload( true );
+		}).always( function() {
+		});
+	});
+	// Process logout
+	$( 'body' ).on( 'click', '#submit_logout', function() {
+		$.post( '/frontpage/UserLogout', {
+		}).done( function( data ) {
+			location.reload( true );
+		}).always( function () {
 		});
 	});
 });

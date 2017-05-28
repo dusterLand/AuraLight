@@ -29,6 +29,9 @@ class FrontPageController {
 		$smarty->template_dir =  '../lib/View/FrontPage/Template/';
 		$smarty->compile_dir = '../lib/View/FrontPage/Template_c/';
 		$smarty->config_dir = '../lib/View/FrontPage/Config/';
+		if( isset( $_SESSION['id'] )) {
+			$this->active_login = $_SESSION['id'];
+		}
 	}
 	/**
 	 * Assign needed values.
@@ -110,20 +113,25 @@ class FrontPageController {
 	 */
 	public function UserLogin() {
 		$this->log_frontpage->trace( __FUNCTION__ . ' called' );
-		if( isset( $_REQUEST['username']) && isset( $_REQUEST['password'])) {
+		if( isset( $_REQUEST['username']) && isset( $_REQUEST['userpass'])) {
 			$username = $_REQUEST['username'];
-			$password = $_REQUEST['password'];
+			$password = $_REQUEST['userpass'];
 		} else {
 			exit( 'Bad request, handle this.' );
 		}
-		$this->log_frontpage->trace( $username, __FUNCTION__ . ' $username' );
-		$this->log_frontpage->trace( $password, __FUNCTION__ . ' $password' );
+		$json_response = array(
+			'data' => '',
+			'message' => '',
+			'success' => 0,
+		);
 		$this->active_login = $this->playerManager()->Authenticate( $username, $password );
 		if( $this->active_login !== null ) {
 			$_SESSION['id'] = $this->active_login;
+			$json_response['success'] = 1;
 		}
-		$this->log_frontpage->trace( $this->active_login, __FUNCTION__ . ' $this->active_login' );
-		$this->DisplayPage();
+		$this->log_frontpage->trace( $json_response, __FUNCTION__ . ' $json_response');
+		header('Content-Type: application/json');
+		echo( json_encode( $json_response ));
 	}
 	/**
 	 * Process user logout.
@@ -132,7 +140,6 @@ class FrontPageController {
 		$this->log_frontpage->trace( __FUNCTION__ . ' called' );
 		session_unset();
 		$this->active_login = false;
-		$this->DisplayPage();
 	}
 	/**
 	 * Render the page.
@@ -142,20 +149,5 @@ class FrontPageController {
 		global $smarty;
 		$this->AssignValues( $smarty );
 		$smarty->display( $smarty->template_dir[0] . 'index.smarty' );
-	}
-	/**
-	 * Testing jQuery AJAX post returns
-	 */
-	public function Becky() {
-		$this->log_frontpage->trace( __FUNCTION__ . ' called');
-		$this->log_frontpage->trace( $_REQUEST, __FUNCTION__ . ' $_REQUEST');
-		$json_response = array(
-			'data' => 'Look at her butt.',
-			'message' => 'Oscar Mike Golf, Becky',
-			'success' => 1,
-		);
-		$this->log_frontpage->trace( $json_response, __FUNCTION__ . ' $json_response');
-		header('Content-Type: application/json');
-		echo( json_encode( $json_response ));
 	}
 }
