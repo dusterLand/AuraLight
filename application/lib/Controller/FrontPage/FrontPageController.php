@@ -7,19 +7,17 @@ use AuraLight\Common\Utility\AL_Utility;
 use AuraLight\Model\Manager\AL_PlayerManager;
 
 class FrontPageController {
-
-	private $race;
-	private $reputation;
-	private $conn;
-	private $sql;
-	private $result;
-	private $log_frontpage;
-	private $races;
 	private $accounts;
-	private $atts;
 	private $active_login;
+	private $atts;
+	private $conn;
+	private $log_frontpage;
 	private $player_manager;
-	
+	private $race;
+	private $races;
+	private $reputation;
+	private $result;
+	private $sql;
 	/**
 	 * Constructor function.
 	 */
@@ -29,8 +27,11 @@ class FrontPageController {
 		$smarty->template_dir =  '../lib/View/FrontPage/Template/';
 		$smarty->compile_dir = '../lib/View/FrontPage/Template_c/';
 		$smarty->config_dir = '../lib/View/FrontPage/Config/';
+		// check & validate login
 		if( isset( $_SESSION['id'] )) {
-			$this->active_login = $_SESSION['id'];
+			$retrieved_session_id = $_SESSION['id'];
+			$player_result = $this->playerManager()->PlayerBySession( $retrieved_session_id );
+			$this->active_login = !$player_result ? false : $retrieved_session_id;
 		}
 	}
 	/**

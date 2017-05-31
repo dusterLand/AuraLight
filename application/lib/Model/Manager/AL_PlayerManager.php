@@ -99,6 +99,7 @@ SQL;
 	 *
 	 * @param string $id_session DB ID of a session
 	 * @return AL_Player $player Player object associated with given session ID
+	 * @return boolean false Return false if no player found
 	 */
 	public function PlayerBySession( $id_session ) {
 		$this->log_gamemanager->trace( __FUNCTION__ . ' called' );
@@ -108,10 +109,15 @@ SQL;
 			$id_session
 		));
 		$pg_results = pg_fetch_all( $result_player_id );
-		while( $row = pg_fetch_row( $result_player_id )) {
-			$this->player_id = $row[0];
+		if( !$pg_results ) {
+			$this->log_gamemanager->trace( __FUNCTION__ . ' No player found for provided session ID.' );
+		} else {
+			while( $row = pg_fetch_row( $result_player_id )) {
+				$this->player_id = $row[0];
+			}
+			$player = $this->Player();
+			return $player;
 		}
-		$player = $this->Player();
-		return $player;
+		return false;
 	}
 }
