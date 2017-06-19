@@ -136,6 +136,9 @@ SQL;
 		if(!(isset( $this->accounts ))){
 			$results = pg_query_params(static::$sql_account_name, array(':player_id'=>$this->player_id));
 			//exit(print_r(count($results),true));
+			if( !$results ) {
+				return null;
+			}
 			while($row = pg_fetch_assoc($results)) {
 				$this->log_player->trace($row, __FUNCTION__ . ' $row');
 				$tmp_account = new AL_Account();

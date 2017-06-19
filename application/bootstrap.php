@@ -20,6 +20,7 @@ $config['app'] = array(
 	'name2' => 'Stan',
 	'log_default' => Logger::getLogger( 'Default' ),
 	'log_frontpage' => Logger::getLogger( 'FrontPage' ),
+	'log_registration' => Logger::getLogger( 'Registration' ),
 );
 
 $config['log_config'] = dirname(__FILE__) . '/../share/config/log4php/';

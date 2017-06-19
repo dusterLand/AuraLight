@@ -12,6 +12,7 @@ class FrontPageController {
 	private $atts;
 	private $conn;
 	private $log_frontpage;
+	private $log_registration;
 	private $player_manager;
 	private $race;
 	private $races;
@@ -23,6 +24,7 @@ class FrontPageController {
 	 */
 	public function __construct() {
 		$this->log_frontpage = new AL_Log( 'FrontPage' );
+		$this->log_registration = new AL_Log( 'Registration' );
 		global $smarty;
 		$smarty->template_dir =  '../lib/View/FrontPage/Template/';
 		$smarty->compile_dir = '../lib/View/FrontPage/Template_c/';
@@ -47,6 +49,7 @@ class FrontPageController {
 		$javascript = array(
 			'/javascript/jquery/jquery-3.2.1.js',
 			'/javascript/auralight.js',
+			'/javascript/registration.js',
 		);
 		$stylesheets = array(
 			'/CSS/index.css',
@@ -67,7 +70,7 @@ class FrontPageController {
 			$this->log_frontpage->trace( $player->get_attributes(), __FUNCTION__ . ' $player->get_attributes()');
 		}
 		if( isset( $player )) {
-			foreach( $player->get_attributes() as $at ){
+			foreach( (array)$player->get_attributes() as $at ){
 				// exit(print_r($at,true));
 				$accts[] = $at->account_name();
 			}
@@ -143,10 +146,67 @@ class FrontPageController {
 		$this->active_login = false;
 	}
 	/**
+	 * Process Registration started
+	 */
+	 public function UserRegistration() {
+		$this->log_frontpage->trace( __FUNCTION__ . ' called from registration' );
+		//echo ( "Going to Registration page");
+		global $smarty;
+		$smarty->template_dir =  '../lib/View/Registration/Template/';
+		$smarty->compile_dir = '../lib/View/Registration/Template_c/';
+		$smarty->config_dir = '../lib/View/Registration/Config/';
+		$javascript = array(
+			'/javascript/jquery/jquery-3.2.1.js',
+			'/javascript/registration.js',
+		);
+		$stylesheets = array(
+			'/CSS/index.css',
+			'/CSS/al_menu.css',
+			'/CSS/al_registration.css',
+		);
+		$smarty->assign( 'stylesheets', $stylesheets );
+		$smarty->assign( 'javascript', $javascript );	
+		$smarty->assign( 'tool_fullname', AL_Utility::TOOL_FULLNAME );
+		//$this->AssignValues( $smarty );
+		//$this->log_frontpage->trace( "logging before smarty load");
+		$smarty->display( $smarty->template_dir[0] . 'registration.smarty' );
+		//$this->log_frontpage->trace( "logging after smarty load");
+	 }
+	 
+	 public function SubmitRegistrationInfo() {
+		$this->log_frontpage->trace( __FUNCTION__ . ' called' );
+		if( isset( $_REQUEST['username']) && isset( $_REQUEST['userpass'])&& isset( $_REQUEST['firstname']) && isset( $_REQUEST['lastname']) && isset( $_REQUEST['email'])) {
+			$username = $_REQUEST['username'];
+			$password = $_REQUEST['userpass'];
+			$firstname = $_REQUEST['firstname'];
+			$lastname = $_REQUEST['lastname'];
+			$email = $_REQUEST['email'];
+			$middlename = isset($_REQUEST['middlename']) ? $_REQUEST['middlename'] : null;
+			// if middle name is set set to middle name, otherwise make it null - is what the line above does
+		} else {
+			$this->log_frontpage->trace( 'bad registration' );
+			exit( 'Bad request, handle this.' );
+		}
+		$json_response = array(
+			'data' => '',
+			'message' => '',
+			'success' => 0,
+		);
+		$this->register_user = $this->playerManager()->Registration( $username, $password, $firstname, $middlename, $lastname, $email );
+		if( $this->register_user == 'true' ) {
+			//$_SESSION['id'] = $this->active_login;
+			$json_response['success'] = 1;
+		}
+		$this->log_frontpage->trace( $json_response, __FUNCTION__ . ' $json_response');
+		header('Content-Type: application/json');
+		echo( json_encode( $json_response ));
+	 }
+	
+	/**
 	 * Render the page.
 	 */
 	public function DisplayPage() {
-		$this->log_frontpage->trace( __FUNCTION__ . ' called');
+		$this->log_frontpage->trace( __FUNCTION__ . ' here called');
 		global $smarty;
 		$this->AssignValues( $smarty );
 		$smarty->display( $smarty->template_dir[0] . 'index.smarty' );
