@@ -91,8 +91,37 @@ SQL;
 		return $session_id;
 	}
 	
+private static $sql_check_db_username_exists = <<< 'SQL'
+select id
+from al_player
+where player_username = $1;
+SQL;
 
-	
+	public function ValidateNewUsername( $username ) {
+		$this->log_gamemanager->trace( __FUNCTION__ . ' called');
+		$this->log_gamemanager->trace(  $username, __FUNCTION__ . ' $username');
+		global $conn;
+		$result_player_id = pg_query_params( $conn, static::$sql_check_db_username_exists, array(
+			$username
+		));
+		$results = array();
+		$pg_results = pg_fetch_all( $result_player_id );
+		$this->log_gamemanager->trace( $pg_results, __FUNCTION__ . ' $pg_results' );
+		if( !$pg_results ) {
+			$this->log_gamemanager->trace( $username, __FUNCTION__ . ' $username does not exist' );
+			return true;
+		}
+		if( count( $pg_results) === 1 ) {
+			while( $row = pg_fetch_row( $result_player_id )) {
+				$this->player_id = $row[0];
+				break;
+			}
+			$this->log_gamemanager->trace( $this->player_id, __FUNCTION__ . ' $this->player_id - username exists' );
+			return false;
+		} else {
+			exit( 'Authenticate: ERROR: Too many results returned' );
+		}
+	}
 	// SQL to insert registration into the al_player table
 	private static $sql_insert_db_player_all_info = <<<'SQL'
 insert into al_player (player_username, player_password, player_name_first, player_name_middle, player_name_last, player_email)

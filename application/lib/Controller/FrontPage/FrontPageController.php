@@ -192,10 +192,39 @@ class FrontPageController {
 			'message' => '',
 			'success' => 0,
 		);
-		$this->register_user = $this->playerManager()->Registration( $username, $password, $firstname, $middlename, $lastname, $email );
-		if( $this->register_user == 'true' ) {
+		$register_user = $this->playerManager()->Registration( $username, $password, $firstname, $middlename, $lastname, $email );
+		if( $register_user == 'true' ) {
 			//$_SESSION['id'] = $this->active_login;
 			$json_response['success'] = 1;
+		}
+		$this->log_frontpage->trace( $json_response, __FUNCTION__ . ' $json_response');
+		header('Content-Type: application/json');
+		echo( json_encode( $json_response ));
+	 }
+	 
+	 public function ValidateRegistrationInfo() {
+		 $this->log_frontpage->trace( __FUNCTION__ . ' called' );
+		 
+		if( isset($_REQUEST['username']) ) {
+			$new_username = $_REQUEST['username'];
+			$this->log_frontpage->trace( __FUNCTION__ . ' username passed in: ' . $new_username );
+		} else {
+			$this->log_frontpage->trace( ' no username to check' );
+			exit( 'Bad request, handle this.' );		
+		}
+		$json_response = array(
+			'data' => '',
+			'message' => '',
+			'success' => 0,
+		);
+		$this->log_frontpage->trace( __FUNCTION__ . ' before ValidateNewUsername' );
+		$val_user = $this->playerManager()->ValidateNewUsername( $new_username );
+		if( $val_user == 'true' ) {
+			//sucess means the user does not exist
+			$json_response['success'] = 1;
+			$this->log_frontpage->trace( __FUNCTION__ . ' success - no user' );
+		} else ( $val_user == 'false' ){
+			$json_response['success'] = 0;
 		}
 		$this->log_frontpage->trace( $json_response, __FUNCTION__ . ' $json_response');
 		header('Content-Type: application/json');
