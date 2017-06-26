@@ -20,9 +20,11 @@
 			{foreach $accounts as $attrs}
 			<p>Account: {$attrs}</p>
 			{/foreach}
+			{* comenting out the races always right part for now
 			{foreach $races as $row}
 			<p>{$row.race_name} is this {$row.race_reputation_name}</p>
 			{/foreach}
+			*}
 		<div id="home_bottom">
 			<div id="button_test_jquery">Test JQuery</div>
 		</div>

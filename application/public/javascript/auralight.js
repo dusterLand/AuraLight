@@ -34,4 +34,8 @@ $(function() {
 		}).always( function () {
 		});
 	});
+	$( 'body' ).on( 'click', '#submit_registration', function() {
+		console.log( 'Registration test successful' );
+		window.location.href = '/frontpage/UserRegistration';
+	});
 });

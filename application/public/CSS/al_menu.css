@@ -74,6 +74,22 @@
 	float: right;
 }
 
+.registration_button {
+	background-color: #880000;
+	border: 1px black solid;
+	color: white;
+	float: right;
+	font-family: Calibri, sans-serif;
+	font-size: 120%;
+	font-weight: bold;
+	margin-right: 0.2em;
+}
+
+.registration_button:hover {
+	background-color: #ff0000;
+	color: black;
+	cursor: pointer;
+}
 .clear {
 	clear: both;
 }

@@ -7,19 +7,23 @@
 			</div>
 		{else}
 			<div id="login_fields">
-				<input id="username" type="text" name="username" rows="1" form="loginForm" maxlength="12" placeholder="Username"></input><br />
-				<input id="userpass" type="password" name="password" rows="1" form="loginForm" maxlength="12" placeholder="Password"></input>
+				<input id="username" type="text" name="username" rows="1" form="loginForm" maxlength="12" placeholder="Username" /><br />
+				<input id="userpass" type="password" name="password" rows="1" form="loginForm" maxlength="12" placeholder="Password" />
 			</div>
 		{/if}
 		<div class="clear"></div>
 	</div>
-	<div class="al_menu_item" name="front_page">Front Page</div>
+	{if $user_login}
+		<div class="al_menu_item" name="account_managment">Account Management</div>
+	{/if}
 	<div id="login_button_container">
 	{if !$user_login}
 		<button id="submit_login" class="login_button">Login</button>
+		<button id="submit_registration" class="registration_button">Registration</button>
 	{else}
 		<button id="submit_logout" class="logout_button">Logout</button>
 	{/if}
 	</div>
+
 	<div class="clear"></div>
 </div>
