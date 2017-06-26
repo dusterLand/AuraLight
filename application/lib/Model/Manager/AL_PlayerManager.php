@@ -160,7 +160,7 @@ SQL;
 			$email
 		));
 		
-		$this->log_gamemanager->trace( $pg_results, __FUNCTION__ . ' $ins_player_id' );
+		$this->log_gamemanager->trace( $ins_player_id, __FUNCTION__ . ' $ins_player_id' );
 		$pg_results = pg_fetch_all( $ins_player_id );
 		$this->log_gamemanager->trace( $pg_results, __FUNCTION__ . ' $pg_results' );
 		if( !$pg_results ) {

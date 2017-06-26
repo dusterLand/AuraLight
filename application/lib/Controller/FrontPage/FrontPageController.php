@@ -173,23 +173,26 @@ class FrontPageController {
 		//$this->log_frontpage->trace( "logging after smarty load");
 	 }
 	 
+	 /**
+	 /* Used to submit new user's registration data
+	 */
 	 public function SubmitRegistrationInfo() {
 		$this->log_frontpage->trace( __FUNCTION__ . ' called' );
-		if( isset( $_REQUEST['username']) && isset( $_REQUEST['userpass'])&& isset( $_REQUEST['firstname']) && isset( $_REQUEST['lastname']) && isset( $_REQUEST['email'])) {
-			$username = $_REQUEST['username'];
-			$password = $_REQUEST['userpass'];
-			$firstname = $_REQUEST['firstname'];
-			$lastname = $_REQUEST['lastname'];
-			$email = $_REQUEST['email'];
-			$middlename = isset($_REQUEST['middlename']) ? $_REQUEST['middlename'] : null;
+		if( isset( $_REQUEST['regusername']) && isset( $_REQUEST['reguserpass'])&& isset( $_REQUEST['regfirstname']) && isset( $_REQUEST['reglastname']) && isset( $_REQUEST['regemail'])) {
+			$username = $_REQUEST['regusername'];
+			$password = $_REQUEST['reguserpass'];
+			$firstname = $_REQUEST['regfirstname'];
+			$lastname = $_REQUEST['reglastname'];
+			$email = $_REQUEST['regemail'];
+			$middlename = isset($_REQUEST['regmiddlename']) ? $_REQUEST['regmiddlename'] : null;
 			// if middle name is set set to middle name, otherwise make it null - is what the line above does
 		} else {
 			$this->log_frontpage->trace( 'bad registration' );
 			exit( 'Bad request, handle this.' );
 		}
 		$json_response = array(
-			'data' => '',
-			'message' => '',
+			'data' => 0,
+			'message' => 0,
 			'success' => 0,
 		);
 		$register_user = $this->playerManager()->Registration( $username, $password, $firstname, $middlename, $lastname, $email );
@@ -202,19 +205,22 @@ class FrontPageController {
 		echo( json_encode( $json_response ));
 	 }
 	 
+	 /**
+	 /*Currently validates the username is not already used. Could add more functionality to verify other things if needed
+	 */
 	 public function ValidateRegistrationInfo() {
 		 $this->log_frontpage->trace( __FUNCTION__ . ' called' );
 		 
-		if( isset($_REQUEST['username']) ) {
-			$new_username = $_REQUEST['username'];
+		if( isset($_REQUEST['regusername']) ) {
+			$new_username = $_REQUEST['regusername'];
 			$this->log_frontpage->trace( __FUNCTION__ . ' username passed in: ' . $new_username );
 		} else {
 			$this->log_frontpage->trace( ' no username to check' );
 			exit( 'Bad request, handle this.' );		
 		}
 		$json_response = array(
-			'data' => '',
-			'message' => '',
+			'data' => 0,
+			'message' => 0,
 			'success' => 0,
 		);
 		$this->log_frontpage->trace( __FUNCTION__ . ' before ValidateNewUsername' );
@@ -223,7 +229,7 @@ class FrontPageController {
 			//sucess means the user does not exist
 			$json_response['success'] = 1;
 			$this->log_frontpage->trace( __FUNCTION__ . ' success - no user' );
-		} else ( $val_user == 'false' ){
+		} elseif ( $val_user == 'false' ){
 			$json_response['success'] = 0;
 		}
 		$this->log_frontpage->trace( $json_response, __FUNCTION__ . ' $json_response');

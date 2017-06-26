@@ -12,50 +12,66 @@ $(function() {
 		alert( 'jQuery test successful' );
 	});
 	
-	$('body').on("focusout", "#email", function(){
+	$('body').on("focusout", "#regemail", function(){
 		var input_val = $(this).val();
 		var is_success = validate_email(input_val);
 		
 		if(!is_success){
-			$("#email").focus();
+			$("#regemail").focus();
 		}
 	});
 	
-	$( 'body' ).on("focusout", "#username", function(){
+	$( 'body' ).on("focusout", "#reguserpassverify", function(){
+		if ($('#reguserpass').val() !== $('#reguserpassverify').val()) {
+			alert("Your passwords do not match. Please try again.")
+			$('#reguserpass').focus();
+		}
+	});
+	
+	$( 'body' ).on("focusout", "#regusername", function(){
 		var input_val = $(this).val();
 		console.log( 'before ValidateRegistrationInfo' );
 		$.post( '/frontpage/ValidateRegistrationInfo', {
-				'username' : input_val
+				'regusername' : input_val
 		}).done( function ( data ) {
-			console.log( 'success ValidateRegistrationInfo' );
+			console.log( 'done response from ValidateRegistrationInfo' );
+			if (data['success'] == 0){
+				alert("Username is already used. Please choose a new name.");		
+				$("#regusername").focus();	
+			}else if (data['success'] == 1){
+				console.log( 'ValidateRegistrationInfo: user does not currently exist - continue' );			
+			}else{
+				console.log( 'ValidateRegistrationInfo: unknown response' );
+			}
 			var is_success = true;
 		}).fail( function ( data ) {
 			console.log( 'fail ValidateRegistrationInfo' );
-			var is_success = false;
-			$("#username").focus();
 		}).always( function(){
 		});	
 	});
 	
 	$( 'body' ).on( 'click', '#submit_registration_info', function() {
-		var registration_username = $('input#username').val();
-		var registration_userpass = $('input#userpass').val();
-		var registration_firstname = $('input#firstname').val();
-		var registration_middlename = $('input#middlename').val();
-		var registration_lastname = $('input#lastname').val();
-		var registration_email = $('input#email').val();
-		console.log( 'before SubmitRegistrationInfo' );
+		var registration_username = $('input#regusername').val();
+		var registration_userpass = $('input#reguserpass').val();
+		var registration_firstname = $('input#regfirstname').val();
+		var registration_middlename = $('input#regmiddlename').val();
+		var registration_lastname = $('input#reglastname').val();
+		var registration_email = $('input#regemail').val();
+		console.log( 'SubmitRegistrationInfo: Starting....' );
 		$.post( '/frontpage/SubmitRegistrationInfo', {
-			'username': registration_username,
-			'userpass': registration_userpass,
-			'firstname': registration_firstname,
-			'middlename': registration_middlename,
-			'lastname': registration_lastname,
-			'email': registration_email
-		}).done( function( data ) {
-			console.log( 'in done SubmitRegistrationInfo' );
+			'regusername': registration_username,
+			'reguserpass': registration_userpass,
+			'regfirstname': registration_firstname,
+			'regmiddlename': registration_middlename,
+			'reglastname': registration_lastname,
+			'regemail': registration_email
+		}).done( function( regdata) {
+			console.log( 'SubmitRegistrationInfo: done response ' + regdata['success'] );
 			window.location.href = '/';
+		}).fail( function( jqXHR, textStatus, errorThrown ) {
+			console.log('SubmitRegistrationInfo: Failed' + errorThrown);
 		}).always( function() {
+			console.log('SubmitRegistrationInfo: Always');
 		});
 	});
 	

@@ -2,7 +2,7 @@
 .clear {
 	clear: both;
 }
-#username, #userpass,#firstname, #lastname, #middlename, #email {
+#regusername, #reguserpass, #reguserpassverify, #regfirstname, #reglastname, #regmiddlename, #regemail {
 	background-color: #3060a0;
 	border: 1px black solid;
 	color: white !important;
@@ -60,6 +60,19 @@
 }
 
 #registration_fields_password_inputs {
+	padding: 0.2em;
+	float: right-side;
+}
+
+#registration_fields_verify_password_key {
+	padding: 0.2em;
+	float: left;
+	font-size: 120%;
+	text-align: right;
+	width: 10%;
+}
+
+#registration_fields_verify_password_inputs {
 	padding: 0.2em;
 	float: right-side;
 }
