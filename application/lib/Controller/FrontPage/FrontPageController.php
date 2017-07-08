@@ -96,6 +96,7 @@ class FrontPageController {
 			$smarty->assign( 'player_first_name', $player->name_first());
 			$smarty->assign( 'player_password', $player->password());
 		}
+		$smarty->assign( 'page', 'index');
 		$smarty->assign( 'accounts', $accts);
 		$smarty->assign( 'races', $data['races']);
 		$smarty->assign( 'stylesheets', $stylesheets );
@@ -145,6 +146,35 @@ class FrontPageController {
 		session_unset();
 		$this->active_login = false;
 	}
+	/**
+	 * user Profile
+	 */
+	 public function UserProfile() {
+		$this->log_frontpage->trace( __FUNCTION__ . ' called' );
+		global $smarty;
+		$this->AssignValues( $smarty );
+		$smarty->template_dir =  '../lib/View/UserProfile/Template/';
+		$smarty->compile_dir = '../lib/View/UserProfile/Template_c/';
+		$smarty->config_dir = '../lib/View/UserProfile/Config/';
+		$javascript = array(
+			'/javascript/jquery/jquery-3.2.1.js',
+			'/javascript/userprofile.js',
+		);
+		$stylesheets = array(
+			'/CSS/index.css',
+			'/CSS/al_menu.css',
+			'/CSS/al_userprofile.css',
+		);
+		$smarty->assign( 'stylesheets', $stylesheets );
+		$smarty->assign( 'javascript', $javascript );	
+		$smarty->assign( 'page', 'userprofile');
+		$smarty->assign( 'tool_fullname', AL_Utility::TOOL_FULLNAME );
+		
+		//$this->AssignValues( $smarty );
+		//$this->log_frontpage->trace( "logging before smarty load");
+		$smarty->display( $smarty->template_dir[0] . 'userprofile.smarty' );
+		//$this->log_frontpage->trace( "logging after smarty load");
+	 }
 	/**
 	 * Process Registration started
 	 */

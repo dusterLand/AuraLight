@@ -1,0 +1,159 @@
+
+.clear {
+	clear: both;
+}
+#regusername, #reguserpass, #reguserpassverify, #regfirstname, #reglastname, #regmiddlename, #regemail {
+	background-color: #3060a0;
+	border: 1px black solid;
+	color: white !important;
+	font-family: Consolas, monospace;
+	font-size: 90%;
+	margin-right: 0.9em;
+	padding: 0.4em;
+	resize: none;
+	width: 16em;
+}
+
+
+#submit_cancel {
+	background-color: #880000;
+	border: 1px black solid;
+	color: white;
+	
+	font-family: Calibri, sans-serif;
+	font-size: 120%;
+	font-weight: bold;
+
+	width: 32em;
+
+}
+
+#submit_cancel_info:hover {
+	background-color: #ff0000;
+	color: black;
+	cursor: pointer;
+}
+
+#submit_userprofile_info {
+	background-color: #880000;
+	border: 1px black solid;
+	color: white;
+	
+	font-family: Calibri, sans-serif;
+	font-size: 120%;
+	font-weight: bold;
+
+	width: 32em;
+
+}
+
+#submit_userprofile_info:hover {
+	background-color: #ff0000;
+	color: black;
+	cursor: pointer;
+}
+
+
+
+#registration_fields_container {
+	padding: 0.2em;
+}
+
+#registration_fields_username_key {
+	padding: 0.2em;
+	float: left;
+	font-size: 120%;
+	text-align: right;
+	width: 10%;
+}
+
+#registration_fields_username_inputs {
+	padding: 0.2em;
+	float: right-side;
+}
+
+#registration_fields_password_key {
+	padding: 0.2em;
+	float: left;
+	font-size: 120%;
+	text-align: right;
+	width: 10%;
+}
+
+#registration_fields_password_inputs {
+	padding: 0.2em;
+	float: right-side;
+}
+
+#registration_fields_verify_password_key {
+	padding: 0.2em;
+	float: left;
+	font-size: 120%;
+	text-align: right;
+	width: 10%;
+}
+
+#registration_fields_verify_password_inputs {
+	padding: 0.2em;
+	float: right-side;
+}
+
+#registration_fields_firstname_key {
+	padding: 0.2em;
+	float: left;
+	font-size: 120%;
+	text-align: right;
+	width: 10%;
+}
+
+#registration_fields_firstname_inputs {
+	padding: 0.2em;
+	float: right-side;
+}
+
+#registration_fields_lastname_key {
+	padding: 0.2em;
+	float: left;
+	font-size: 120%;
+	text-align: right;
+	width: 10%;
+}
+
+#registration_fields_lastname_inputs {
+	padding: 0.2em;
+	float: right-side;
+}
+
+#registration_fields_middlename_key {
+	padding: 0.2em;
+	float: left;
+	font-size: 120%;
+	text-align: right;
+	width: 10%;
+}
+
+#registration_fields_middlename_inputs {
+	padding: 0.2em;
+	float: right-side;
+}
+
+
+#registration_fields_email_key {
+	padding: 0.2em;
+	float: left;
+	font-size: 120%;
+	text-align: right;
+	width: 10%;
+}
+
+#registration_fields_email_inputs {
+	padding: 0.2em;
+	float: right-side;
+}
+
+
+@-moz-document url-prefix() {
+	textarea, input[type="password"] {
+		height: 1.1em;
+	}
+}

@@ -38,4 +38,9 @@ $(function() {
 		console.log( 'Registration test successful' );
 		window.location.href = '/frontpage/UserRegistration';
 	});
+	// Link to Setup Profile Page
+	$('#user_profile_link').on( 'click', function () {
+		console.log( 'Loading User Profile Page' );
+		window.location.href = '/frontpage/UserProfile';
+	});
 });

@@ -3,7 +3,10 @@
 		<div id="al_menu_title">{$tool_fullname}</div>
 		{if $user_login}
 			<div id="login_information">
-				Logged in as: <b>{$login_username|default:null}</b>
+				Logged in as: <b>{$login_username|default:null}</b><br />
+				<div id="user_profile_link">
+					User Profile
+				</div>
 			</div>
 		{else}
 			<div id="login_fields">
@@ -14,7 +17,12 @@
 		<div class="clear"></div>
 	</div>
 	{if $user_login}
-		<div class="al_menu_item" name="account_managment">Account Management</div>
+		{if $page == 'userprofile'}
+			<div class="al_menu_item" name="user_profile">User Profile</div>
+			<div class="al_menu_item" name="game_managment">Game Management</div>
+		{else}
+			<div class="al_menu_item" name="game_managment">Game Management</div>
+		{/if}
 	{/if}
 	<div id="login_button_container">
 	{if !$user_login}

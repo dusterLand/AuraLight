@@ -2,6 +2,7 @@
 '/frontpage', AuraLight\Controller\FrontPage\FrontPageController
 '/frontpage/UserLogin', AuraLight\Controller\FrontPage\FrontPageController\UserLogin
 '/frontpage/UserLogout', AuraLight\Controller\FrontPage\FrontPageController\UserLogout
+'/frontpage/UserProfile', AuraLight\Controller\FrontPage\FrontPageController\UserProfile
 '/frontpage/UserRegistration', AuraLight\Controller\FrontPage\FrontPageController\UserRegistration
 '/frontpage/DisplayTestPage', AuraLight\Controller\FrontPage\FrontPageController\DisplayTestPage
 '/frontpage/SubmitRegistrationInfo', AuraLight\Controller\FrontPage\FrontPageController\SubmitRegistrationInfo
