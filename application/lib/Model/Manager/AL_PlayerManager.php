@@ -91,7 +91,7 @@ SQL;
 		return $session_id;
 	}
 	
-private static $sql_check_db_username_exists = <<< 'SQL'
+	private static $sql_check_db_username_exists = <<< 'SQL'
 select id
 from al_player
 where player_username = $1;
@@ -178,7 +178,32 @@ SQL;
 		$this->log_gamemanager->trace( $this->player_id, __FUNCTION__ . ': $this->player_id [2]' );
 		return true;
 	}
+
+	/**
+	*	REtrieve a user's profile information for modification
+	*/
+	private static $sql_retrieve_user_profile_info = <<<'SQL'
+select player_password, player_name_last, player_email
+from al_player
+where player_id = $1;
+SQL;
+
+	public function RetrieveUserProfileInfo( $player_id ) {
 		
+	}
+
+
+
+	private static $sql_modify_user_profile_info = <<<'SQL'
+update al_player
+set player_password = $1, player_name_last = $2, player_email = $3
+where id = $4
+SQL;
+
+	public function UpdateUserProfile( $player_id, $password, $lastname, $email ) {
+		
+	}
+	
 	// SQL to return a player ID given an associated session ID
 	private static $sql_retrieve_player_from_session = <<<'SQL'
 select id_player from auralight.al_session where id = $1;

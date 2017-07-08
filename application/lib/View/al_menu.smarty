@@ -18,7 +18,7 @@
 	</div>
 	{if $user_login}
 		{if $page == 'userprofile'}
-			<div class="al_menu_item" name="user_profile">User Profile</div>
+			<div class="al_menu_item al_menu_item_current_page" name="user_profile">User Profile</div>
 			<div class="al_menu_item" name="game_managment">Game Management</div>
 		{else}
 			<div class="al_menu_item" name="game_managment">Game Management</div>

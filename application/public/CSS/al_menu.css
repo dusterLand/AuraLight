@@ -5,12 +5,9 @@
 	padding: 0.3em;
 }
 
-.al_menu_item_active {
-	float: left;
-	font-size: 120%;
-	margin: 0.3em;
-	padding: 0.3em;
-	background-color: #4477ee;
+.al_menu_item_current_page {
+	border-radius: 15px 50px 30px 5px;
+	background-color: #00BFFF;
 }
 
 .al_menu_item:hover {
