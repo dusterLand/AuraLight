@@ -1,0 +1,40 @@
+Pages Need
+Home -
+ + Not Logged in - A description of what the site is about
+ + Logged in - Landing Zone - Current activity - how many accounts, toons, pairings, recent objectives, random ideas on what to do based off of objectives versus anything 
+	+ Placeholder for a game filter (initially it may just be a wow icon but set it up so that we are using the space we want for a filter later)
+    	+ Top of screen quick summary
+	+ Sections
+		+ Characters - list of most recently played, most active in a set time period
+		+ Objectives - list of users objectives by game (select which game you want to display objective easily), make this a short 3 or so list, if you want to see more objectives you go to an objective page
+    		+ Randomizer - a randomizer picks items that could be played11
+		+ Summary section that lists amounts of games, toons, different professions, where the professions exist (allow the user to pick what items they would like to display here)
+Registration
+ + Brief form to initially register the user
+User Profile
+ + change email
+ + change password
+ + change last name
+ + Put under "logged in as: <name> (Link for user Profile) (Play around and see what works)
+ + If clicked on created a new tab called User Profile - make editable page similar to registration page with only the above items to be changed
+ + Buttons at bottom to Save or Cancel
+ + When Saved takes you back to the main "/" page
+Game Management
+ + Games
+ + Accounts
+ + Characters
+   + Choice to pull from Blizzard more information when button is clicked for a particular character
+ + Linking of Characters
+ + Add the ability to add Favorites to each section
+ - Simple tab like design is the thought
+Character Analysis
+ + Filter Pane by profession, server, etc
+ + List of all Characters/Professions
+ + 
+Objective
+ + List of objectives
+ + By each objective an icon or something to allow it to be edited or deleted or marked completed
+ + completed objective section at the bottom that can be hidden 
+ + Button to add objectives
+Extras:
+ + Weigted page - allow users to weigh different items by percentage
